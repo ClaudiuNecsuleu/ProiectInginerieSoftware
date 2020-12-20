@@ -40,16 +40,16 @@ public class ProfileServlet extends HttpServlet {
 
             HttpSession session = request.getSession(true);
 
-            UserBean currentUser = ((UserBean) (session.getAttribute("currentSessionUser")));
+          //  UserBean currentUser = ((UserBean) (session.getAttribute("currentSessionUser")));
 
-            User user = userDaoLocal.getUserProfile(currentUser.getUsername());
+           // User user = userDaoLocal.getUserProfile(currentUser.getUsername());
 
-            request.setAttribute("user", user);
+         //   request.setAttribute("user", user);
 
-            request.setAttribute("getCommentsByUsername", commentDaoLocal.getAllCommentsByUser(currentUser.getUsername()));
+          //  request.setAttribute("getCommentsByUsername", commentDaoLocal.getAllCommentsByUser(currentUser.getUsername()));
         }
 
-        request.getRequestDispatcher("profile.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/profile/profile.jsp").forward(request, response);
 
     }
 
