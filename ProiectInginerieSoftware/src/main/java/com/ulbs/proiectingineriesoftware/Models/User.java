@@ -63,6 +63,9 @@ public class User implements Serializable {
     @Column(name = "USERNAME")
     private String username;
 
+    @Column(name = "PASSWORD")
+    private String password;
+    
     @ManyToOne
     private Role role;
 
