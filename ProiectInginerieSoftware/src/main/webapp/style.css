@@ -1,6 +1,7 @@
 
 body{
    font-family:poppins;
+   background-color: #BDD5EA; 
 }
 .parag{
   color: white;
@@ -9,7 +10,7 @@ body{
 }
 nav{
     height:80px;
-    background: #9F75C5;
+    background: #9DB8DF;
 }
 nav h1{
     color:white;
@@ -49,10 +50,6 @@ li a:hover,active {
     font-size: 15px;
     text-transform: uppercase;
 }
-/*.bttn-one:hover
-{
-    background-color: darkorange;
-}*/
 
 h1{
     
@@ -66,7 +63,8 @@ h1{
 }
 
 .comm{
-    width:30%;
+    
+    width:47%;
     background:white;
     margin: auto;
     border-radius:10px;
@@ -357,16 +355,16 @@ h1{
 
 }
 .centerj{
-    position:static;
+    position:absolute;
     top:50%;
     left:50%;
-    transform:translate(155%,10%);
-    width:410px;
-    
+    transform:translate(-50%,180%);
+    width:auto;
     background:white;
     border-radius:10px;
 
 }
+
 .centerj h2{
     text-align:center;
     padding: 0 0 20px 0;

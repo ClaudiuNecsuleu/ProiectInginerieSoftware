@@ -10,8 +10,7 @@
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- <link rel="stylesheet" type="text/css" href="style.css" media="all" />
-        -->
+        <link rel="stylesheet" type="text/css" href="style.css" media="all" />
         <title>${pageTitle}</title>
     </head>
     <body>
