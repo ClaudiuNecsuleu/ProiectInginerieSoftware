@@ -10,21 +10,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "JobApplicantServlet", urlPatterns = {"/JobApplicantServlet"})
-public class JobApplicantServlet extends HttpServlet {
 
+@WebServlet(name = "JobApplicantServletDelete", urlPatterns = {"/JobApplicantServletDelete"})
+public class JobApplicantServletDelete extends HttpServlet {
+    
     @EJB
     JobDaoLocal jobDaoLocal;
     @EJB
     UserDaoLocal userDaoLocal;
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        if (request != null) {
+            String action = request.getParameter("action");
+            
+            String username = request.getParameter("username");
 
-        request.setAttribute("jobList", jobDaoLocal.getAllJobs());
-        request.setAttribute("userList", userDaoLocal.getAllUsers());
-        request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicant.jsp").forward(request, response);
-
+            
+            if ("Def".equalsIgnoreCase(action)) {
+                userDaoLocal.setJobApplicantDeafult(username);   
+            } 
+            
+            request.setAttribute("jobList", jobDaoLocal.getAllJobs());
+            request.setAttribute("userList", userDaoLocal.getAllUsers());
+            request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicantDelete.jsp").forward(request, response);
+        }
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -10,21 +10,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "JobApplicantServlet", urlPatterns = {"/JobApplicantServlet"})
-public class JobApplicantServlet extends HttpServlet {
 
+@WebServlet(name = "JobApplicantServletEdit", urlPatterns = {"/JobApplicantServletEdit"})
+public class JobApplicantServletEdit extends HttpServlet {
+    
     @EJB
     JobDaoLocal jobDaoLocal;
     @EJB
     UserDaoLocal userDaoLocal;
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        request.setAttribute("jobList", jobDaoLocal.getAllJobs());
-        request.setAttribute("userList", userDaoLocal.getAllUsers());
-        request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicant.jsp").forward(request, response);
-
+        if (request != null) {
+            String action = request.getParameter("action");
+            
+            String username = request.getParameter("username");
+            String deleteApp = request.getParameter("deleteApp");
+            String deleteJob = request.getParameter("deleteJob");
+            
+              if ("Select".equalsIgnoreCase(action)) {
+                userDaoLocal.confirmJob(username);
+                
+            } else if ("SelectDelete".equalsIgnoreCase(action)) {
+                userDaoLocal.setJobApplicantDeafult(deleteApp);
+                
+            } else if ("SelectDeleteJob".equalsIgnoreCase(action)) {
+                jobDaoLocal.deleteUserFromJob(deleteJob);
+            }
+            
+            request.setAttribute("jobList", jobDaoLocal.getAllJobs());
+            request.setAttribute("userList", userDaoLocal.getAllUsers());
+            request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicantEdit.jsp").forward(request, response);
+        }
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

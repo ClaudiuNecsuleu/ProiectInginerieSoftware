@@ -10,21 +10,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "JobApplicantServlet", urlPatterns = {"/JobApplicantServlet"})
-public class JobApplicantServlet extends HttpServlet {
 
+@WebServlet(name = "JobApplicantServletAdd", urlPatterns = {"/JobApplicantServletAdd"})
+public class JobApplicantServletAdd extends HttpServlet {
+    
     @EJB
     JobDaoLocal jobDaoLocal;
     @EJB
     UserDaoLocal userDaoLocal;
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        request.setAttribute("jobList", jobDaoLocal.getAllJobs());
-        request.setAttribute("userList", userDaoLocal.getAllUsers());
-        request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicant.jsp").forward(request, response);
-
+        if (request != null) {
+            String action = request.getParameter("action");
+            
+            String username = request.getParameter("username");
+            String jobname = request.getParameter("jobname");
+                   
+            if ("Add".equalsIgnoreCase(action)) {
+                jobDaoLocal.addUserApplicantToJob(username, jobname);
+            } 
+            
+            request.setAttribute("jobList", jobDaoLocal.getAllJobs());
+            request.setAttribute("userList", userDaoLocal.getAllUsers());
+            request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicantAdd.jsp").forward(request, response);
+        }
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
