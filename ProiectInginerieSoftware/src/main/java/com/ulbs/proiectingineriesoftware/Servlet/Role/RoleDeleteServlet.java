@@ -30,7 +30,7 @@ public class RoleDeleteServlet extends HttpServlet {
 
         request.setAttribute("allRoles", usersDaoLocal.getAllRoles());
         request.setAttribute("allUsers", usersDaoLocal.getAllUsers());
-        request.getRequestDispatcher("roleDelete.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/role/roleDelete.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

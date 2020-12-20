@@ -50,7 +50,7 @@ public class JobsServlet extends HttpServlet {
             request.setAttribute("job", job);
         }
         request.setAttribute("allJobs", jobsDaoLocal.getAllJobs());
-        request.getRequestDispatcher("jobsinfo.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/job/jobsinfo.jsp").forward(request, response);
 
     }
 

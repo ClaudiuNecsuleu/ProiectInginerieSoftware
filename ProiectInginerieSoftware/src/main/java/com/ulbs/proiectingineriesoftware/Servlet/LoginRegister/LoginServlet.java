@@ -36,10 +36,10 @@ public class LoginServlet extends HttpServlet {
 
                     HttpSession session = request.getSession(true);
                     session.setAttribute("currentSessionUser", userBean);
-                    response.sendRedirect("userLogged.jsp"); //logged-in page   DF
+                    response.sendRedirect("/WEB-INF/pages/loginreg/userLogged.jsp"); //logged-in page   DF
                 }
                  else {
-                    response.sendRedirect("userLogInvalid.jsp"); //error page 
+                    response.sendRedirect("/WEB-INF/pages/loginreg/userLogInvalid.jsp"); //error page 
 
                 }
 

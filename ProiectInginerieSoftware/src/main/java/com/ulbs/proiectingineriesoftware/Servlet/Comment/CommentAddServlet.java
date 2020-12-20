@@ -51,7 +51,7 @@ public class CommentAddServlet extends HttpServlet {
 
         }
         request.setAttribute("allUsers", commentDaoLocal.getUsersList());          //trebuie o lista de users
-        request.getRequestDispatcher("commentAdd.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/comment/commentAdd.jsp").forward(request, response);
 
     }
 

@@ -31,7 +31,7 @@ public class CommentDeleteServlet extends HttpServlet {
         request.setAttribute("commentID",commentID);   
         }
      request.setAttribute("allComments", commentDaoLocal.getAllComments());
-     request.getRequestDispatcher("commentDelete.jsp").forward(request, response);
+     request.getRequestDispatcher("/WEB-INF/pages/comment/commentDelete.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

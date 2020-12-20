@@ -45,7 +45,7 @@ public class UserAddServlet extends HttpServlet {
             request.setAttribute("user", user);
         }
         request.setAttribute("allUsers", userDaoLocal.getAllUsers());
-        request.getRequestDispatcher("userAdd.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/user/userAdd.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

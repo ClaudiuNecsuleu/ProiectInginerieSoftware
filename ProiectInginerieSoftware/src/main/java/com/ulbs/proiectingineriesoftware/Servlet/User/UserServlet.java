@@ -49,7 +49,7 @@ public class UserServlet extends HttpServlet {
         
         String action = request.getParameter("action");
         }
-        request.getRequestDispatcher("user.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/user/user.jsp").forward(request, response);
 
     }
 

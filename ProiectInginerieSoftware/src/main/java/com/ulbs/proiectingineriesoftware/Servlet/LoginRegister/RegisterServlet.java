@@ -105,7 +105,7 @@ public class RegisterServlet extends HttpServlet {
 
         request.setAttribute("status", status);
         //  request.setAttribute("status", "acasa");
-        request.getRequestDispatcher("register.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/loginreg/register.jsp").forward(request, response);
 
     }
 

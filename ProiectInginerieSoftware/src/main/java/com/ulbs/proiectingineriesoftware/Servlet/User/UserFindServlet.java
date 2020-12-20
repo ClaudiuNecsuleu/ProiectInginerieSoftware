@@ -19,7 +19,7 @@ public class UserFindServlet extends HttpServlet {
             throws ServletException, IOException {
       
         request.setAttribute("allUsers", userDaoLocal.getAllUsers());
-        request.getRequestDispatcher("userFind.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/user/userFind.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
