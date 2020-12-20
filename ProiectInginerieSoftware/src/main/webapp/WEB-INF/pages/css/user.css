@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 10px;
+    background:lightgrey;
+}
+input[type=text], input[type=password]{
+    margin:8px 0;
+    border: 2px solid #6D696A;
+    box-sizing: border-box;
+    padding: 6px 16px;
+}
+.wrapper{
+    max-width: 500px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+}
+.wrapper1{
+    max-width: 730px;
+    width: 100%;
+    margin: 5px auto;
+}
+.tabel th {
+    border-collapse : collapse;
+    border-right:1px solid  #1C0221;
+    border-top :1px solid #1C0221;
+    border-left: 1px solid #1C0221;
+    border-bottom:1px solid #1C0221;
+}
+button {
+    background-color: #A8DCD1;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 23.5%;
+}
+button:hover {
+    opacity: 0.7;
+}    
