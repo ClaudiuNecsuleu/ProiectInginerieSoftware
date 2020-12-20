@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ulbs.proiectingineriesoftware.Servlet.LoginRegister;
 
+import com.ulbs.proiectingineriesoftware.Common.UserBean;
+import com.ulbs.proiectingineriesoftware.Models.User;
+import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -13,15 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import pro.webproject.dao.UserDaoLocal;
-import pro.webproject.model.Role;
-import pro.webproject.model.User;
-import pro.webproject.common.UserBean;
 
-/**
- *
- * @author Larisa
- */
+
 @WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 

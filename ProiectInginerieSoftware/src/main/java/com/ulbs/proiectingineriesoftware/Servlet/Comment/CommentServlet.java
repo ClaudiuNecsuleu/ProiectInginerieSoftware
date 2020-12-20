@@ -1,5 +1,9 @@
 package com.ulbs.proiectingineriesoftware.Servlet.Comment;
 
+import com.ulbs.proiectingineriesoftware.Models.Comment;
+import com.ulbs.proiectingineriesoftware.Services.CommentDaoLocal;
+import com.ulbs.proiectingineriesoftware.Services.JobDaoLocal;
+import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -9,15 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import pro.webproject.model.Comment;
-import pro.webproject.dao.CommentDaoLocal;
-import pro.webproject.dao.JobDaoLocal;
-import pro.webproject.dao.UserDaoLocal;
 
-/**
- *
- * @author Bogdan
- */
+
 @WebServlet(name = "CommentServlet", urlPatterns = {"/CommentServlet"})
 public class CommentServlet extends HttpServlet {
 

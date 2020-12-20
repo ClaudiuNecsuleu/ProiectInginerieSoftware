@@ -5,22 +5,17 @@
  */
 package com.ulbs.proiectingineriesoftware.Servlet.Photo;
 
+import com.ulbs.proiectingineriesoftware.Common.PhotoDetails;
+import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import pro.webproject.dao.UserDaoLocal;
-import pro.webproject.common.PhotoDetails;
 
-/**
- *
- * @author Clau
- */
 
 @WebServlet(name = "Photo", urlPatterns = {"/Photo"})
 public class Photo extends HttpServlet {
