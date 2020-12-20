@@ -1,8 +1,4 @@
-<%-- 
-    Document   : commentsAdd
-    Created on : Oct 26, 2020, 4:54:24 PM
-    Author     : oleof
---%>
+
 
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

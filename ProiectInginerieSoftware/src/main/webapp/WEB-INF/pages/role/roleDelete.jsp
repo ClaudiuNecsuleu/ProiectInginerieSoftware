@@ -1,8 +1,4 @@
-<%-- 
-    Document   : roleAdd
-    Created on : Nov 9, 2020, 1:06:03 PM
-    Author     : oleof
---%>
+
 
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

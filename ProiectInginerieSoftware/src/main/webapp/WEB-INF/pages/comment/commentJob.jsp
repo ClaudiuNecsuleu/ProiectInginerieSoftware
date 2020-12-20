@@ -1,8 +1,3 @@
-<%-- 
-    Document   : commentJob
-    Created on : Nov 9, 2020, 3:18:18 PM
-    Author     : oleof
---%>
 
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

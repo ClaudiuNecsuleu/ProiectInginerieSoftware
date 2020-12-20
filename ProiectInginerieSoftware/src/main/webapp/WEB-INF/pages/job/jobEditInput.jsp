@@ -1,8 +1,4 @@
-<%-- 
-    Document   : jobEditInput
-    Created on : Dec 6, 2020, 9:58:49 AM
-    Author     : Bogdan
---%>
+
 
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

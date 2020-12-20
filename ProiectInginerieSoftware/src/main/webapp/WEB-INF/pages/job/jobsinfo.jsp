@@ -1,8 +1,4 @@
-<%-- 
-    Document   : jobsinfo
-    Created on : 22.10.2020, 19:02:40
-    Author     : oleof
---%>
+
 
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

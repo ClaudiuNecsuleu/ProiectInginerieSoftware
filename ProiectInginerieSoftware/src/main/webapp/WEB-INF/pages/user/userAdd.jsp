@@ -1,8 +1,4 @@
- <%-- 
-    Document   : userinfo
-    Created on : Oct 12, 2020, 1:19:25 PM
-    Author     : oleof
---%>
+
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

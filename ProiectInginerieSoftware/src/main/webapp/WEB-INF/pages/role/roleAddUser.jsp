@@ -1,8 +1,4 @@
-<%-- 
-    Document   : roleAddUser
-    Created on : Nov 9, 2020, 1:11:33 PM
-    Author     : oleof
---%>
+
 
 <%@page import="pro.webproject.common.UserBean"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 

@@ -1,11 +1,3 @@
-<%-- 
-    Document   : commentsDelete
-    Created on : Oct 26, 2020, 4:59:44 PM
-    Author     : oleof
---%>
-
-
-
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

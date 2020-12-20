@@ -1,8 +1,4 @@
-<%-- 
-    Document   : register
-    Created on : Oct 12, 2020, 1:19:25 PM
-    Author     : oleof
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

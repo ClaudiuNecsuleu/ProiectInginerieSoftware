@@ -1,8 +1,4 @@
-<%-- 
-    Document   : userFind
-    Created on : Nov 13, 2020, 10:59:41 AM
-    Author     : oleof
---%>
+
 
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

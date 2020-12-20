@@ -1,8 +1,3 @@
-<%-- 
-    Document   : jobEdit
-    Created on : Nov 9, 2020, 2:20:22 PM
-    Author     : oleof
---%>
 
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

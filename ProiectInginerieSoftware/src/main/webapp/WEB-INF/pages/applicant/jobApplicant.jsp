@@ -1,8 +1,3 @@
-<%-- 
-    Document   : jobApplicant
-    Created on : 18.11.2020, 22:59:25
-    Author     : Clau
---%>
 
 <%@page import="pro.webproject.common.UserBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

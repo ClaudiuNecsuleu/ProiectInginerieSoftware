@@ -1,8 +1,3 @@
-<%-- 
-    Document   : profile
-    Created on : Nov 20, 2020, 12:01:27 PM
-    Author     : oleof
---%>
 
 
 <%@page import="pro.webproject.model.User"%>
