@@ -1,6 +1,4 @@
-
-
-<%@page import="pro.webproject.common.UserBean"%>
+<%@page import="com.ulbs.proiectingineriesoftware.Common.UserBean"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <html>
     <head>
