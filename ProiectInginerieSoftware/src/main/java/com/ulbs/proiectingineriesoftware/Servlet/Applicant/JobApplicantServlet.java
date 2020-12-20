@@ -46,7 +46,7 @@ public class JobApplicantServlet extends HttpServlet {
             
             request.setAttribute("jobList", jobDaoLocal.getAllJobs());
             request.setAttribute("userList", userDaoLocal.getAllUsers());
-            request.getRequestDispatcher("jobApplicant.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicant.jsp").forward(request, response);
         }
     }
 

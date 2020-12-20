@@ -42,7 +42,7 @@ public class CommentJobServlet extends HttpServlet {
 
         }
         request.setAttribute("allJobs", commentDaoLocal.getJobsList());
-        request.getRequestDispatcher("commentJob.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/comment/commentJob.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

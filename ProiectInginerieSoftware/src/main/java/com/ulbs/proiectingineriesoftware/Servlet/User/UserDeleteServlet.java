@@ -34,7 +34,7 @@ public class UserDeleteServlet extends HttpServlet {
             request.setAttribute("userID", userID);
         }
         request.setAttribute("allUsers", userDaoLocal.getAllUsers());
-        request.getRequestDispatcher("userDelete.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/user/userDelete.jsp").forward(request, response);
 
     }
     private static final Logger LOG = Logger.getLogger(UserDeleteServlet.class.getName());

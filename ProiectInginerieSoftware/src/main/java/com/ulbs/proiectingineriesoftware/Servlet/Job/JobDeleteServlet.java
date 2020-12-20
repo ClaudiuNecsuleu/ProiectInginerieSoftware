@@ -32,7 +32,7 @@ public class JobDeleteServlet extends HttpServlet {
             request.setAttribute("jobid", jobid);
         }
         request.setAttribute("allJobs", jobDaoLocal.getAllJobs());
-        request.getRequestDispatcher("jobDelete.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/job/jobDelete.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -20,7 +20,7 @@ public class CommentEditServlet extends HttpServlet {
             throws ServletException, IOException {
  
         request.setAttribute("allUsers", userDaoLocal.getAllUsers());
-        request.getRequestDispatcher("commentEdit.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/comment/commentEdit.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

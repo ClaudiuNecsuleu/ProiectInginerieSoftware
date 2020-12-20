@@ -21,7 +21,7 @@ public class JobEditServlet extends HttpServlet {
 
         
         request.setAttribute("allJobs", jobDaoLocal.getAllJobs());
-        request.getRequestDispatcher("jobEdit.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/job/jobEdit.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
