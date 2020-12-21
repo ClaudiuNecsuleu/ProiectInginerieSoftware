@@ -3,10 +3,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<% request.setAttribute("name", request.getRemoteUser());%>
 
 <t:pageTemplate pageTitle="Profile">
         <div class="centerprof">
-             <h1>Salut, ${name} !</h1>
+             <h1>Salut, ${user.getName()} ${user.getPrenume()} !</h1>
         <form>
             <br><br>
         <table>
