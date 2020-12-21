@@ -2,6 +2,7 @@
 
 <%-- The list of normal or fragment attributes can be specified here: --%>
 <%@attribute name="pageTitle"%>
+<%@attribute name="body" fragment="true" %>
 
 <%-- any content can be specified here e.g.: --%>
 
