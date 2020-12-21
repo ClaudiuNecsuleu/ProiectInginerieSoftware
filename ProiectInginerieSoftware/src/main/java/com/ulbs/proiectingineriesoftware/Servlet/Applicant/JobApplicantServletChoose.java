@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "JobApplicantServletAdd", urlPatterns = {"/JobApplicantServletAdd"})
-public class JobApplicantServletAdd extends HttpServlet {
+@WebServlet(name = "JobApplicantServletChoose", urlPatterns = {"/JobApplicantServletChoose"})
+public class JobApplicantServletChoose extends HttpServlet {
     
     @EJB
     JobDaoLocal jobDaoLocal;
@@ -25,16 +25,17 @@ public class JobApplicantServletAdd extends HttpServlet {
             String action = request.getParameter("action");
             
             String username = request.getParameter("username");
+            String recruiterName = request.getParameter("recruiterName");
 
                    
-           if ("Select".equalsIgnoreCase(action)) {
-                userDaoLocal.confirmJob(username);
+           if ("Recomanda".equalsIgnoreCase(action)) {
+                userDaoLocal.recomandaUser(username, recruiterName);
                 
             }
             
             request.setAttribute("jobList", jobDaoLocal.getAllJobs());
             request.setAttribute("userList", userDaoLocal.getAllUsers());
-            request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicantAdd.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicantChoose.jsp").forward(request, response);
         }
     }
 

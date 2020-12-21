@@ -8,7 +8,6 @@ import com.ulbs.proiectingineriesoftware.Models.User;
 import java.util.List;
 import javax.ejb.Local;
 
-
 @Local
 public interface UserDaoLocal {
 
@@ -57,5 +56,7 @@ public interface UserDaoLocal {
     public PhotoDetails findPhotoByUserId(Integer userId);
 
     void deleteAllApplicantsForJob(Job job);
+
+    void recomandaUser(String username,String recruiterName);
 
 }

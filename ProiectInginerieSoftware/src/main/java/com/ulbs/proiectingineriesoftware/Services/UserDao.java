@@ -17,7 +17,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
-
 @Stateless
 public class UserDao implements UserDaoLocal {
 
@@ -563,6 +562,23 @@ public class UserDao implements UserDaoLocal {
         }
         Photo photo = photos.get(0);
         return new PhotoDetails(photo.getId(), photo.getFilename(), photo.getFileType(), photo.getFileContent());
+    }
+
+    @Override
+    public void recomandaUser(String username,String recruiterName) {
+        try {
+            LOG.info("recomandaUser ,name " + username);
+         
+            Query qu = entityManager.createQuery("select u from User u where u.username = :username");
+            qu.setParameter("username", username);
+            @SuppressWarnings("unchecked")
+            List<User> users = qu.getResultList();
+            User user = users.get(0);
+            user.setRecomandare(recruiterName);
+            entityManager.merge(user);
+        } catch (Exception e) {
+            throw new EJBException(e);
+        }
     }
 
 }

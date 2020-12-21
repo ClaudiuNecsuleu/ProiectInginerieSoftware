@@ -18,7 +18,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-
 @NamedQueries(
         @NamedQuery(name = "Users.getAll", query = "select u from User u"))
 @Entity
@@ -65,7 +64,10 @@ public class User implements Serializable {
 
     @Column(name = "PASSWORD")
     private String password;
-    
+
+    @Column(name = "RECOMANDARE")
+    private String recomandare;
+
     @ManyToOne
     private Role role;
 
@@ -80,7 +82,7 @@ public class User implements Serializable {
     @JoinColumn(name = "JobApplicant")
     private Job jobApplicant;
 
-    @OneToOne(mappedBy = "userPhoto",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "userPhoto", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Photo photo;
 
     public User() {
@@ -90,7 +92,7 @@ public class User implements Serializable {
         this.userid = userid;
     }
 
-    public User(String name, String prenume, String telefon, String telefonMobil, String mail, String functia, String descriere, String username , String password) {
+    public User(String name, String prenume, String telefon, String telefonMobil, String mail, String functia, String descriere, String username, String password) {
 
         //this.userid = id;
         this.name = name;
@@ -101,7 +103,7 @@ public class User implements Serializable {
         this.functia = functia;
         this.descriere = descriere;
         this.username = username;
-        this.password=password;
+        this.password = password;
 
     }
 
@@ -165,7 +167,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    
     public Role getRole() {
         return role;
     }
@@ -244,6 +245,14 @@ public class User implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getRecomandare() {
+        return recomandare;
+    }
+
+    public void setRecomandare(String recomandare) {
+        this.recomandare = recomandare;
     }
 
     @Override
