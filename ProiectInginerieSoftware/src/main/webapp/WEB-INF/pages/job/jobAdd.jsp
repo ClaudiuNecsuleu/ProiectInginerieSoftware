@@ -6,7 +6,7 @@
 <% request.setAttribute("name", request.getRemoteUser());%>
 <t:pageTemplate pageTitle="JobAdd">
     <jsp:body>
-        <div class="comm">    
+        <div class="center">    
 
             <h2>Job Add</h2>
             <form action="./JobsServlet" method="POST">
@@ -16,9 +16,7 @@
                 <input type="hidden" name="publisher" value="${name}">
                 <button type="submit" name="action" value="Add">Add</button>
                 <a href="JobsServlet"><button type="button">Back</button></a>
-                <br>
-
-
+                
             </form>
         </div>
     </jsp:body>

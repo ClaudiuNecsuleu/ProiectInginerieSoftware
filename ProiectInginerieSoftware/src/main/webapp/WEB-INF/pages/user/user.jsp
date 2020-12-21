@@ -4,11 +4,15 @@
 
 <t:pageTemplate pageTitle="User">
     <div class="center">
-        <h1>Users</h1>
+        <form>
+        <h2>Users</h2>
+        
         <a href="UserAddServlet"><button class="btn" type="button">Add</button></a>
         <a href="UserEditServlet"><button class="btn" type="button">Edit</button></a>
         <a href="UserDeleteServlet"><button class="btn" type="button">Delete</button></a>
         <a href="UserFindServlet"><button class="btn" type="button">Search</button></a>
+       
         <br><br>
+         </form>
     </div>
 </t:pageTemplate>

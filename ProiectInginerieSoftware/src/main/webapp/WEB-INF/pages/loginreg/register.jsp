@@ -2,7 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 
 <t:pageTemplate pageTitle="Register">
-        <div class="center"> 
+        <div class="centereg"> 
             <h2>Register</h2>
             <form action="./RegisterServlet" method="POST" enctype="multipart/form-data" novalidate >     
                 <div class="txt_field"> <input type="text" placeholder="Nume" name="name" value="${users.name}" required/></div>
@@ -19,7 +19,9 @@
                     </div>
                 </div>
                 <button type="submit" name="action" value="Add">Register</button>
-                <a href="index.xhtml"><button type="button" class="cancelbtn" >Cancel</button></a>
+                <a href="${pageContext.request.contextPath}"><button type="button" class="cancelbtn" >Cancel</button></a>
+                <br>
             </form>
+                <br>
         </div>
 </t:pageTemplate>

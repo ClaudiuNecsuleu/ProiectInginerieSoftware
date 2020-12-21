@@ -5,7 +5,7 @@
 
 <t:pageTemplate pageTitle="UserDelete">
 
-    <div class="comm">
+    <div class="center">
         <h2>Users Delete</h2>
         <form action="./UserDeleteServlet" method="POST">
 

@@ -5,7 +5,7 @@
 
 <t:pageTemplate pageTitle="JobEdit">
     <jsp:body>
-        <div class="comm">    
+        <div class="center">    
             <h2>Job Edit</h2>
             <form action="./JobEditInputServlet" method="POST">
                 <label><strong>Select job to edit:</strong></label>
@@ -18,10 +18,13 @@
                 <br>
                 <button type="submit" class="btn3" value="Edit">Edit</button>
                 <a href="JobsServlet"><button class="btn3" type="button">Back</button></a>
+            
             </form>
-            <br>
+             <br>
         </div>
-        <div class="centerj">
+           
+    
+        <div class="centerjed">
             <form>
                 <br><br>
                 <table>
@@ -45,6 +48,8 @@
                         </tr>   
                     </c:forEach>
                 </table>
+                <br>
+                <br>
 
             </form>
         </div>

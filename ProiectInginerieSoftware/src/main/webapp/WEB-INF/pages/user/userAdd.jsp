@@ -5,7 +5,7 @@
 
 <t:pageTemplate pageTitle="UserAdd">
 
-    <div class="comm">
+    <div class="centereg">
         <h2>Users Add</h2>
         <form action="./UserAddServlet" method="POST">
             <div class="txt_field">  <input type="text" name="name" placeholder="Nume" value="${user.name}" required></div>
@@ -24,7 +24,7 @@
                 <option value="DIRDEP">Director de departament</option>
                 <option value="RECRUITER">Recruiter</option>
             </select>
-
+            <br>
             <button type="submit" name="action" value="Add">Add</button>
             <a href="UserServlet"><button type="button">Back</button></a>
             <br> <br>

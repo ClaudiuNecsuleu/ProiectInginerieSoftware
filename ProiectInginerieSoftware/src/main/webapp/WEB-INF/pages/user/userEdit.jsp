@@ -5,8 +5,8 @@
 
 <t:pageTemplate pageTitle="UserEdit">
     
-    <div class="comm">
-        <h1>Users Edit</h1>
+    <div class="center">
+        <h2>Users Edit</h2>
         <form action="./UserEditInputServlet" method="POST">
             <label><strong>Select user to edit:</strong></label>
             <select  name="userid" required>
@@ -18,12 +18,14 @@
 
             <button type="submit" class="btn3" name="action" value="Edit">Edit</button>
             <a href="UserServlet"><button class="btn3" type="button">Back</button></a>
-            <br><br>
+            
         </form> 
+         <br>
     </div>
-    <div class="center1">
-        <br>
+    <div class="centerued">
+       
         <form>
+                <br><br>
             <table>
                 <th>ID</th>
                 <th>Name</th>
@@ -48,7 +50,7 @@
                     </tr>   
                 </c:forEach>
             </table>
-            <br>
+                <br><br>
         </form>
 
     </div>

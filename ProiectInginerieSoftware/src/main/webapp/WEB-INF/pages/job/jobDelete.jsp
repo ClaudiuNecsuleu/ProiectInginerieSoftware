@@ -6,7 +6,7 @@
 <% request.setAttribute("name", request.getRemoteUser());%>
 <t:pageTemplate pageTitle="JobDelete">
     <jsp:body>
-        <div class="comm">    
+        <div class="center">    
             <h2>Job Delete</h2>
             <form action="./JobDeleteServlet" method="POST">
                 <label>Select job to delete:</label>
@@ -19,7 +19,9 @@
                 <br>
                 <button type="submit" class="btn3" name="action" value="Delete">Delete</button>
                 <a href="JobsServlet"><button class="btn3" type="button">Back</button></a>
-
+                <br>
+                <br>
+          
             </form>
         </div>
     </jsp:body>

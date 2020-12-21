@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav>
-    <img src="logo.png" alt="logo" width="210" height="110">
+    <img src="logoo.png" alt="logoo" width="210" height="110">
     <ul>
 
         <li> 

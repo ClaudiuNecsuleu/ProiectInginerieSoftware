@@ -1,14 +1,15 @@
 
 body{
-   font-family:poppins;
-   background-color: #BDD5EA; 
+    font-family:poppins;
+    background-color: #BDD5EA; 
 }
 .parag{
-  color: white;
-  font-family: courier;
-  font-size:35px;
+    color: white;
+    font-family: courier;
+    font-size:35px;
 }
 nav{
+
     height:80px;
     background: #9DB8DF;
 }
@@ -52,7 +53,7 @@ li a:hover,active {
 }
 
 h1{
-    
+
     text-align:center;
     padding: 40px 40px;
 
@@ -62,43 +63,6 @@ h1{
     background: #9567BF;
 }
 
-.comm{
-    
-    width:47%;
-    background:white;
-    margin: auto;
-    border-radius:10px;
-}
-.comm1{
-    width:48%;
-    background:white;
-    margin: auto;
-    border-radius:10px;
-}
-.comm1 h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
-
-}
-.comm1 form{
-    padding: 0 40px;
-    box-sizing: border-box;
-
-}
-.comm h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
-
-}
-.comm form{
-    padding: 0 40px;
-    box-sizing: border-box;
-
-}
 .centeruf{
     position:absolute;
     top:50%;
@@ -120,21 +84,66 @@ h1{
     box-sizing: border-box;
 
 }
+.centereg{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-40%);
+    width:25%;
+    background:white;
+    border-radius:30px;
+}
+.centereg h2{
+
+    text-align:center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver; 
+    font-size:40px;
+
+}
+.centereg form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+.centeruinput{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-35%);
+    width:25%;
+    background:white;
+    border-radius:30px;
+}
+.centeruinput h2{
+
+    text-align:center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver; 
+    font-size:40px;
+
+}
+.centeruinput form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
 .center{
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    width:400px;
+    width:25%;
     background:white;
-    border-radius:10px;
-
+    border-radius:30px;
 }
 .center h2{
+
     text-align:center;
     padding: 0 0 20px 0;
     border-bottom: 1px solid silver; 
-    font-size:40px
+    font-size:40px;
+
 }
 .center form{
     padding: 0 40px;
@@ -185,7 +194,7 @@ h1{
 
 }
 .centerc1{
-    position:static;
+    position:absolute;
     top:50%;
     left:50%;
     transform:translate(210%,10%);
@@ -206,7 +215,7 @@ h1{
 
 }
 .centerc2{
-    position:static;
+    position:absolute;
     top:50%;
     left:50%;
     transform:translate(100%,-98%);
@@ -356,28 +365,74 @@ h1{
 }
 .centerj{
     position:absolute;
-    top:50%;
+    top:57%;
     left:50%;
-    transform:translate(-50%,180%);
+    transform:translate(-250px,160px);
     width:auto;
     background:white;
-    border-radius:10px;
-
-}
-
-.centerj h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
+    border-radius:20px;
 }
 .centerj form{
     padding: 0 40px;
     box-sizing: border-box;
-
 }
+.centerjeinput{
+    position:absolute;
+    top:57%;
+    left:50%;
+    transform:translate(-250px,190px);
+    width:auto;
+    background:white;
+    border-radius:20px;
+}
+.centerjeinput form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+
+.centerjed{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-250px,150px);
+    width:auto;
+    background:white;
+    border-radius:20px;
+}
+.centerjed form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.centerued{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-360px,150px);
+    width:auto;
+    background:white;
+    border-radius:20px;
+}
+.centerued form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.centeruedinput{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-360px,490px);
+    width:auto;
+    background:white;
+    border-radius:20px;
+}
+.centeruedinput form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
 .centerjagen{
-    position:static;
+    position:absolute;
     top:50%;
     left:50%;
     transform:translate(230%,10%);
@@ -398,14 +453,13 @@ h1{
 
 }
 .centergen{
-    position:static;
+    position:absolute;
     top:50%;
     left:50%;
     transform:translate(350%,-90%);
     width:250px;
     background:white;
     border-radius:10px;
-
 }
 .centergen h2{
     text-align:center;
@@ -418,10 +472,8 @@ h1{
     box-sizing: border-box;
 
 }
-
-
 .centerhr{
-    position:static;
+    position:absolute;
     top:50%;
     left:50%;
     transform:translate(230%,-70%);
@@ -442,7 +494,7 @@ h1{
 
 }
 .centerhr1{
-    position:static;
+    position:absolute;
     top:50%;
     left:50%;
     transform:translate(350%,30%);
@@ -487,7 +539,7 @@ form .txt_field{
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    margin-left:78px;
+    margin-left:64px;
     opacity: 0.6;
     border: none;
     cursor: pointer;
@@ -512,7 +564,7 @@ form .txt_field{
     opacity: 0.6;
     border: none;
     cursor: pointer;
-    width: auto;
+    width: 30%;
 
 }
 button{
@@ -523,7 +575,7 @@ button{
     opacity: 0.6;
     border: none;
     cursor: pointer;
-    width: 100%; 
+    width: auto; 
 }
 
 
@@ -534,43 +586,20 @@ button:hover {
 
 .cancelbtn {
     width: auto;
-    padding: 10px 18px;
+    padding: 14px 20px;
     background-color: #DA344D;
 }
 
-.cancelbtn {
-    width: 100%;
-}
-.floatLeft { 
-    width: 50%; float: left;
-}
-.floatRight {
-    width: 50%; float: right;
-}
-.container {
-    overflow: hidden;
-}
 table, td, th {
+
     border: 3px solid #91739C;
     text-align:center;
 }
 table {
-  
     background-color: white;
     border-collapse: collapse;
-    
+
 }
 tr:hover {
     background-color:#9F87AF;
-}
-textarea {
-  transform:translate(10%,180%);
-  width: 40%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
 }

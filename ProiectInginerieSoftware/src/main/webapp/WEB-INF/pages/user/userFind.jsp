@@ -5,18 +5,19 @@
 
 <t:pageTemplate pageTitle="UserFind">
 
-    <div class="comm">
-        <h1>Users Information</h1>
+    <div class="center">
+        <h1>Users Information</h1>  
         <form action="./UserFindServlet" method="POST">
             <div class="txt_field"> <input type="text" id="usernameInput" onkeypress="return noenter()" placeholder="Cauta dupa nume si prenume..." required></div>
             <a href="UserServlet"><button class="btn3" type="button">Back</button></a>
-            <br><br>
+            <br>
         </form>
     </div>
 
-    <div class="centeruf">
-        <br>
+    <div class="centerued">
+     
         <form>
+               <br><br>
             <table id="userTable">
                 <tr>
                     <th>ID</th>
@@ -63,7 +64,7 @@
                 }
             </script>
 
-            <br>
+               <br><br>
         </form>
     </div>
 

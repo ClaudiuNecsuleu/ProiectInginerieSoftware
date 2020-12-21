@@ -4,14 +4,16 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:pageTemplate pageTitle="Job">
-    
+
     <div class="center">
+        <form>
         <h2>Job Info</h2>
         <a href="JobAddServlet"><button class="btn" type="button">Add</button></a>
         <a href="JobEditServlet"><button class="btn" type="button">Edit</button></a>
         <a href="JobDeleteServlet"><button class="btn" type="button">Delete</button></a>
         <a href="userLogged.jsp"><button class="btn" type="button">Back</button></a>
         <br><br>
+        </form>
 
     </div>
     <div class="centerj">
@@ -23,7 +25,7 @@
                 <th>Job description</th>
                 <th>Remaining posts</th>
                 <th>Publisher</th>
-                <c:forEach items="${allJobs}" var="job">
+                    <c:forEach items="${allJobs}" var="job">
                     <tr>
                         <td>${job.jobid}</td>
                         <td>${job.jobname}</td>
@@ -40,5 +42,6 @@
             </table>
             <br><br>
         </form>
+  
     </div>
 </t:pageTemplate>
