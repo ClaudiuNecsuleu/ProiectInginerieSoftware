@@ -4,7 +4,7 @@
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <% request.setAttribute("name", request.getRemoteUser());%>
-<t:pageTemplate pageTitle="Comment">
+<t:pageTemplate pageTitle="CommentToJob">
     <jsp:body>
         <div class="comm">  
             <h2>Comments Add</h2>

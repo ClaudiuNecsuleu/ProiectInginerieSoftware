@@ -4,7 +4,7 @@
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <% request.setAttribute("name", request.getRemoteUser());%>
-<t:pageTemplate pageTitle="JobApplicant">
+<t:pageTemplate pageTitle="JobDelete">
     <jsp:body>
         <div class="comm">    
             <h2>Job Delete</h2>

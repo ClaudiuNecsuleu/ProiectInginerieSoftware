@@ -3,7 +3,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<t:pageTemplate pageTitle="JobInfo">
+<t:pageTemplate pageTitle="Job">
     
     <div class="center">
         <h2>Job Info</h2>

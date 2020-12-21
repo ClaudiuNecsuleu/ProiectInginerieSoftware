@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<t:pageTemplate pageTitle="JobApplicant">
+<t:pageTemplate pageTitle="JobEdit">
     <jsp:body>
         <div class="comm">    
             <h2>Job Edit</h2>

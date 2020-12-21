@@ -30,47 +30,7 @@ public class UserEditInputServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if (request != null) {
-            String action = request.getParameter("action");
 
-            String userIDStr = request.getParameter("userid");
-            String userIDStrSelect = request.getParameter("useridSelect");
-
-            String name = request.getParameter("name");
-            String prenume = request.getParameter("prenume");
-            String telefon = request.getParameter("telefon");
-            String telefonMobil = request.getParameter("telefonMobil");
-            String mail = request.getParameter("mail");
-            String functia = request.getParameter("functia");
-            String descriere = request.getParameter("descriere");
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            String passwrodSha256 = PasswordUtil.convertToSha256(password);
-
-            int userID = 0;
-            int userID1 = 0;
-            if (userIDStr != null && !userIDStr.equals("")) {
-                userID = Integer.parseInt(userIDStr);
-            }
-
-            if (userIDStrSelect != null && !userIDStrSelect.equals("")) {
-                userID1 = Integer.parseInt(userIDStrSelect);
-            }
-
-            User userSelect = userDaoLocal.getUser(userID);
-
-            if (name != null && name != " ") {
-                User user = new User(name, prenume, telefon, telefonMobil, mail, functia, descriere, username, passwrodSha256);
-
-                if ("Edit".equalsIgnoreCase(action)) {
-
-                    userDaoLocal.editUser(user, userID1);
-                }
-            }
-            request.setAttribute("userSelect", userSelect);
-        }
-        request.setAttribute("allUsers", userDaoLocal.getAllUsers());
-        request.getRequestDispatcher("/WEB-INF/pages/user/userEditInput.jsp").forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
@@ -85,7 +45,7 @@ public class UserEditInputServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
     }
 
     /**
@@ -99,7 +59,58 @@ public class UserEditInputServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String action = request.getParameter("action");
+
+        String userIDStrSelect = request.getParameter("useridSelect");
+
+        String name = request.getParameter("name");
+        String prenume = request.getParameter("prenume");
+        String telefon = request.getParameter("telefon");
+        String telefonMobil = request.getParameter("telefonMobil");
+        String mail = request.getParameter("mail");
+        String functia = request.getParameter("functia");
+        String descriere = request.getParameter("descriere");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String passwrodSha256 = "";
+        if (password != "" && password != null) {
+            passwrodSha256 = PasswordUtil.convertToSha256(password);
+        }
+
+        String userIDStr = request.getParameter("userid");
+        int userID = 0;
+
+        if (userIDStr != null && !userIDStr.equals("")) {
+            userID = Integer.parseInt(userIDStr);
+        }
+        User userSelect = userDaoLocal.getUser(userID);
+        request.setAttribute("userSelect", userSelect);
+
+        int userID1 = 0;
+        if (userIDStrSelect != null && !userIDStrSelect.equals("")) {
+            userID1 = Integer.parseInt(userIDStrSelect);
+        }
+
+        if (name != null && name != " ") {
+            if (password != null && password != "") {
+                User user = new User(name, prenume, telefon, telefonMobil, mail, functia, descriere, username, passwrodSha256);
+                if ("Edit".equalsIgnoreCase(action)) {
+
+                    userDaoLocal.editUser(user, userID1);
+                }
+            } else {
+                User userPass = userDaoLocal.getUser(userID1);
+                User user = new User(name, prenume, telefon, telefonMobil, mail, functia, descriere, username, userPass.getPassword());  //old password
+                if ("Edit".equalsIgnoreCase(action)) {
+
+                    userDaoLocal.editUser(user, userID1);
+                }
+            }
+
+        }
+
+        request.setAttribute("allUsers", userDaoLocal.getAllUsers());
+        request.getRequestDispatcher("/WEB-INF/pages/user/userEditInput.jsp").forward(request, response);
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.ulbs.proiectingineriesoftware.Servlet.User;
 
+import com.ulbs.proiectingineriesoftware.Models.User;
 import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
 import java.io.IOException;
 import javax.ejb.EJB;
@@ -18,6 +19,8 @@ public class UserEditServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+     
 
         request.setAttribute("allUsers", userDaoLocal.getAllUsers());
         request.getRequestDispatcher("/WEB-INF/pages/user/userEdit.jsp").forward(request, response);

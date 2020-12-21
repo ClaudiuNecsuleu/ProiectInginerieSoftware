@@ -21,34 +21,6 @@ public class UserAddServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        if (request != null) {
-            String action = request.getParameter("action");
-
-            String name = request.getParameter("name");
-            String prenume = request.getParameter("prenume");
-            String telefon = request.getParameter("telefon");
-            String telefonMobil = request.getParameter("telefonMobil");
-            String mail = request.getParameter("mail");
-            // String functia = request.getParameter("functia");
-            String descriere = request.getParameter("descriere");
-            String password = request.getParameter("password");
-            String passwrodSha256 = PasswordUtil.convertToSha256(password);
-            User user = new User(name, prenume, telefon, telefonMobil, mail, "USER", descriere, userDaoLocal.createUsername(name, prenume), passwrodSha256);
-            
-            if ("Add".equalsIgnoreCase(action)) {
-                userDaoLocal.addUser(user);
-                if (userDaoLocal.existsUserWithUsername(user.getUsername())) {
-                    Role role = new Role("Viewer");
-                    userDaoLocal.addRoleToUser(role, user.getUsername());
-                    request.setAttribute("status", "ok");
-                }
-            } else {
-                request.setAttribute("status", "failed");
-            }
-            request.setAttribute("user", user);
-        }
-        request.setAttribute("allUsers", userDaoLocal.getAllUsers());
-        request.getRequestDispatcher("/WEB-INF/pages/user/userAdd.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -63,7 +35,8 @@ public class UserAddServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setAttribute("allUsers", userDaoLocal.getAllUsers());
+        request.getRequestDispatcher("/WEB-INF/pages/user/userAdd.jsp").forward(request, response);
     }
 
     /**
@@ -77,7 +50,30 @@ public class UserAddServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String action = request.getParameter("action");
+
+        String name = request.getParameter("name");
+        String prenume = request.getParameter("prenume");
+        String telefon = request.getParameter("telefon");
+        String telefonMobil = request.getParameter("telefonMobil");
+        String mail = request.getParameter("mail");
+        String descriere = request.getParameter("descriere");
+        String functia = request.getParameter("functia");
+        String password = request.getParameter("password");
+        String passwrodSha256 = PasswordUtil.convertToSha256(password);
+        User user = new User(name, prenume, telefon, telefonMobil, mail, functia, descriere, userDaoLocal.createUsername(name, prenume), passwrodSha256);
+
+        if ("Add".equalsIgnoreCase(action)) {
+            userDaoLocal.addUser(user);
+            if (userDaoLocal.existsUserWithUsername(user.getUsername())) {
+                Role role = new Role("Viewer");
+                userDaoLocal.addRoleToUser(role, user.getUsername());
+            }
+        } 
+        request.setAttribute("user", user);
+
+        request.setAttribute("allUsers", userDaoLocal.getAllUsers());
+        request.getRequestDispatcher("/WEB-INF/pages/user/userAdd.jsp").forward(request, response);
     }
 
     /**

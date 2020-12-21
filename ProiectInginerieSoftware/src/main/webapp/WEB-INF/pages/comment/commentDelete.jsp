@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<t:pageTemplate pageTitle="Comment">
+<t:pageTemplate pageTitle="CommentDelete">
 
     <div class="comm">
         <h2>Comments Delete</h2>
