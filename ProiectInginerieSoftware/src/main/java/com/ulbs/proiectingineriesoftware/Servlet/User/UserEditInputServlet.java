@@ -1,5 +1,6 @@
 package com.ulbs.proiectingineriesoftware.Servlet.User;
 
+import com.ulbs.proiectingineriesoftware.Common.PasswordUtil;
 import com.ulbs.proiectingineriesoftware.Models.User;
 import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
 import java.io.IOException;
@@ -43,8 +44,9 @@ public class UserEditInputServlet extends HttpServlet {
             String functia = request.getParameter("functia");
             String descriere = request.getParameter("descriere");
             String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            String passwrodSha256 = PasswordUtil.convertToSha256(password);
 
-            
             int userID = 0;
             int userID1 = 0;
             if (userIDStr != null && !userIDStr.equals("")) {
@@ -55,11 +57,10 @@ public class UserEditInputServlet extends HttpServlet {
                 userID1 = Integer.parseInt(userIDStrSelect);
             }
 
-
             User userSelect = userDaoLocal.getUser(userID);
-            
+
             if (name != null && name != " ") {
-                User user = new User(name, prenume, telefon, telefonMobil, mail, functia, descriere, username);
+                User user = new User(name, prenume, telefon, telefonMobil, mail, functia, descriere, username, passwrodSha256);
 
                 if ("Edit".equalsIgnoreCase(action)) {
 

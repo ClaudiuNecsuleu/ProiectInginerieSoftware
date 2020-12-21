@@ -90,7 +90,7 @@ public class User implements Serializable {
         this.userid = userid;
     }
 
-    public User(String name, String prenume, String telefon, String telefonMobil, String mail, String functia, String descriere, String username) {
+    public User(String name, String prenume, String telefon, String telefonMobil, String mail, String functia, String descriere, String username , String password) {
 
         //this.userid = id;
         this.name = name;
@@ -101,6 +101,7 @@ public class User implements Serializable {
         this.functia = functia;
         this.descriere = descriere;
         this.username = username;
+        this.password=password;
 
     }
 
@@ -156,6 +157,15 @@ public class User implements Serializable {
         this.commentsList.add(comments);
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    
     public Role getRole() {
         return role;
     }

@@ -1,5 +1,6 @@
 package com.ulbs.proiectingineriesoftware.Servlet.User;
 
+import com.ulbs.proiectingineriesoftware.Common.PasswordUtil;
 import com.ulbs.proiectingineriesoftware.Models.Role;
 import com.ulbs.proiectingineriesoftware.Models.User;
 import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
@@ -30,13 +31,15 @@ public class UserAddServlet extends HttpServlet {
             String mail = request.getParameter("mail");
             // String functia = request.getParameter("functia");
             String descriere = request.getParameter("descriere");
-
-            User user = new User(name, prenume, telefon, telefonMobil, mail, "Fara", descriere, userDaoLocal.createUsername(name, prenume));
+            String password = request.getParameter("password");
+            String passwrodSha256 = PasswordUtil.convertToSha256(password);
+            User user = new User(name, prenume, telefon, telefonMobil, mail, "USER", descriere, userDaoLocal.createUsername(name, prenume), passwrodSha256);
+            
             if ("Add".equalsIgnoreCase(action)) {
                 userDaoLocal.addUser(user);
                 if (userDaoLocal.existsUserWithUsername(user.getUsername())) {
-                     Role role = new Role("Viewer");
-                userDaoLocal.addRoleToUser(role, user.getUsername());
+                    Role role = new Role("Viewer");
+                    userDaoLocal.addRoleToUser(role, user.getUsername());
                     request.setAttribute("status", "ok");
                 }
             } else {

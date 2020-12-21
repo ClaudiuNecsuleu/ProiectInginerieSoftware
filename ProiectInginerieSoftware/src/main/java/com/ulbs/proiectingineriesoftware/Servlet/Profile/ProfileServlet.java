@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 @WebServlet(name = "ProfileServlet", urlPatterns = {"/ProfileServlet"})
 public class ProfileServlet extends HttpServlet {
 
@@ -36,17 +35,16 @@ public class ProfileServlet extends HttpServlet {
             throws ServletException, IOException {
 
         if (request != null) {
-            String username = request.getParameter("username");
-
             HttpSession session = request.getSession(true);
 
-          //  UserBean currentUser = ((UserBean) (session.getAttribute("currentSessionUser")));
+            String name = request.getRemoteUser();
 
-           // User user = userDaoLocal.getUserProfile(currentUser.getUsername());
+           User user = userDaoLocal.getUserByUsername(name);
+            
 
-         //   request.setAttribute("user", user);
+            request.setAttribute("user", user);
 
-          //  request.setAttribute("getCommentsByUsername", commentDaoLocal.getAllCommentsByUser(currentUser.getUsername()));
+            request.setAttribute("getCommentsByUsername", commentDaoLocal.getAllCommentsByUser(name));
         }
 
         request.getRequestDispatcher("/WEB-INF/pages/profile/profile.jsp").forward(request, response);

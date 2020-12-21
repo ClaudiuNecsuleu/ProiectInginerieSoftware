@@ -32,6 +32,14 @@
         <li ${activePage eq 'JobApplicantServlet' ? ' active' : ''}>
             <a  href="${pageContext.request.contextPath}/JobApplicantServlet">Applicant</a>
         </li>
+        <c:choose>
+            <c:when test="${pageContext.request.getRemoteUser() == null}">
+                <li ${activePage eq 'RegisterServlet' ? ' active' : ''}>
+                    <a  href="${pageContext.request.contextPath}/RegisterServlet">Register</a>
+                </li>
+            </c:when>    
+        </c:choose>
+
         <li>
             <c:choose>
                 <c:when test="${pageContext.request.getRemoteUser() == null}">
