@@ -6,8 +6,8 @@
 <% request.setAttribute("name", request.getRemoteUser());%>
 <t:pageTemplate pageTitle="JobApplicant">
     <jsp:body>
-        <div class="comm">
-            <h1>Job Applicant</h1>
+        <div class="center">
+            <h2>Job Applicant</h2>
             <form action="./JobApplicantServletAplica" method="POST">
                 <input type="hidden" name="username" id="ts"  value="${name}">
                 <br>
@@ -19,7 +19,11 @@
                 </select>
                 <button type="submit" class="btn3" name="action" value="Add">Aplica</button>  
                 <button type="submit" class="btn3" name="action" value="Def">Elimina aplicarea</button>  
-                <hr>
+                <br>
+            </form>
+        </div>
+                <div class="centeraplica">
+                    <form>
                 <p>All user applicant:</p>
                 <table>
                     <th>UserName</th>

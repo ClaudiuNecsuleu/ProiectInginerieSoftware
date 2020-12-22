@@ -4,13 +4,13 @@
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:pageTemplate pageTitle="JobApplicant">
-    <div class="comm">
-        <h1>Job Applicant</h1>
+    <div class="center">
+        <h2>Job Applicant</h2>
         <form action="./JobApplicantServletEdit" method="POST">
        
         </form>
     </div>
-    <div class="centerjagen">
+    <div class="centerapadd1">
         <form>
             <br>
             <p><strong>All user applicant:</strong></p>
@@ -29,7 +29,7 @@
             <br><br>
         </form>
     </div>
-    <div class="centergen">
+    <div class="centerapadd2">
         <form>
             <br>
             <p><strong>Job list:</strong></p>

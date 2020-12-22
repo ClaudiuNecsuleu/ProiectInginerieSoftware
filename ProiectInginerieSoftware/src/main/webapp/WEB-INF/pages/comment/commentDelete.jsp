@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <t:pageTemplate pageTitle="CommentDelete">
 
-    <div class="comm">
+    <div class="center">
         <h2>Comments Delete</h2>
         <form action="./CommentDeleteServlet" method="POST">
             <label><strong>Delete comment:</strong></label>

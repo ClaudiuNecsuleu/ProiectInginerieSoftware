@@ -5,7 +5,7 @@
 
 <t:pageTemplate pageTitle="CommentEdit">
 
-    <div class="comm">  
+    <div class="center">  
         <h2>Comments Edit</h2>
         <form action="./CommentEditNextServlet" method="POST">
 

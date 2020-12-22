@@ -6,7 +6,7 @@
 <% request.setAttribute("name", request.getRemoteUser());%>
 <t:pageTemplate pageTitle="CommentToUser">
     <jsp:body>
-        <div class="comm">   
+        <div class="center">   
             <h2>Comments Add</h2>
             <form action="./CommentAddServlet" method="POST">
                 <label><strong>Select user to add a comment:</strong></label>
