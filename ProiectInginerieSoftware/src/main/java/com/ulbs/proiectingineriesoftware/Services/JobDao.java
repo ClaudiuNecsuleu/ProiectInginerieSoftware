@@ -12,7 +12,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-
 @Stateless
 public class JobDao implements JobDaoLocal {
 
@@ -71,8 +70,7 @@ public class JobDao implements JobDaoLocal {
     public void deleteJob(int jobID) { //sterge un job dupa id
         LOG.info("deleteJob");
         try {
-            Job job = entityManager.find(Job.class,
-                    jobID);//se cauta jobul care are ID respectiv
+            Job job = entityManager.find(Job.class, jobID);//se cauta jobul care are ID respectiv
 
             List<User> users = job.getUsersList(); //se iau toti userii care au jobul respectiv
             List<Comment> comments = job.getCommentsList();//se iau toate comentariile de la jobul respectiv
@@ -247,6 +245,21 @@ public class JobDao implements JobDaoLocal {
         } catch (Exception e) {
             throw new EJBException(e);
         }
+    }
+
+    @Override
+    public void setStatusJob(int jobid) {
+        LOG.info("setStatusJob");
+        try {
+            Job job = entityManager.find(Job.class, jobid);
+            job.setStatus("Aprobat");
+            
+            entityManager.merge(job);
+            
+        } catch (Exception e) {
+            throw new EJBException(e);
+        }
+
     }
 
 }

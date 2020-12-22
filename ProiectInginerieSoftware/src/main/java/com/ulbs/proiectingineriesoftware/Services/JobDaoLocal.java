@@ -28,7 +28,9 @@ public interface JobDaoLocal {
 
     boolean existsJobWithName(String name);
 
-    public void addUserApplicantToJob(String username, String jobname);
+    void addUserApplicantToJob(String username, String jobname);
+    
+    void setStatusJob(int jobid);
 
 
 

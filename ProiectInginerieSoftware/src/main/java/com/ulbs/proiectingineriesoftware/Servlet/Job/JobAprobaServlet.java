@@ -1,9 +1,6 @@
 package com.ulbs.proiectingineriesoftware.Servlet.Job;
 
-import static com.ulbs.proiectingineriesoftware.Common.SendEmail.send;
-import com.ulbs.proiectingineriesoftware.Models.Job;
 import com.ulbs.proiectingineriesoftware.Services.JobDaoLocal;
-import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -11,62 +8,31 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.ulbs.proiectingineriesoftware.Models.User;
-import java.util.List;
 
 
-@WebServlet(name = "JobAddServlet", urlPatterns = {"/JobAddServlet"})
-public class JobAddServlet extends HttpServlet {
+@WebServlet(name = "JobAprobaServlet", urlPatterns = {"/JobAprobaServlet"})
+public class JobAprobaServlet extends HttpServlet {
 
- 
-   @EJB
-    private JobDaoLocal jobsDaoLocal;
-   
-     @EJB
-     private UserDaoLocal userDaoLocal;
+    @EJB
+    private JobDaoLocal jobDaoLocal;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
-         if (request != null) {
+        if (request != null) {
             String action = request.getParameter("action");
             String jobidStr = request.getParameter("jobid");
             Integer jobid = 0;
             if (jobidStr != null && !jobidStr.equals("")) {
                 jobid = Integer.parseInt(jobidStr);
             }
-            String namejob = request.getParameter("jobname");
-            String description = request.getParameter("description");
 
-            String leftJobStr = request.getParameter("remainingjob");
-            int remainingjob = 0;
-            if (leftJobStr != null && !leftJobStr.equals("")) {
-                remainingjob = Integer.parseInt(leftJobStr);
+            if ("Aproba".equalsIgnoreCase(action)) {
+                jobDaoLocal.setStatusJob(jobid);
             }
-            String publisher = request.getParameter("publisher");
-
-            Job job = new Job(namejob, remainingjob, description, publisher);
-
-            if ("Add".equalsIgnoreCase(action)) {
-                jobsDaoLocal.addJobToUser(publisher, job);
-                
-                List<User> userList = userDaoLocal.getAllUsers();
-                
-                for(User user : userList)
-                {
-                if(user.getFunctia().equals("DIRGEN"))
-                {
-                    System.out.println(user.getFunctia());
-                 send(user.getMail(), "Job nou", "Job-ul cu numele: "+job.getJobname()+" a fost adaugat de "+publisher+" si necesita aprobare! Te rugam si vizitezi site-ul pentru acest lucru.", "abc12dll@gmail.com", "firmasoftwareabc12DLL");
-                }
-                }
-                
-            } 
-
-            request.setAttribute("job", job);
+            request.setAttribute("jobid", jobid);
         }
-        request.setAttribute("allJobs", jobsDaoLocal.getAllJobs());
-        request.getRequestDispatcher("/WEB-INF/pages/job/jobAdd.jsp").forward(request, response);
+        request.setAttribute("allJobs", jobDaoLocal.getAllJobs());
+        request.getRequestDispatcher("/WEB-INF/pages/job/jobAprobare.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -81,8 +47,7 @@ public class JobAddServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/pages/job/jobAdd.jsp").forward(request, response);
-     
+        processRequest(request, response);
     }
 
     /**

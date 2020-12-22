@@ -9,7 +9,7 @@
         <div class="center">    
 
             <h2>Job Add</h2>
-            <form action="./JobsServlet" method="POST">
+            <form action="./JobAddServlet" method="POST">
                 <div class="txt_field"> <input type="text" placeholder="Name" name="jobname" value="${job.jobname}" required></div>
                 <div class="txt_field"><input type="text" placeholder="Description" name="description" value="${job.description}" required></div>
                 <div class="txt_field">  <input type="text" placeholder="RemainingPosts" name="remainingjob" value="${job.remainingjob}" required></div>

@@ -14,7 +14,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
 @NamedQueries(
         @NamedQuery(name = "Jobs.getAll", query = "select u from Job u"))
 @Entity
@@ -44,6 +43,9 @@ public class Job implements Serializable {
     @Size(min = 1, max = 30)
     @Column(name = "PUBLISHER")
     private String publisher;
+
+    @Column(name = "STATUS")
+    private String status;
 
     @OneToMany(mappedBy = "job")
     private List<User> usersApplicant;
@@ -76,8 +78,6 @@ public class Job implements Serializable {
         this.usersApplicant = usersApplicant;
     }
 
-    
-    
     public List<Comment> getCommentsList() {
         return commentsList;
     }
@@ -144,6 +144,14 @@ public class Job implements Serializable {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override

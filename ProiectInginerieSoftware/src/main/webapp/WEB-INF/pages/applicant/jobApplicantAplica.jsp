@@ -14,7 +14,9 @@
                 <select name="jobname"  required/>
                 <option value="">Chose Job...</option>
                 <c:forEach var="job" items="${jobList}" varStatus="status">
+                     <d:if test="${job.getStatus()!=null}">
                     <option value="${job.jobname}"> ${job.jobname}</option>
+                     </d:if>
                 </c:forEach>
                 </select>
                 <button type="submit" class="btn3" name="action" value="Add">Aplica</button>  

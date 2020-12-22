@@ -20,35 +20,6 @@ public class JobsServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        if (request != null) {
-            String action = request.getParameter("action");
-            String jobidStr = request.getParameter("jobid");
-            Integer jobid = 0;
-            if (jobidStr != null && !jobidStr.equals("")) {
-                jobid = Integer.parseInt(jobidStr);
-            }
-            String namejob = request.getParameter("jobname");
-            String description = request.getParameter("description");
-
-            String leftJobStr = request.getParameter("remainingjob");
-            int remainingjob = 0;
-            if (leftJobStr != null && !leftJobStr.equals("")) {
-                remainingjob = Integer.parseInt(leftJobStr);
-            }
-            String publisher = request.getParameter("publisher");
-
-            Job job = new Job(namejob, remainingjob, description, publisher);
-
-            if ("Add".equalsIgnoreCase(action)) {
-                jobsDaoLocal.addJobToUser(publisher, job);
-            } else if ("Edit".equalsIgnoreCase(action)) {
-                jobsDaoLocal.editJob(jobid, job);
-            } else if ("Delete".equalsIgnoreCase(action)) {
-                jobsDaoLocal.deleteJob(jobid);
-            }
-
-            request.setAttribute("job", job);
-        }
         request.setAttribute("allJobs", jobsDaoLocal.getAllJobs());
         request.getRequestDispatcher("/WEB-INF/pages/job/jobsinfo.jsp").forward(request, response);
 

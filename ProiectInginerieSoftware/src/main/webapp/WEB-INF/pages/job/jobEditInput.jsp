@@ -19,10 +19,10 @@
                 <br><br>
             </form>
         </div>
-                <br>
-                <div class="centerjeinput">
-                    <form>
-                      <br><br>
+        <br>
+        <div class="centerjeinput">
+            <form>
+                <br><br>
                 <table>
                     <th>IDJob</th>
                     <th>Job name</th>
@@ -31,20 +31,22 @@
                     <th>Publisher</th>
                         <c:forEach items="${allJobs}" var="job">
                         <tr>
-                            <td>${job.jobid}</td>
-                            <td>${job.jobname}</td>
-                            <td>${job.description}</td>
-                            <c:if test="${job.getRemainingjob()!=0}">
-                                <td>${job.remainingjob}</td>
-                            </c:if>
-                            <c:if test="${job.getRemainingjob()==0}">
-                                <td>Job inchis</td>
-                            </c:if>
-                            <td>${job.publisher}</td>
+                            <d:if test="${job.getStatus()!=null}">
+                                <td>${job.jobid}</td>
+                                <td>${job.jobname}</td>
+                                <td>${job.description}</td>
+                                <c:if test="${job.getRemainingjob()!=0}">
+                                    <td>${job.remainingjob}</td>
+                                </c:if>
+                                <c:if test="${job.getRemainingjob()==0}">
+                                    <td>Job inchis</td>
+                                </c:if>
+                                <td>${job.publisher}</td>
+                            </d:if>
                         </tr>   
                     </c:forEach>
                 </table>
-                      <br><br>
+                <br><br>
             </form>
 
         </div>
