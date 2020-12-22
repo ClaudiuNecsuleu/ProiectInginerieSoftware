@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import com.ulbs.proiectingineriesoftware.Common.SendEmail;
+
 
 @MultipartConfig
 @WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
@@ -124,6 +126,7 @@ public class RegisterServlet extends HttpServlet {
                 Role role = new Role("Viewer");
                 userDaoLocal.addRoleToUser(role, user.getUsername());
                 status = "ok";
+                SendEmail.send(mail, "Inregistrare abc.dll", "Salut "+user.getUsername()+ " ,ne bucuram ca ai ales site-ul nostru ! .Parola ta este: "+password+".","abc12dll@gmail.com", "firmasoftwareabc12DLL");
 
             } else {
                 status = "false";
