@@ -1,11 +1,11 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+    <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <t:pageTemplate pageTitle="Comment">
 
-    <div class="comm">
+    <div class="center">
         <h2>Comments</h2>
         <form action="./CommentServlet" method="POST">
             <a href="CommentAddServlet"><button class="btn3" type="button">AddToUser</button></a>

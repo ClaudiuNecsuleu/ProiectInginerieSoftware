@@ -197,17 +197,11 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(210%,10%);
-    width:400px;
+    transform:translate(-330px,140px);
+    width:300px;
     background:white;
     border-radius:10px;
 
-}
-.centerc1 h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
 }
 .centerc1 form{
     padding: 0 40px;
@@ -218,17 +212,77 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(100%,-98%);
-    width:400px;
+    transform:translate(10px,140px);
+    width:300px;
     background:white;
     border-radius:10px;
 
 }
-.centerc2 h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
+.centerc2 form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+.centeraplica{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-120px,140px);
+    width:230px;
+    background:white;
+    border-radius:10px;
+
+}
+.centeraplica form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+
+.centerapadd1{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-280px,140px);
+    width:250px;
+    background:white;
+    border-radius:10px;
+
+}
+.centerapadd1 form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+.centerapadd2{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(10px,140px);
+    width:250px;
+    background:white;
+    border-radius:10px;
+
+}
+.centerapadd2 form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+.centerc1 form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+.centerc2{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(10px,140px);
+    width:300px;
+    background:white;
+    border-radius:10px;
+
 }
 .centerc2 form{
     padding: 0 40px;
@@ -468,48 +522,6 @@ h1{
     font-size:40px
 }
 .centergen form{
-    padding: 0 40px;
-    box-sizing: border-box;
-
-}
-.centerhr{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(230%,-70%);
-    width:250px;
-    background:white;
-    border-radius:10px;
-
-}
-.centerhr h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
-}
-.centerhr form{
-    padding: 0 40px;
-    box-sizing: border-box;
-
-}
-.centerhr1{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(350%,30%);
-    width:250px;
-    background:white;
-    border-radius:10px;
-
-}
-.centerhr1 h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
-}
-.centerhr1 form{
     padding: 0 40px;
     box-sizing: border-box;
 

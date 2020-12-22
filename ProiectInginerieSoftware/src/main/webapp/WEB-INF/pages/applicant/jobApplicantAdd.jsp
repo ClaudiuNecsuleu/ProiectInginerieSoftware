@@ -5,9 +5,9 @@
 
 <t:pageTemplate pageTitle="JobApplicant">
 
-    <div class="comm">
+    <div class="center">
 
-        <h1>Job Applicant</h1>
+        <h2>Job Applicant</h2>
         <form action="./JobApplicantServletAdd" method="POST">
             <select name="username"  required/>
             <option value="">Chose Applicant...</option>
@@ -23,7 +23,7 @@
             <br><br>
         </form>
     </div>
-    <div class="centerhr1">
+    <div class="centerapadd1">
         <form>
             <br>
             <p><strong>All user applicant:</strong></p>
@@ -46,7 +46,7 @@
     </div>
 
 
-    <div class="centerhr">
+    <div class="centerapadd2">
         <form>
             <br>
             <p><strong>Job list:</strong></p>

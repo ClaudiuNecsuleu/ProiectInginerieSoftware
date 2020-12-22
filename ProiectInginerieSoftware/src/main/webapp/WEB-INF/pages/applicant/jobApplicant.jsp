@@ -5,14 +5,17 @@
 
 <t:pageTemplate pageTitle="JobApplicant">
 
-    <div class="comm">
+    <div class="center">
+        <form>
         <h2>Applicant</h2>
 
-        <a href="JobApplicantServletAplica"><button class="btn3" type="button">Aplica</button></a>
-        <a href="JobApplicantServletChoose"><button class="btn3" type="button">Recomanda</button></a>
-        <a href="JobApplicantServletAdd"><button class="btn3" type="button">AddApplicant</button></a>
-        <a href="JobApplicantServletDelete"><button class="btn3" type="button">DeleteApplicant</button></a>
-        <a href="JobApplicantServletEdit"><button class="btn3" type="button">EditApplicant</button></a>
+        <a href="JobApplicantServletAplica"><button class="btn" type="button">Aplica</button></a>
+        <a href="JobApplicantServletChoose"><button class="btn" type="button">Recomanda</button></a>
+        <a href="JobApplicantServletAdd"><button class="btn" type="button">AddApplicant</button></a>
+        <a href="JobApplicantServletDelete"><button class="btn" type="button">DeleteApplicant</button></a>
+        <a href="JobApplicantServletEdit"><button class="btn" type="button">EditApplicant</button></a>
+        <br><br>
+        </form>
     </div>
 
 </t:pageTemplate>

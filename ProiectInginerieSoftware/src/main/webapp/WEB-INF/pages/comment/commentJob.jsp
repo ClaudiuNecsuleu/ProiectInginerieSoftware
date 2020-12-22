@@ -6,7 +6,7 @@
 <% request.setAttribute("name", request.getRemoteUser());%>
 <t:pageTemplate pageTitle="CommentToJob">
     <jsp:body>
-        <div class="comm">  
+        <div class="center">  
             <h2>Comments Add</h2>
             <form action="./CommentJobServlet" method="POST">
                 <label><strong>Select job to add a comment:</strong></label>

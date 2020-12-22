@@ -4,8 +4,8 @@
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:pageTemplate pageTitle="JobApplicant">
-    <div class="comm">
-        <h1>Job Applicant</h1>
+    <div class="center">
+        <h2>Job Applicant</h2>
         <form action="./JobApplicantServletDelete" method="POST">
 
             <select name="deleteApp" />
@@ -19,7 +19,7 @@
             <button type="submit" class="btn3" name="action" value="SelectDelete">Sterge</button> 
             <br>
             <select name="deleteJob" />
-            <option value="">Chose user for delete from job...</option>
+            <option value="">Chose user for delete from job</option>
             <c:forEach var="user" items="${userList}" varStatus="status">
                 <c:if test="${user.getJob() != null}">
                     <option value="${user.username}"> ${user.username}</option>
@@ -29,7 +29,7 @@
             <button type="submit" class="btn3" name="action" value="SelectDeleteJob">Sterge</button> 
         </form>
     </div>
-    <div class="centerjagen">
+    <div class="centerapadd1">
         <form>
             <br>
             <p><strong>All user applicant:</strong></p>
@@ -48,7 +48,7 @@
             <br><br>
         </form>
     </div>
-    <div class="centergen">
+    <div class="centerapadd2">
         <form>
             <br>
             <p><strong>Job list:</strong></p>
