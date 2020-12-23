@@ -14,6 +14,7 @@
         <a href="JobApplicantServletAdd"><button class="btn" type="button">AddApplicant</button></a>
         <a href="JobApplicantServletDelete"><button class="btn" type="button">DeleteApplicant</button></a>
         <a href="JobApplicantServletEdit"><button class="btn" type="button">EditApplicant</button></a>
+        <a href="ViewCVApplicant"><button class="btn" type="button">View CV Applicant</button></a>
         <br><br>
         </form>
     </div>

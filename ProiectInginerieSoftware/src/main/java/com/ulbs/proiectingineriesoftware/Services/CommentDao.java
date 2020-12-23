@@ -1,5 +1,6 @@
 package com.ulbs.proiectingineriesoftware.Services;
 
+import com.ulbs.proiectingineriesoftware.Common.SendEmail;
 import com.ulbs.proiectingineriesoftware.Models.Comment;
 import com.ulbs.proiectingineriesoftware.Models.Job;
 import com.ulbs.proiectingineriesoftware.Models.User;
@@ -37,6 +38,9 @@ public class CommentDao implements CommentDaoLocal {
 
                 entityManager.persist(comment);             //efectuam tranzactiile
                 entityManager.merge(getUser);
+
+                SendEmail.send(getUser.getMail(), "Ai primit un comentariu! ", "Salut " + getUser.getUsername() + " ai primit comentariul: " + comment.getComment() + " de la " + comment.getPublisherUsername() + ".", "abc12dll@gmail.com", "firmasoftwareabc12DLL");
+
             }
 
         } catch (RuntimeException e) {
@@ -61,6 +65,15 @@ public class CommentDao implements CommentDaoLocal {
 
                 entityManager.persist(comment);
                 entityManager.merge(getJob);
+
+                Query qu = entityManager.createQuery("select u from User u where u.username = :username");   //query in baza de date
+                qu.setParameter("username", getJob.getPublisher());  //precizam cine este username din query
+                @SuppressWarnings("unchecked")  //spunem compilatorului ca tot ce facem e legal (la unele compilatoare poate gasi asta ca eroare/warning)
+                List<User> user = qu.getResultList();      //preluam lista
+                User getUser = user.get(0);
+
+                SendEmail.send(getUser.getMail(), "Ai primit un comentariu la job! ", "Salut " + getUser.getUsername() + ", ai primit comentariul: " + comment.getComment() + " de la " + comment.getPublisherUsername() + ".", "abc12dll@gmail.com", "firmasoftwareabc12DLL");
+
             }
 
         } catch (RuntimeException e) {
@@ -151,7 +164,7 @@ public class CommentDao implements CommentDaoLocal {
             List<Comment> commentsByUser = new ArrayList<Comment>();
 
             for (Comment comment : commentsList) {
-                if (comment.getPublisherUsername().equals(username) && comment.getJob()==null) {
+                if (comment.getPublisherUsername().equals(username) && comment.getJob() == null) {
                     commentsByUser.add(comment);
                 }
             }

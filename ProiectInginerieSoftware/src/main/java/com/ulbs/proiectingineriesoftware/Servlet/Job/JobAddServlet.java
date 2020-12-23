@@ -57,7 +57,7 @@ public class JobAddServlet extends HttpServlet {
                 if(user.getFunctia().equals("DIRGEN"))
                 {
                     System.out.println(user.getFunctia());
-                 send(user.getMail(), "Job nou", "Job-ul cu numele: "+job.getJobname()+" a fost adaugat de "+publisher+" si necesita aprobare! Te rugam si vizitezi site-ul pentru acest lucru.", "abc12dll@gmail.com", "firmasoftwareabc12DLL");
+                 send(user.getMail(), "Job nou", "Job-ul cu numele: "+job.getJobname()+" a fost adaugat de "+publisher+" si necesita aprobare! Te rugam sa vizitezi site-ul pentru acest lucru.", "abc12dll@gmail.com", "firmasoftwareabc12DLL");
                 }
                 }
                 

@@ -14,7 +14,7 @@
             <c:forEach var="user" items="${userList}" varStatus="status">
                 <c:if test="${user.getJobApplicant() != null}">
                     <d:if test="${user.getRecomandare() != null}">
-                    <option value="${user.username}"> ${user.username}</option>
+                    <option value="${user.username}"> ${user.username} ,recomandat de : ${user.getRecomandare()}</option>
                       </d:if>
                 </c:if>
             </c:forEach>

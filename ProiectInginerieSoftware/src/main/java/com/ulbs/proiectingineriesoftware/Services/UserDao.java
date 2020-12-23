@@ -2,6 +2,7 @@ package com.ulbs.proiectingineriesoftware.Services;
 
 import com.ulbs.proiectingineriesoftware.Common.FileDetails;
 import com.ulbs.proiectingineriesoftware.Common.PhotoDetails;
+import com.ulbs.proiectingineriesoftware.Common.SendEmail;
 import com.ulbs.proiectingineriesoftware.Models.Comment;
 import com.ulbs.proiectingineriesoftware.Models.File;
 import com.ulbs.proiectingineriesoftware.Models.Job;
@@ -503,6 +504,8 @@ public class UserDao implements UserDaoLocal {
 
                     entityManager.merge(job);
                     entityManager.merge(user);
+                   SendEmail.send(user.getMail(), "Ai fost acceptat in job-ul "+job.getJobname(), "Felicitari "+user.getUsername()+ " pentru ocuparea acestui post! ","abc12dll@gmail.com", "firmasoftwareabc12DLL");
+
 
                 }
                 if (job.getRemainingjob() == 0) {

@@ -103,7 +103,7 @@ public class UploadFileServlet extends HttpServlet {
         User user = userDaoLocal.getUserByUsername(username);
         userDaoLocal.setUserFile(user, file);
         
-        request.getRequestDispatcher("/WEB-INF/pages/profile/profile.jsp").forward(request, response);
+        request.getRequestDispatcher("ProfileServlet").forward(request, response);
 
     }
 
