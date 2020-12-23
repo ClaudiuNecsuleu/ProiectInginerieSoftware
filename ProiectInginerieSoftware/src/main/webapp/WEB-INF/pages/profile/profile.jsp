@@ -50,16 +50,20 @@
                 <tr>
                     <td><strong>CV </strong></td>
                     <td>  
-                  
+
                         <a href="ShowCVServlet" > ${user.getFile().getFilename()}</a>
-                       
+
                     </td>
                 </tr>
             </table>
-            <a href="ProfileEditServlet"><button class="btn" type="button">Profile Edit</button></a>
+
             <a href="RedirectUploadFile"><button class="btn" type="button">Upload CV</button></a>
         </form>
 
+        <form action="./ProfileRedirectEdit" method="POST">
+            <input type="hidden" name="username" value="${name}" >
+            <button class="btn" type="submit">Profile Edit</button>
+        </form>
         <br><br>
 
     </div>

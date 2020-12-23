@@ -610,4 +610,19 @@ public class UserDao implements UserDaoLocal {
         }
     }
 
+    @Override
+    public void updateProfile(User user, String telefon, String telefonMobil, String descriere) {
+        LOG.info("updateProfile");
+        try {
+            user.setTelefon(telefon);
+            user.setTelefonMobil(telefonMobil);
+            user.setDescriere(descriere);
+
+            entityManager.merge(user);
+
+        } catch (Exception e) {
+            throw new EJBException(e);
+        }
+    }
+
 }

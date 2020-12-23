@@ -15,10 +15,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "ProfileEditServlet", urlPatterns = {"/ProfileEditServlet"})
-public class ProfileEditServlet extends HttpServlet {
+@WebServlet(name = "ProfileRedirectEdit", urlPatterns = {"/ProfileRedirectEdit"})
+public class ProfileRedirectEdit extends HttpServlet {
 
     @EJB
     UserDaoLocal userDaoLocal;
@@ -34,7 +33,19 @@ public class ProfileEditServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ProfileRedirectEdit</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ProfileRedirectEdit at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -49,7 +60,7 @@ public class ProfileEditServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
+     
     }
 
     /**
@@ -63,15 +74,11 @@ public class ProfileEditServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String telefon = request.getParameter("telefon");
-        String telefonMobil = request.getParameter("telefonMobil");
-        String descriere = request.getParameter("descriere");
+         String username = request.getParameter("username");
         User user = userDaoLocal.getUserByUsername(username);
+        request.setAttribute("user", user);
 
-        userDaoLocal.updateProfile(user, telefon, telefonMobil, descriere);
-
-        request.getRequestDispatcher("ProfileServlet").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/profile/profileEdit.jsp").forward(request, response);
     }
 
     /**
