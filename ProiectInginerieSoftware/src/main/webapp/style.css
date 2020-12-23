@@ -197,8 +197,8 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-330px,140px);
-    width:300px;
+    transform:translate(-400px,140px);
+    width:400px;
     background:white;
     border-radius:10px;
 
@@ -213,7 +213,7 @@ h1{
     top:50%;
     left:50%;
     transform:translate(10px,140px);
-    width:300px;
+    width:400px;
     background:white;
     border-radius:10px;
 
@@ -274,21 +274,7 @@ h1{
     box-sizing: border-box;
 
 }
-.centerc2{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(10px,140px);
-    width:300px;
-    background:white;
-    border-radius:10px;
 
-}
-.centerc2 form{
-    padding: 0 40px;
-    box-sizing: border-box;
-
-}
 .centerc3{
     position:absolute;
     top:50%;
@@ -352,14 +338,50 @@ h1{
     box-sizing: border-box;
 
 }
+.photoprof{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-70px,-370px);
+    width:190px;
+    background:white;
+    border-radius:170px;
 
+}
+
+.photoprof form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+.circular {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+  transform: translate(110%, -300%);
+}
+.circular img {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+}
 .centerprof{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
-    width:380px;
-    height:300px;
+    transform:translate(-50%,0%);
+    width:470px;
     background:white;
     border-radius:30px;
 
@@ -379,17 +401,11 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(60%,-55%);
-    width:390px;
+    transform:translate(240px,30px);
+    width:400px;
     background:white;
     border-radius:10px;
 
-}
-.centerprofc2 h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
 }
 .centerprofc2 form{
     padding: 0 40px;
@@ -400,17 +416,11 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-170%,-50%);
-    width:350px;
+    transform:translate(-640px,30px);
+    width:400px;
     background:white;
     border-radius:10px;
 
-}
-.centerprofc h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
 }
 .centerprofc form{
     padding: 0 40px;
@@ -421,7 +431,7 @@ h1{
     position:absolute;
     top:57%;
     left:50%;
-    transform:translate(-250px,160px);
+    transform:translate(-250px,190px);
     width:auto;
     background:white;
     border-radius:20px;
@@ -615,3 +625,4 @@ table {
 tr:hover {
     background-color:#9F87AF;
 }
+

@@ -6,8 +6,10 @@
 <% request.setAttribute("name", request.getRemoteUser());%>
 
 <t:pageTemplate pageTitle="Profile">
-    <div class="centerprof">
+   
+
         <h1>Salut, ${user.getName()} ${user.getPrenume()} !</h1>
+         <div class="centerprof">
         <form>
             <br><br>
             <table>
@@ -31,10 +33,7 @@
                     <td><strong>Mail:</strong></td>
                     <td>${user.getMail()}</td>
                 </tr>
-                <tr>
-                    <td><strong>Rol:</strong></td>
-                    <td>${user.getRole().getRolename()}</td>
-                </tr>
+              
                 <tr>
                     <td><strong>Job:</strong> </td>
                     <td>${user.getJob().getJobname()}</td>
@@ -43,10 +42,7 @@
                     <td><strong>Job pentru care ai aplicat: </strong></td>
                     <td>${user.getJobApplicant().getJobname()}</td>
                 </tr>
-                <tr>
-                    <td><strong>Photo </strong></td>
-                    <td>  <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="48"/></td>
-                </tr>
+
                 <tr>
                     <td><strong>CV </strong></td>
                     <td>  
@@ -57,8 +53,14 @@
                 </tr>
             </table>
 
+
             <a href="RedirectUploadFile"><button class="btn" type="button">Upload CV</button></a>
         </form>
+                        <div class="circular">
+                            <center>
+            <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="100" height="100"/>
+            </center>
+        </div>
 
         <form action="./ProfileRedirectEdit" method="POST">
             <input type="hidden" name="username" value="${name}" >
