@@ -48,6 +48,7 @@
                 <td>  <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="48"/></td>
             </tr>
         </table>
+            <a href="ProfileEditServlet"><button class="btn" type="button">Profile Edit</button></a>
             <br><br>
         </form>
         </div>
