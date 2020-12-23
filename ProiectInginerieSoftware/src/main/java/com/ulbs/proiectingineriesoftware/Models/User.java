@@ -85,6 +85,9 @@ public class User implements Serializable {
     @OneToOne(mappedBy = "userPhoto", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Photo photo;
 
+    @OneToOne(mappedBy = "userFile", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private File file;
+
     public User() {
     }
 
@@ -121,6 +124,14 @@ public class User implements Serializable {
         this.commentsList = commentsList;
         this.job = job;
         this.jobApplicant = jobApplicant;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
     }
 
     public Photo getPhoto() {

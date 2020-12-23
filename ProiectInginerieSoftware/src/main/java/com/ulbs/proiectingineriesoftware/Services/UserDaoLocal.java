@@ -1,6 +1,8 @@
 package com.ulbs.proiectingineriesoftware.Services;
 
+import com.ulbs.proiectingineriesoftware.Common.FileDetails;
 import com.ulbs.proiectingineriesoftware.Common.PhotoDetails;
+import com.ulbs.proiectingineriesoftware.Models.File;
 import com.ulbs.proiectingineriesoftware.Models.Job;
 import com.ulbs.proiectingineriesoftware.Models.Photo;
 import com.ulbs.proiectingineriesoftware.Models.Role;
@@ -57,6 +59,10 @@ public interface UserDaoLocal {
 
     void deleteAllApplicantsForJob(Job job);
 
-    void recomandaUser(String username,String recruiterName);
+    void recomandaUser(String username, String recruiterName);
+
+    FileDetails findFileByUserId(Integer userId);
+
+    void setUserFile(User user, File file);
 
 }

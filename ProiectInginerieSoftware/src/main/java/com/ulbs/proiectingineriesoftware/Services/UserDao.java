@@ -1,7 +1,9 @@
 package com.ulbs.proiectingineriesoftware.Services;
 
+import com.ulbs.proiectingineriesoftware.Common.FileDetails;
 import com.ulbs.proiectingineriesoftware.Common.PhotoDetails;
 import com.ulbs.proiectingineriesoftware.Models.Comment;
+import com.ulbs.proiectingineriesoftware.Models.File;
 import com.ulbs.proiectingineriesoftware.Models.Job;
 import com.ulbs.proiectingineriesoftware.Models.Photo;
 import com.ulbs.proiectingineriesoftware.Models.Role;
@@ -565,10 +567,10 @@ public class UserDao implements UserDaoLocal {
     }
 
     @Override
-    public void recomandaUser(String username,String recruiterName) {
+    public void recomandaUser(String username, String recruiterName) {
         try {
             LOG.info("recomandaUser ,name " + username);
-         
+
             Query qu = entityManager.createQuery("select u from User u where u.username = :username");
             qu.setParameter("username", username);
             @SuppressWarnings("unchecked")
@@ -576,6 +578,33 @@ public class UserDao implements UserDaoLocal {
             User user = users.get(0);
             user.setRecomandare(recruiterName);
             entityManager.merge(user);
+        } catch (Exception e) {
+            throw new EJBException(e);
+        }
+    }
+
+    @Override
+    public FileDetails findFileByUserId(Integer userId) {
+        LOG.info("findFileByUserId ,      userID: " + userId);
+        TypedQuery<File> typedQuery = entityManager.createQuery("select p from File p where p.userFile.userid= :id", File.class).setParameter("id", userId);
+        List<File> files = typedQuery.getResultList();
+        if (files.isEmpty()) {
+            return null;
+        }
+        File file = files.get(0);
+        return new FileDetails(file.getId(), file.getFilename(), file.getFileType(), file.getFileContent());
+    }
+
+    @Override
+    public void setUserFile(User user, File file) {
+        LOG.info("setUserFile");
+        try {
+            user.setFile(file);
+            file.setUser(user);
+
+            entityManager.persist(file);
+            entityManager.merge(user);
+
         } catch (Exception e) {
             throw new EJBException(e);
         }

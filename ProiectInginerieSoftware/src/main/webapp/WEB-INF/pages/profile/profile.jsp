@@ -6,105 +6,116 @@
 <% request.setAttribute("name", request.getRemoteUser());%>
 
 <t:pageTemplate pageTitle="Profile">
-        <div class="centerprof">
-             <h1>Salut, ${user.getName()} ${user.getPrenume()} !</h1>
+    <div class="centerprof">
+        <h1>Salut, ${user.getName()} ${user.getPrenume()} !</h1>
         <form>
             <br><br>
-        <table>
-            <tr>
-                <td><strong>Nume:</strong></td>
-                <td>${user.getName()}</td>
-            </tr>
-            <tr>
-                <td><strong>Prenume:</strong></td>
-                <td>${user.getPrenume()}</td>
-            </tr>
-            <tr>
-                <td><strong>Telefon:</strong></td>
-                <td>${user.getTelefon()}</td>
-            </tr>
-            <tr>
-                <td><strong>Telefon mobil:</strong></td>
-                <td>${user.getTelefonMobil()}</td>
-            </tr>
-            <tr>
-                <td><strong>Mail:</strong></td>
-                <td>${user.getMail()}</td>
-            </tr>
-            <tr>
-                <td><strong>Rol:</strong></td>
-                <td>${user.getRole().getRolename()}</td>
-            </tr>
-            <tr>
-                <td><strong>Job:</strong> </td>
-                <td>${user.getJob().getJobname()}</td>
-            </tr>
-            <tr>
-                <td><strong>Job pentru care ai aplicat: </strong></td>
-                <td>${user.getJobApplicant().getJobname()}</td>
-            </tr>
-            <tr>
-                <td><strong>Photo </strong></td>
-                <td>  <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="48"/></td>
-            </tr>
-        </table>
+            <table>
+                <tr>
+                    <td><strong>Nume:</strong></td>
+                    <td>${user.getName()}</td>
+                </tr>
+                <tr>
+                    <td><strong>Prenume:</strong></td>
+                    <td>${user.getPrenume()}</td>
+                </tr>
+                <tr>
+                    <td><strong>Telefon:</strong></td>
+                    <td>${user.getTelefon()}</td>
+                </tr>
+                <tr>
+                    <td><strong>Telefon mobil:</strong></td>
+                    <td>${user.getTelefonMobil()}</td>
+                </tr>
+                <tr>
+                    <td><strong>Mail:</strong></td>
+                    <td>${user.getMail()}</td>
+                </tr>
+                <tr>
+                    <td><strong>Rol:</strong></td>
+                    <td>${user.getRole().getRolename()}</td>
+                </tr>
+                <tr>
+                    <td><strong>Job:</strong> </td>
+                    <td>${user.getJob().getJobname()}</td>
+                </tr>
+                <tr>
+                    <td><strong>Job pentru care ai aplicat: </strong></td>
+                    <td>${user.getJobApplicant().getJobname()}</td>
+                </tr>
+                <tr>
+                    <td><strong>Photo </strong></td>
+                    <td>  <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="48"/></td>
+                </tr>
+                <tr>
+                    <td><strong>CV </strong></td>
+                    <td>  
+                  
+                        <a href="ShowCVServlet" > ${user.getFile().getFilename()}</a>
+                       
+                    </td>
+                </tr>
+            </table>
             <a href="ProfileEditServlet"><button class="btn" type="button">Profile Edit</button></a>
+            <a href="RedirectUploadFile"><button class="btn" type="button">Upload CV</button></a>
+        </form>
+
+        <br><br>
+
+    </div>
+    <br><br>
+    <div class="centerprofc2">
+        <form>
+            <p><strong> Comentariile pentru tine:</strong></p>
+            <table >
+                <th>
+                    Comentariu
+                </th>
+                <th>
+                    Data
+                </th>
+                <th>
+                    Ora
+                </th>
+                <th>
+                    Autor
+                </th>
+
+                <c:forEach items="${user.getCommentsList()}" var="comment">
+                    <tr>
+                        <td>${comment.comment}</td>
+                        <td>${comment.date}</td>
+                        <td>${comment.time}</td>
+                        <td>${comment.publisherUsername}</td>
+                    </tr> 
+                </c:forEach>
+            </table>
             <br><br>
         </form>
-        </div>
-            <br><br>
-            <div class="centerprofc2">
-            <form>
-            <p><strong> Comentariile pentru tine:</strong></p>
-        <table >
-            <th>
-                Comentariu
-            </th>
-            <th>
-                Data
-            </th>
-            <th>
-                Ora
-            </th>
-            <th>
-                Autor
-            </th>
-
-            <c:forEach items="${user.getCommentsList()}" var="comment">
-                <tr>
-                    <td>${comment.comment}</td>
-                    <td>${comment.date}</td>
-                    <td>${comment.time}</td>
-                    <td>${comment.publisherUsername}</td>
-                </tr> 
-            </c:forEach>
-        </table>
-            <br><br>
-            </form>
-            </div>
-            <br><br>
-            <div class="centerprofc">
-            <form>
+    </div>
+    <br><br>
+    <div class="centerprofc">
+        <form>
             <p><strong> Comentariile tale:</strong></p>
-        <table >
-            <th>
-                Comentariu
-            </th>
-            <th>
-                Data
-            </th>
-            <th>
-                Ora
-            </th>
-            <c:forEach items="${getCommentsByUsername}" var="comment">
-                <tr>
-                    <td>${comment.comment}</td>
-                    <td>${comment.date}</td>
-                    <td>${comment.time}</td>
-                </tr> 
-            </c:forEach>
-        </table>
+            <table >
+                <th>
+                    Comentariu
+                </th>
+                <th>
+                    Data
+                </th>
+                <th>
+                    Ora
+                </th>
+                <c:forEach items="${getCommentsByUsername}" var="comment">
+                    <tr>
+                        <td>${comment.comment}</td>
+                        <td>${comment.date}</td>
+                        <td>${comment.time}</td>
+                    </tr> 
+                </c:forEach>
+            </table>
             <br><br>
-            </form>
-            </div>
-        </t:pageTemplate>
+        </form>
+    </div>
+</t:pageTemplate>
