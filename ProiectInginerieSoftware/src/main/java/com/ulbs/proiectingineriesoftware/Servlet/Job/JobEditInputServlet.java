@@ -53,6 +53,10 @@ public class JobEditInputServlet extends HttpServlet {
 
             if ("Edit".equalsIgnoreCase(action)) {
                 jobDaoLocal. editJob(jobidInput, job);
+                request.setAttribute("message", "Successful!");
+            }
+            else{
+            request.setAttribute("message", "Failed!");
             }
         }
 

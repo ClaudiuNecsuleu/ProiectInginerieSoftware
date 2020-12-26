@@ -125,17 +125,17 @@ public class RegisterServlet extends HttpServlet {
                 userDaoLocal.setUserPhoto(user, photo);
                 Role role = new Role("Viewer");
                 userDaoLocal.addRoleToUser(role, user.getUsername());
-                status = "ok";
+                status = "Successful register!" ;
                 SendEmail.send(mail, "Inregistrare abc.dll", "Salut "+user.getUsername()+ " ,ne bucuram ca ai ales site-ul nostru ! .Parola ta este: "+password+".","abc12dll@gmail.com", "firmasoftwareabc12DLL");
 
             } else {
-                status = "false";
+                status = "Failed register!";
             }
 
         }
         request.setAttribute("user", user);
 
-        request.setAttribute("status", status);
+        request.setAttribute("message", status);
 
         request.getRequestDispatcher("/WEB-INF/pages/loginreg/register.jsp").forward(request, response);
     }

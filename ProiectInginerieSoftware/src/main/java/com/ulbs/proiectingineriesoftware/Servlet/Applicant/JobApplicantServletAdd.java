@@ -10,28 +10,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet(name = "JobApplicantServletAdd", urlPatterns = {"/JobApplicantServletAdd"})
 public class JobApplicantServletAdd extends HttpServlet {
-    
+
     @EJB
     JobDaoLocal jobDaoLocal;
     @EJB
     UserDaoLocal userDaoLocal;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         if (request != null) {
             String action = request.getParameter("action");
-            
+
             String username = request.getParameter("username");
 
-                   
-           if ("Select".equalsIgnoreCase(action)) {
+            if ("Select".equalsIgnoreCase(action)) {
                 userDaoLocal.confirmJob(username);
-                
+                request.setAttribute("message", "Job added!");
+            } else {
+                request.setAttribute("message", "Job added!");
             }
-            
+
             request.setAttribute("jobList", jobDaoLocal.getAllJobs());
             request.setAttribute("userList", userDaoLocal.getAllUsers());
             request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicantAdd.jsp").forward(request, response);

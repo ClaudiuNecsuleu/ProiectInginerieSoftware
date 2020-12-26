@@ -28,6 +28,11 @@
             </select>     
             <button type="submit" class="btn3" name="action" value="SelectDeleteJob">Sterge</button> 
         </form>
+        <c:if test="${message != null}">
+            <div class="alert alert-warning" role="alert">
+                ${message}
+            </div>   
+        </c:if>
     </div>
     <div class="centerapadd1">
         <form>

@@ -18,6 +18,11 @@
                 </select>
                 <div class="txt_field"> <input type="text" placeholder="Comment" name="comment" value="${comment.comment}" required></div>
                 <input type="hidden" name="publisherUsername" value="${name}">
+                  <c:if test="${message != null}">
+                    <div class="alert alert-warning" role="alert">
+                        ${message}
+                    </div>   
+                </c:if>
                 <button type="submit" class="btn3" name="action" value="AddJob">Add</button>
                 <a href="CommentServlet"><button class="btn3" type="button">Back</button></a>
                 <br>

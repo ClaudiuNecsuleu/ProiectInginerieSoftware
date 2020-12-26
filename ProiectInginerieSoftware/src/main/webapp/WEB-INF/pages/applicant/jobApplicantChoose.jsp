@@ -16,6 +16,11 @@
                         <d:if test="${user.getRecomandare() == null}">
                             <label>User:  ${user.username}</label>  
                             <input type="hidden" name="recruiterName" value="${name}" />
+                            <c:if test="${message != null}">
+                                <div class="alert alert-warning" role="alert">
+                                    ${message}
+                                </div>   
+                            </c:if>
                             <button type="submit" class="btn3" name="username" value="${user.username}">Recomanda</button> 
                             <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button>ViewCV</button>  </a>
                             <br>         

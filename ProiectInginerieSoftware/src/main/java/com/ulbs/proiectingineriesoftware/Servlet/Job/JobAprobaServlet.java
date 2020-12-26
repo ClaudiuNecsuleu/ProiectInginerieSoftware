@@ -28,6 +28,10 @@ public class JobAprobaServlet extends HttpServlet {
 
             if ("Aproba".equalsIgnoreCase(action)) {
                 jobDaoLocal.setStatusJob(jobid);
+                request.setAttribute("message", "Successful!");
+            }
+            else{
+            request.setAttribute("message", "Failed!");
             }
             request.setAttribute("jobid", jobid);
         }

@@ -51,7 +51,11 @@ public class CommentEditNextServlet extends HttpServlet {
                 if ("Edit".equalsIgnoreCase(action)) {
 
                     commentDaoLocal.editComment(commentID, comment);
+                    request.setAttribute("message", "Successful!");
 
+                }
+                else{
+                request.setAttribute("message", "Failed!");
                 }
 
             }

@@ -14,18 +14,23 @@
                 <select name="jobname"  required/>
                 <option value="">Chose Job...</option>
                 <c:forEach var="job" items="${jobList}" varStatus="status">
-                     <d:if test="${job.getStatus()!=null}">
-                    <option value="${job.jobname}"> ${job.jobname}</option>
-                     </d:if>
+                    <d:if test="${job.getStatus()!=null}">
+                        <option value="${job.jobname}"> ${job.jobname}</option>
+                    </d:if>
                 </c:forEach>
                 </select>
+                <c:if test="${message != null}">
+                    <div class="alert alert-warning" role="alert">
+                        ${message}
+                    </div>   
+                </c:if>
                 <button type="submit" class="btn3" name="action" value="Add">Aplica</button>  
                 <button type="submit" class="btn3" name="action" value="Def">Elimina aplicarea</button>  
                 <br>
             </form>
         </div>
-                <div class="centeraplica">
-                    <form>
+        <div class="centeraplica">
+            <form>
                 <p>All user applicant:</p>
                 <table>
                     <th>UserName</th>

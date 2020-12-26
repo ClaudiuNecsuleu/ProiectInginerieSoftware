@@ -19,6 +19,11 @@
                 </c:if>
             </c:forEach>
             </select>     
+             <c:if test="${message != null}">
+                <div class="alert alert-warning" role="alert">
+                    ${message}
+                </div>   
+            </c:if>
             <button type="submit" class="btn3" name="action" value="Select">Alege</button> 
             <br><br>
         </form>

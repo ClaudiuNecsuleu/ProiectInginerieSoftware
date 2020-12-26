@@ -16,6 +16,11 @@
                 </c:forEach>
             </select>
             <br>
+              <c:if test="${message != null}">
+                    <div class="alert alert-warning" role="alert">
+                        ${message}
+                    </div>   
+                </c:if>
             <button type="submit" class="btn3" name="action" value="Delete" >Delete</button>
             <a href="CommentServlet"><button class="btn3" type="button">Back</button></a>
             <br>

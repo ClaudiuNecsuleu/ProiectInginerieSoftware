@@ -44,6 +44,10 @@ public class CommentAddServlet extends HttpServlet {
             Comment comment = new Comment(comment1, date1, time, publisherUsername);
             if ("Add".equalsIgnoreCase(action)) {
                 commentDaoLocal.addCommentToUser(comment, username);
+                request.setAttribute("message", "Successful!");
+            }
+            else{
+            request.setAttribute("message", "Failed!");
             }
             request.setAttribute("comment", comment);
             request.setAttribute("username", username);

@@ -49,7 +49,7 @@ public class JobAddServlet extends HttpServlet {
 
             if ("Add".equalsIgnoreCase(action)) {
                 jobsDaoLocal.addJobToUser(publisher, job);
-                
+                request.setAttribute("message", "Successful!");
                 List<User> userList = userDaoLocal.getAllUsers();
                 
                 for(User user : userList)
@@ -61,7 +61,9 @@ public class JobAddServlet extends HttpServlet {
                 }
                 }
                 
-            } 
+            } else{
+            request.setAttribute("message", "Failed!");
+            }
 
             request.setAttribute("job", job);
         }

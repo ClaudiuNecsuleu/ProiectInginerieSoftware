@@ -14,24 +14,27 @@ public class CommentDeleteServlet extends HttpServlet {
 
     @EJB
     private CommentDaoLocal commentDaoLocal;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-   if (request != null) {
-        String action = request.getParameter("action");
-        
-        String commentIDStr = request.getParameter("commentid");
-        int commentID = 0;
-        if (commentIDStr != null && !commentIDStr.equals("")) {
-            commentID = Integer.parseInt(commentIDStr);
-        } 
+        if (request != null) {
+            String action = request.getParameter("action");
+
+            String commentIDStr = request.getParameter("commentid");
+            int commentID = 0;
+            if (commentIDStr != null && !commentIDStr.equals("")) {
+                commentID = Integer.parseInt(commentIDStr);
+            }
             if ("Delete".equalsIgnoreCase(action)) {
-            commentDaoLocal.deleteComment(commentID);
+                commentDaoLocal.deleteComment(commentID);
+                request.setAttribute("message", "Successful!");
+            } else {
+                request.setAttribute("message", "Failed!");
+            }
+            request.setAttribute("commentID", commentID);
         }
-        request.setAttribute("commentID",commentID);   
-        }
-     request.setAttribute("allComments", commentDaoLocal.getAllComments());
-     request.getRequestDispatcher("/WEB-INF/pages/comment/commentDelete.jsp").forward(request, response);
+        request.setAttribute("allComments", commentDaoLocal.getAllComments());
+        request.getRequestDispatcher("/WEB-INF/pages/comment/commentDelete.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

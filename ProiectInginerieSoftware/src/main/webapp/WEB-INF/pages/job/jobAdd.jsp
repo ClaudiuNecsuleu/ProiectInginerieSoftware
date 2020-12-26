@@ -14,9 +14,14 @@
                 <div class="txt_field"><input type="text" placeholder="Description" name="description" value="${job.description}" required></div>
                 <div class="txt_field">  <input type="text" placeholder="RemainingPosts" name="remainingjob" value="${job.remainingjob}" required></div>
                 <input type="hidden" name="publisher" value="${name}">
+                <c:if test="${message != null}">
+                    <div class="alert alert-warning" role="alert">
+                        ${message}
+                    </div>   
+                </c:if>
                 <button type="submit" name="action" value="Add">Add</button>
                 <a href="JobsServlet"><button type="button">Back</button></a>
-                
+
             </form>
         </div>
     </jsp:body>

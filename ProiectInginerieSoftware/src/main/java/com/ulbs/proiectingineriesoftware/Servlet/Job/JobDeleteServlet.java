@@ -28,6 +28,10 @@ public class JobDeleteServlet extends HttpServlet {
 
             if ("Delete".equalsIgnoreCase(action)) {
                 jobDaoLocal.deleteJob(jobid);
+                request.setAttribute("message", "Successful!");
+            }
+            else{
+            request.setAttribute("message", "Failed!");
             }
             request.setAttribute("jobid", jobid);
         }

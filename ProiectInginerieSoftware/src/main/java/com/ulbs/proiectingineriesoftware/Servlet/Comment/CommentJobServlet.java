@@ -34,6 +34,10 @@ public class CommentJobServlet extends HttpServlet {
             Comment comment = new Comment(comment1, date1, time, publisherUsername);
             if ("AddJob".equalsIgnoreCase(action)) {
                 commentDaoLocal.addCommentToJob(comment, jobname);
+                request.setAttribute("message", "Successful!");
+            }
+            else{
+            request.setAttribute("message", "Failed!");
             }
             request.setAttribute("comment", comment);
 

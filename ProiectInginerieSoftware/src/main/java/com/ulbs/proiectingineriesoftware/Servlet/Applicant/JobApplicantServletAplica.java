@@ -29,10 +29,14 @@ public class JobApplicantServletAplica extends HttpServlet {
                    
             if ("Add".equalsIgnoreCase(action)) {
                 jobDaoLocal.addUserApplicantToJob(username, jobname);
+                 request.setAttribute("message", "Successful!");
             } else if ("Def".equalsIgnoreCase(action)) {
                 userDaoLocal.setJobApplicantDeafult(username);
-                
+                 request.setAttribute("message", "Successful!");               
             } 
+            else{
+             request.setAttribute("message", "Failed!");
+            }
             
             request.setAttribute("jobList", jobDaoLocal.getAllJobs());
             request.setAttribute("userList", userDaoLocal.getAllUsers());

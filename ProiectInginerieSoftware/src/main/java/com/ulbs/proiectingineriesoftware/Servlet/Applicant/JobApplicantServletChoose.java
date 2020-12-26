@@ -1,5 +1,6 @@
 package com.ulbs.proiectingineriesoftware.Servlet.Applicant;
 
+import com.ulbs.proiectingineriesoftware.Models.User;
 import com.ulbs.proiectingineriesoftware.Services.JobDaoLocal;
 import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
 import java.io.IOException;
@@ -55,6 +56,12 @@ public class JobApplicantServletChoose extends HttpServlet {
         String recruiterName = request.getParameter("recruiterName");
 
         userDaoLocal.recomandaUser(username, recruiterName);
+        User user = userDaoLocal.getUserByUsername(username);
+        if (user.getRecomandare().equals(recruiterName)) {
+            request.setAttribute("message", "Successful!");
+        } else {
+            request.setAttribute("message", "Failed!");
+        }
 
         request.setAttribute("jobList", jobDaoLocal.getAllJobs());
         request.setAttribute("userList", userDaoLocal.getAllUsers());

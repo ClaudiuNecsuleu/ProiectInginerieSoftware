@@ -16,14 +16,19 @@
                     </c:forEach>
                 </select>
                 <br>
+                <c:if test="${message != null}">
+                    <div class="alert alert-warning" role="alert">
+                        ${message}
+                    </div>   
+                </c:if>
                 <button type="submit" class="btn3" value="Edit">Edit</button>
                 <a href="JobsServlet"><button class="btn3" type="button">Back</button></a>
-            
+
             </form>
-             <br>
+            <br>
         </div>
-           
-    
+
+
         <div class="centerjed">
             <form>
                 <br><br>
