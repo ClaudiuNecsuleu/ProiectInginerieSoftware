@@ -7,6 +7,7 @@
 <t:pageTemplate pageTitle="Upload File">
 
 
+    <div class="centeruinput">
     <form action="UploadFileServlet" method="POST" enctype="multipart/form-data" novalidate>
         <div>
             <div>
@@ -18,5 +19,5 @@
         <button type="submit" name="action" value="Add">Upload</button>
 
     </form>
-
+    </div>
 </t:pageTemplate>

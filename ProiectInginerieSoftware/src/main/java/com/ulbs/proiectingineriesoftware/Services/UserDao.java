@@ -504,8 +504,7 @@ public class UserDao implements UserDaoLocal {
 
                     entityManager.merge(job);
                     entityManager.merge(user);
-                   SendEmail.send(user.getMail(), "Ai fost acceptat in job-ul "+job.getJobname(), "Felicitari "+user.getUsername()+ " pentru ocuparea acestui post! ","abc12dll@gmail.com", "firmasoftwareabc12DLL");
-
+                    SendEmail.send(user.getMail(), "Ai fost acceptat in job-ul " + job.getJobname(), "Felicitari " + user.getUsername() + " pentru ocuparea acestui post! ", "abc12dll@gmail.com", "firmasoftwareabc12DLL");
 
                 }
                 if (job.getRemainingjob() == 0) {
@@ -622,6 +621,56 @@ public class UserDao implements UserDaoLocal {
             user.setDescriere(descriere);
 
             entityManager.merge(user);
+
+        } catch (Exception e) {
+            throw new EJBException(e);
+        }
+    }
+
+    @Override
+    public void changePasswprd(User user, String passwordSHA) {
+        LOG.info("changePasswprd");
+        try {
+            user.setPassword(passwordSHA);
+            entityManager.merge(user);
+
+        } catch (Exception e) {
+            throw new EJBException(e);
+        }
+    }
+
+    @Override
+    public void deleteUserPhoto(User user) {
+        LOG.info("deleteUserPhoto");
+        try {
+            Photo photo = user.getPhoto();
+            photo.setUser(null);
+            user.setPhoto(null);
+            entityManager.merge(user);
+            if (!entityManager.contains(photo)) {
+                photo = entityManager.merge(photo);
+            }
+
+            entityManager.remove(photo);
+
+        } catch (Exception e) {
+            throw new EJBException(e);
+        }
+    }
+
+    @Override
+    public void deleteUserCV(User user) {
+        LOG.info("deleteUserCV");
+        try {
+            File file = user.getFile();
+            file.setUser(null);
+            user.setFile(null);
+            entityManager.merge(user);
+            if (!entityManager.contains(file)) {
+                file = entityManager.merge(file);
+            }
+
+            entityManager.remove(file);
 
         } catch (Exception e) {
             throw new EJBException(e);

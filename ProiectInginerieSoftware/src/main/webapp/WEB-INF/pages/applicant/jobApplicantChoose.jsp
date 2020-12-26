@@ -10,18 +10,20 @@
 
             <h2>Job Applicant</h2>
             <form action="./JobApplicantServletChoose" method="POST">
-                <select name="username"  required/>
-                <option value="">Chose Applicant...</option>
+
                 <c:forEach var="user" items="${userList}" varStatus="status">
                     <c:if test="${user.getJobApplicant() != null}">
-                         <d:if test="${user.getRecomandare() == null}">
-                        <option value="${user.username}"> ${user.username}</option>
-                         </d:if>
+                        <d:if test="${user.getRecomandare() == null}">
+                            <label>User:  ${user.username}</label>  
+                            <input type="hidden" name="recruiterName" value="${name}" />
+                            <button type="submit" class="btn3" name="username" value="${user.username}">Recomanda</button> 
+                            <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button>ViewCV</button>  </a>
+                            <br>         
+                        </d:if>
                     </c:if>
                 </c:forEach>
-                </select>     
-                <input type="hidden" name="recruiterName" value="${name}" />
-                <button type="submit" class="btn3" name="action" value="Recomanda">Recomanda</button> 
+
+
                 <br><br>
             </form>
         </div>

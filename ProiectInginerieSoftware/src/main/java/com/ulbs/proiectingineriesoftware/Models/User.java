@@ -110,10 +110,11 @@ public class User implements Serializable {
 
     }
 
-    public User(String name, String prenume, String telefon, String telefonMobil, String mail, String functia, String descriere, String username, Role role, List<Comment> commentsList, Job job, Job jobApplicant) {
+    public User(String name, String prenume,String password, String telefon, String telefonMobil, String mail, String functia, String descriere, String username, Role role, List<Comment> commentsList, Job job, Job jobApplicant) {
 
         this.name = name;
         this.prenume = prenume;
+        this.password=password;
         this.telefon = telefon;
         this.telefonMobil = telefonMobil;
         this.mail = mail;

@@ -64,7 +64,12 @@ public interface UserDaoLocal {
     FileDetails findFileByUserId(Integer userId);
 
     void setUserFile(User user, File file);
-    
+
     void updateProfile(User user, String telefon, String telefonMobil, String descriere);
 
+    void changePasswprd(User user, String passwordSHA);
+
+    void deleteUserPhoto(User user);
+    
+    void deleteUserCV(User user);
 }

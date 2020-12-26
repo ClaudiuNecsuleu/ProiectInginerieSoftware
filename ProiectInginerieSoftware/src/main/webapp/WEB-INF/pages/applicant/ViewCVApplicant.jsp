@@ -11,20 +11,20 @@
 
             <h2>Job Applicant</h2>
             <form action="./ViewCVApplicant" method="POST">
-                <select name="username"  required/>
-                <option value="">View CV..</option>
+
                 <c:forEach var="user" items="${userList}" varStatus="status">
                     <c:if test="${user.getJobApplicant() != null}">
                         <d:if test="${user.getRecomandare() != null}">
                             <e:if test="${user.getFile() != null}">
-                                <option value="${user.username}"> ${user.username} , CV: ${user.getFile().getFilename()} </option>
+                                <label>User: ${user.username} , CV: ${user.getFile().getFilename()} </label>
+                                <button type="submit" class="btn3" name="username" value="${user.username}">View</button> 
+                                <br>
                             </e:if>
                         </d:if>
                     </c:if>
                 </c:forEach>
-                </select>     
-                <input type="hidden" name="recruiterName" value="${name}" />
-                <button type="submit" class="btn3" name="action" value="View">View</button> 
+
+
                 <br><br>
             </form>
         </div>

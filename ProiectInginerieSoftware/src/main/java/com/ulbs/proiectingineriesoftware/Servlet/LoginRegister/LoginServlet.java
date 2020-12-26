@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("message", "Username or passwrod incorect");
+        request.setAttribute("message", "Username or password incorect");
         request.getRequestDispatcher("/WEB-INF/pages/loginreg/login.jsp").forward(request, response);
     }
 

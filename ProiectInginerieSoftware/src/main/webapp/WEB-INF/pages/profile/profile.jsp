@@ -6,10 +6,10 @@
 <% request.setAttribute("name", request.getRemoteUser());%>
 
 <t:pageTemplate pageTitle="Profile">
-   
 
-        <h1>Salut, ${user.getName()} ${user.getPrenume()} !</h1>
-         <div class="centerprof">
+
+    <h1>Salut, ${user.getName()} ${user.getPrenume()} !</h1>
+    <div class="centerprof">
         <form>
             <br><br>
             <table>
@@ -33,15 +33,18 @@
                     <td><strong>Mail:</strong></td>
                     <td>${user.getMail()}</td>
                 </tr>
-              
-                <tr>
-                    <td><strong>Job:</strong> </td>
-                    <td>${user.getJob().getJobname()}</td>
-                </tr>
-                <tr>
-                    <td><strong>Job pentru care ai aplicat: </strong></td>
-                    <td>${user.getJobApplicant().getJobname()}</td>
-                </tr>
+                <d:if test="${user.getJob().getJobname()!=null}">
+                    <tr>
+                        <td><strong>Job:</strong> </td>
+                        <td>${user.getJob().getJobname()}</td>
+                    </tr>
+                </d:if>
+                <d:if test="${user.getJobApplicant().getJobname()!=null}">
+                    <tr>
+                        <td><strong>Job pentru care ai aplicat: </strong></td>
+                        <td>${user.getJobApplicant().getJobname()}</td>
+                    </tr>
+                </d:if>
 
                 <tr>
                     <td><strong>CV </strong></td>
@@ -56,9 +59,9 @@
 
             <a href="RedirectUploadFile"><button class="btn" type="button">Upload CV</button></a>
         </form>
-                        <div class="circular">
-                            <center>
-            <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="100" height="100"/>
+        <div class="circular">
+            <center>
+                <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="100" height="100"/>
             </center>
         </div>
 
@@ -66,6 +69,9 @@
             <input type="hidden" name="username" value="${name}" >
             <button class="btn" type="submit">Profile Edit</button>
         </form>
+
+        <a href="ChangePhoto"><button class="btn" type="button">Change photo</button></a>
+        <a href="ChangePassword"><button class="btn" type="button">Change password</button></a>
         <br><br>
 
     </div>

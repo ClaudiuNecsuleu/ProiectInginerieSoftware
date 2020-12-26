@@ -8,6 +8,9 @@
 
     
     <h1>Welcome to the ABC.DLL</h1>
-    
+     <script>
+           window.location.href = 'IndexServlet';
+        </script>
+
       
 </t:pageTemplate>
