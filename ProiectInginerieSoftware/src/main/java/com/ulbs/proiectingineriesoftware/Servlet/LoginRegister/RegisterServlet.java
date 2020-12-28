@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import com.ulbs.proiectingineriesoftware.Common.SendEmail;
+import java.util.logging.Logger;
 
 
 @MultipartConfig
@@ -106,8 +107,24 @@ public class RegisterServlet extends HttpServlet {
         String telefonMobil = request.getParameter("telefonMobil");
         String mail = request.getParameter("mail");
         String descriere = request.getParameter("descriere");
-        String password = request.getParameter("password");
+        
+        String password;
+        
+          if (name.length() > 3) {
+            password = name.substring(0, 3);
+        } else {
+            password = name;
+        }
+
+        if (prenume.length() > 3) {
+            password += prenume.substring(0, 3);
+        } else {
+            password += prenume;
+        }
+
+        password += telefonMobil.substring(telefonMobil.length() - 2, telefonMobil.length());
         String passwrodSha256 = PasswordUtil.convertToSha256(password);
+        LOG.info("Parola ta e "+password);
         User user = new User(name, prenume, telefon, telefonMobil, mail, "USER", descriere, createUsername(name, prenume), passwrodSha256);
 
         Part filePart = request.getPart("file");
@@ -139,6 +156,7 @@ public class RegisterServlet extends HttpServlet {
 
         request.getRequestDispatcher("/WEB-INF/pages/loginreg/register.jsp").forward(request, response);
     }
+    private static final Logger LOG = Logger.getLogger(RegisterServlet.class.getName());
 
     /**
      * Returns a short description of the servlet.

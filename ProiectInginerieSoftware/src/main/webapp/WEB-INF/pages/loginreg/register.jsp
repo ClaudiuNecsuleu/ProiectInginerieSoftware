@@ -8,7 +8,6 @@
         <form action="./RegisterServlet" method="POST" enctype="multipart/form-data" novalidate >     
             <div class="txt_field"> <input type="text" placeholder="Nume" name="name" value="${users.name}" required/></div>
             <div class="txt_field">  <input type="text" placeholder="Prenume" name="prenume" value="${users.prenume}" required/></div>
-            <div class="txt_field">  <input type="text" placeholder="Password" name="password" value="${users.password}" required/></div>
             <div class="txt_field"> <input type="text" placeholder="Telefon" name="telefon" value="${users.telefon}" required/></div>
             <div class="txt_field">  <input type="text" placeholder="Telefon Mobil" name="telefonMobil" value="${users.telefonMobil}" required/></div>
             <div class="txt_field"><input type="text" placeholder="Mail" name="mail" value="${users.mail}" required/></div>
