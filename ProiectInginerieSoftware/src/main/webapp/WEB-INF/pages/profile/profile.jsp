@@ -46,14 +46,12 @@
                     </tr>
                 </d:if>
 
-                <tr>
-                    <td><strong>CV </strong></td>
-                    <td>  
-
-                        <a href="ShowCVServlet" > ${user.getFile().getFilename()}</a>
-
-                    </td>
-                </tr>
+                <d:if test="${user.getFile()!=null}">
+                    <tr>
+                        <td><strong>CV </strong></td>
+                        <td> <a href="ShowCVServlet" > ${user.getFile().getFilename()}</a> </td>
+                    </tr>
+                </d:if>
             </table>
 
 
@@ -62,7 +60,9 @@
         <div class="circular">
             <center>
                 <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="100" height="100"/>
+
             </center>
+            ${user.getDescriere()}
         </div>
 
         <form action="./ProfileRedirectEdit" method="POST">

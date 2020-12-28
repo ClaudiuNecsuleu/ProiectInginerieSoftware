@@ -1,5 +1,6 @@
 package com.ulbs.proiectingineriesoftware.Servlet.Applicant;
 
+import com.ulbs.proiectingineriesoftware.Common.SendEmail;
 import com.ulbs.proiectingineriesoftware.Models.User;
 import com.ulbs.proiectingineriesoftware.Services.JobDaoLocal;
 import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
@@ -59,6 +60,8 @@ public class JobApplicantServletChoose extends HttpServlet {
         User user = userDaoLocal.getUserByUsername(username);
         if (user.getRecomandare().equals(recruiterName)) {
             request.setAttribute("message", "Successful!");
+           SendEmail.send(user.getMail(), "Tocmai ai fost recomandat!", "Salut "+user.getUsername()+ " ,tocmai ai fosr repartizat de recruiterul nostru, "+recruiterName+".Iti dorim mult succes in urmatoarea repartitie,cu drag abc.dll !","abc12dll@gmail.com", "firmasoftwareabc12DLL");
+
         } else {
             request.setAttribute("message", "Failed!");
         }
