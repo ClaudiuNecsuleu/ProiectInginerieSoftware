@@ -5,13 +5,13 @@
 <t:pageTemplate pageTitle="Register">
     <div class="centereg"> 
         <h2>Register</h2>
-        <form action="./RegisterServlet" method="POST" enctype="multipart/form-data" novalidate >     
-            <div class="txt_field"> <input type="text" placeholder="Nume" name="name" value="${users.name}" required/></div>
-            <div class="txt_field">  <input type="text" placeholder="Prenume" name="prenume" value="${users.prenume}" required/></div>
-            <div class="txt_field"> <input type="text" placeholder="Telefon" name="telefon" value="${users.telefon}" required/></div>
-            <div class="txt_field">  <input type="text" placeholder="Telefon Mobil" name="telefonMobil" value="${users.telefonMobil}" required/></div>
-            <div class="txt_field"><input type="text" placeholder="Mail" name="mail" value="${users.mail}" required/></div>
-            <div class="txt_field"> <input type="text" placeholder="Descriere" name="descriere" value="${users.descriere}" required/></div>
+        <form action="./RegisterServlet" method="POST" enctype="multipart/form-data"  >     
+            <div class="txt_field"> <input type="text" placeholder="Nume" name="name" required/></div>
+            <div class="txt_field">  <input type="text" placeholder="Prenume" name="prenume" required/></div>
+            <div class="txt_field"> <input type="text" placeholder="Telefon" name="telefon"  required/></div>
+            <div class="txt_field">  <input type="text" placeholder="Telefon Mobil" name="telefonMobil"  required/></div>
+            <div class="txt_field"><input type="text" placeholder="Mail" name="mail" required/></div>
+            <div class="txt_field"> <input type="text" placeholder="Descriere" name="descriere" required/></div>
             <div>
                 <div>
                     <label for="file">Photo</label>
