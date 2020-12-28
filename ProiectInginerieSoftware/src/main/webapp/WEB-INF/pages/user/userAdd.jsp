@@ -8,12 +8,14 @@
     <div class="centereg">
         <h2>Users Add</h2>
         <form action="./UserAddServlet" method="POST">
-            <div class="txt_field">  <input type="text" name="name" placeholder="Nume" value="${user.name}" required></div>
-            <div class="txt_field"> <input type="text" name="prenume" placeholder="Prenume" value="${user.prenume}" required></div>
-            <div class="txt_field"> <input type="text" name="password" placeholder="Password" value="${user.password}" required></div>
-            <div class="txt_field"> <input type="text" name="telefon" placeholder="Telefon" value="${user.telefon}" required></div>
-            <div class="txt_field">  <input type="text" name="telefonMobil" placeholder="TelefonMobil" value="${user.telefonMobil}" required></div>
-            <div class="txt_field"> <input type="text" name="mail" placeholder="Mail" value="${user.mail}" required></div>
+            <div class="txt_field">  <input pattern=".{3,}" required title="Minimum 3 characters required" type="text" name="name" placeholder="Nume" value="${user.name}" required></div>
+            <div class="txt_field"> <input pattern=".{3,}" required title="Minimum 3 characters required" type="text" name="prenume" placeholder="Prenume" value="${user.prenume}" required></div>
+            <div class="txt_field"> <input pattern=".{10,}" required title="Number required" maxlength="10" type="text" name="password" placeholder="Password" value="${user.password}" required></div>
+            <div class="txt_field"> <input type="text"   pattern=".{10,}" required title="Phone number required" maxlength="10" name="telefon" placeholder="Telefon" value="${user.telefon}" required></div>
+            <div class="txt_field">  <input  pattern=".{10,}" required title="Phone number required" maxlength="10" type="text" name="telefonMobil" placeholder="TelefonMobil" value="${user.telefonMobil}" required></div>
+            <div class="txt_field"> <input type="email" name="mail" placeholder="Mail" value="${user.mail}" required></div>
+
+
             <div class="txt_field"> <input type="text" name="descriere" placeholder="Descriere" value="${user.descriere}" required></div>
             <label for="functia">Functia</label>
             <select  name="functia" required="">
