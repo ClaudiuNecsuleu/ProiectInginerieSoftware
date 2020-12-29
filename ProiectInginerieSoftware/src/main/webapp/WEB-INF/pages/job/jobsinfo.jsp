@@ -9,11 +9,21 @@
     <div class="center">
         <form>
             <h2>Job Info</h2>
+            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
             <a href="JobAddServlet"><button class="btn" type="button">Add</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
             <a href="JobEditServlet"><button class="btn" type="button">Edit</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('DirGenRole')}">
             <a href="JobDeleteServlet"><button class="btn" type="button">Delete</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('DirGenRole')}">
             <a href="JobAprobaServlet"><button class="btn" type="button">Aprobare</button></a>
-            <a href="userLogged.jsp"><button class="btn" type="button">Back</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('UserRole')}">
+            <a href="IndexServlet"><button class="btn" type="button">Back</button></a>
+            </c:if>
             <br><br>
         </form>
 

@@ -4,12 +4,14 @@ import com.ulbs.proiectingineriesoftware.Services.JobDaoLocal;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"RecruiterRole", "DirGenRole", "DirDepRole", "DirHrRole"}))
 @WebServlet(name = "JobEditServlet", urlPatterns = {"/JobEditServlet"})
 public class JobEditServlet extends HttpServlet {
 

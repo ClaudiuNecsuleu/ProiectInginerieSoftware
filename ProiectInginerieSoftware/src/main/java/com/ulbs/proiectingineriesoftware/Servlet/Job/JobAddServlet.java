@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.ulbs.proiectingineriesoftware.Models.User;
 import java.util.List;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
 
-
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"RecruiterRole", "DirGenRole", "DirDepRole", "DirHrRole"}))
 @WebServlet(name = "JobAddServlet", urlPatterns = {"/JobAddServlet"})
 public class JobAddServlet extends HttpServlet {
 

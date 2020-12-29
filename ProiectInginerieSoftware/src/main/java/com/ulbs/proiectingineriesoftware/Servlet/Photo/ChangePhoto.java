@@ -11,8 +11,11 @@ import com.ulbs.proiectingineriesoftware.Models.Photo;
 import com.ulbs.proiectingineriesoftware.Models.User;
 import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
 import javax.ejb.EJB;
+import javax.servlet.annotation.HttpConstraint;
 import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.ServletSecurity;
 
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"UserRole"}))
 @MultipartConfig
 @WebServlet(name = "ChangePhoto", urlPatterns = {"/ChangePhoto"})
 public class ChangePhoto extends HttpServlet {

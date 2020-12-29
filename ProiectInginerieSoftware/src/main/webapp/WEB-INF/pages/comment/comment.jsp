@@ -1,4 +1,4 @@
-    <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -8,10 +8,18 @@
     <div class="center">
         <h2>Comments</h2>
         <form action="./CommentServlet" method="POST">
-            <a href="CommentAddServlet"><button class="btn3" type="button">AddToUser</button></a>
-            <a href="CommentJobServlet"><button class="btn3" type="button">AddToJob</button></a>
-            <a href="CommentEditServlet"><button class="btn3" type="button">Edit</button></a>
-            <a href="CommentDeleteServlet"><button class="btn3" type="button">Delete</button></a>
+            <c:if test="${pageContext.request.isUserInRole('UserRole')}">
+                <a href="CommentAddServlet"><button class="btn3" type="button">AddToUser</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('UserRole')}">
+                <a href="CommentJobServlet"><button class="btn3" type="button">AddToJob</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
+                <a href="CommentEditServlet"><button class="btn3" type="button">Edit</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
+                <a href="CommentDeleteServlet"><button class="btn3" type="button">Delete</button></a>
+            </c:if>
             <br><br>
         </form>
     </div>

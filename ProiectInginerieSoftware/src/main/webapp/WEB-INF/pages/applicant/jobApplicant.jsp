@@ -7,15 +7,26 @@
 
     <div class="center">
         <form>
-        <h2>Applicant</h2>
-
-        <a href="JobApplicantServletAplica"><button class="btn" type="button">Aplica</button></a>
-        <a href="JobApplicantServletChoose"><button class="btn" type="button">Recomanda</button></a>
-        <a href="JobApplicantServletAdd"><button class="btn" type="button">AddApplicant</button></a>
-        <a href="JobApplicantServletDelete"><button class="btn" type="button">DeleteApplicant</button></a>
-        <a href="JobApplicantServletEdit"><button class="btn" type="button">EditApplicant</button></a>
-        <a href="ViewCVApplicant"><button class="btn" type="button">View CV Applicant</button></a>
-        <br><br>
+            <h2>Applicant</h2>
+            <c:if test="${pageContext.request.isUserInRole('UserRole')}">
+                <a href="JobApplicantServletAplica"><button class="btn" type="button">Aplica</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')}">
+                <a href="JobApplicantServletChoose"><button class="btn" type="button">Recomanda</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirDepRole')}">
+                <a href="JobApplicantServletAdd"><button class="btn" type="button">AddApplicant</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')}">
+                <a href="JobApplicantServletDelete"><button class="btn" type="button">DeleteApplicant</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')}">
+                <a href="JobApplicantServletEdit"><button class="btn" type="button">EditApplicant</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')}">
+                <a href="ViewCVApplicant"><button class="btn" type="button">View CV Applicant</button></a>
+            </c:if>
+            <br><br>
         </form>
     </div>
 

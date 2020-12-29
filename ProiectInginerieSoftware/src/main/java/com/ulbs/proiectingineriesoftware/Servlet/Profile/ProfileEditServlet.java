@@ -11,12 +11,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"UserRole"}))
 @WebServlet(name = "ProfileEditServlet", urlPatterns = {"/ProfileEditServlet"})
 public class ProfileEditServlet extends HttpServlet {
 
