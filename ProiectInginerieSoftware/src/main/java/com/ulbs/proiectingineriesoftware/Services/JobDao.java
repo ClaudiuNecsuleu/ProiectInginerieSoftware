@@ -235,7 +235,6 @@ public class JobDao implements JobDaoLocal {
                 User user = users.get(0);
 
                 job.addAplicantList(user);
-                user.setFunctia("In asteptare");
                 user.setJobApplicant(job);
 
                 entityManager.merge(job);
