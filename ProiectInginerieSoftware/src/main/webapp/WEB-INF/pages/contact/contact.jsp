@@ -16,38 +16,110 @@
     <h2 style="text-align:center">Our Team</h2>
     <div class="column">
         <div class="card">
-            <img src="clau.jpg" alt="Jane" style="width:100%">
+            <center>
+                <br>
+                <img src="clau.jpg" alt="Clau" width="80px" height="100px">
+            </center>
             <div class="container">
-                <h2>Clau</h2>
-                <p class="title">CEO & Founder</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>jane@example.com</p>
-                <p><button class="btn3">Contact</button></p>
+                <center>
+                    <h2>Clau</h2>
+
+                    <p><strong>CEO & Founder</strong></p>
+                    <p>Some text </p>
+                    <p>claudiu.necsuleu@ulbsibiu.ro</p>
+                    <button class="btn1">Contact</button>
+                </center>
             </div>
         </div>
     </div>
-     <div class="column">
+    <div class="column">
         <div class="card">
-            <img src="clau.jpg" alt="Jane" style="width:100%">
+            <center>
+                <br>
+                <img src="alex.jpg" alt="Alex" width="80px" height="100px">
+            </center>
             <div class="container">
-                <h2>Alex</h2>
-                <p class="title">CEO & Founder</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>jane@example.com</p>
-                <p><button class="btn3">Contact</button></p>
+                <center>
+                    <h2>Alex</h2>
+
+                    <p><strong>CEO & Founder</strong></p>
+                    <p>Some text </p>
+                    <p>alexandruc.stoian@ulbsibiu.ro</p>
+                    <button class="btn1">Contact</button>
+                </center>
             </div>
         </div>
     </div>
-     <div class="column">
+    <div class="column">
         <div class="card">
-            
-            <img src="leo.jpg" alt="Jane" style="width:100%">
+            <center>
+                <br>
+                <img src="bobo.jpg" alt="Bobo" width="80px" height="100px">
+            </center>
             <div class="container">
-                <h2>Bogdan</h2>
-                <p class="title">CEO & Founder</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>jane@example.com</p>
-                <p><button class="btn3">Contact</button></p>
+                <center>
+                    <h2>Bogdan</h2>
+
+                    <p><strong>CEO & Founder</strong></p>
+                    <p>Some text </p>
+                    <p>bogdan.paicu@ulbsibiu.ro</p>
+
+                    <button class="btn1">Contact</button>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <center>
+                <br>
+                <img src="larisa.jpg" alt="Larisa" width="80px" height="100px">
+            </center>
+            <div class="container">
+                <center>
+                    <h2>Larisa</h2>
+
+                    <p><strong>CEO & Founder</strong></p>
+                    <p>Some text </p>
+                    <p>larisa.giubega@ulbsibiu.ro</p>
+                    <button class="btn1">Contact</button>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <center>
+                <br>
+                <img src="dani.jpg" alt="Dani" width="80px" height="100px">
+            </center>
+            <div class="container">
+                <center>
+                    <h2>Dani</h2>
+
+                    <p><strong>CEO & Founder</strong></p>
+                    <p>Some text</p>
+                    <p>daniel.dumitrana@ulbsibiu.ro</p>
+                    <button class="btn1">Contact</button>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <center>
+                <br>
+                <img src="leo.jpg" alt="Leo" width="80px" height="100px">
+            </center>
+            <div class="container">
+                <center>
+                    <h2>Leo</h2>
+
+                    <p><strong> CEO & Founder</strong></p>
+                    <p>Some text </p>
+                    <p>leonard.otesanu@ulbsibiu.ro</p>
+                    <button class="btn1">Contact</button>
+                </center>
             </div>
         </div>
     </div>

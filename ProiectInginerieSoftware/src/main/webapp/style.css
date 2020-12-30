@@ -659,21 +659,19 @@ tr:hover {
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: #474e5d;
+  background-color:grey;
   color: white;
 }
 .column {
   float: left;
-  width: 33.3%;
+  width: 16%;
   margin-bottom: 16px;
-  padding: 0 8px;
+  padding: 0 5px;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+
 
