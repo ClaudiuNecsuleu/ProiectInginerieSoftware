@@ -63,6 +63,9 @@
                 </c:if>
             </c:when>    
         </c:choose>
+        <li>
+            <a  href="${pageContext.request.contextPath}/contactServlet">Contact</a>
+        </li>
 
         <c:choose>
             <c:when test="${pageContext.request.getRemoteUser() == null}">
@@ -82,5 +85,6 @@
                 </c:otherwise>
             </c:choose>
         </li>
+
     </ul>
 </nav>

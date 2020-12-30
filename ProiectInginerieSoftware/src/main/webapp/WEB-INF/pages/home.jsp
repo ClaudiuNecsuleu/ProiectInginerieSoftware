@@ -10,6 +10,7 @@
 
     <div class="center">  
         <h2>NEWS</h2>
+        <form>
         <table>
             <th>Job name</th>
             <th>Job description</th>
@@ -31,6 +32,8 @@
                 </d:if>
             </c:forEach>
         </table>
+            <br><br>
+        </form>
     </div>
 
 </t:pageTemplate>

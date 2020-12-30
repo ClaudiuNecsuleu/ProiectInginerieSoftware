@@ -269,6 +269,37 @@ h1{
     box-sizing: border-box;
 
 }
+
+.centerapach1{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-480px,-140px);
+    width:250px;
+    background:white;
+    border-radius:10px;
+
+}
+.centerapach1 form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+.centerapach2{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(240px,-140px);
+    width:250px;
+    background:white;
+    border-radius:10px;
+
+}
+.centerapach2 form{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
 .centerc1 form{
     padding: 0 40px;
     box-sizing: border-box;
@@ -360,7 +391,7 @@ h1{
   border-radius: 50%;
   position: absolute;
   overflow: hidden;
-  transform: translate(110%, -300%);
+  transform: translate(85%, -255%);
 }
 .circular img {
   min-width: 100%;
@@ -381,7 +412,7 @@ h1{
     top:50%;
     left:50%;
     transform:translate(-50%,0%);
-    width:470px;
+    width:390px;
     background:white;
     border-radius:30px;
 
@@ -624,5 +655,25 @@ table {
 }
 tr:hover {
     background-color:#9F87AF;
+}
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 

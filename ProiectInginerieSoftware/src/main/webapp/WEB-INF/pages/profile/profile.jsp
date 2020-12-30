@@ -9,6 +9,7 @@
 
 
     <h1>Salut, ${user.getName()} ${user.getPrenume()} !</h1>
+            <center> ${user.getDescriere()}</center>
     <div class="centerprof">
         <form>
             <br><br>
@@ -53,6 +54,7 @@
                     </tr>
                 </d:if>
             </table>
+                <br>
 
 
             <a href="RedirectUploadFile"><button class="btn" type="button">Upload CV</button></a>
@@ -62,18 +64,20 @@
                 <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="100" height="100"/>
 
             </center>
-            ${user.getDescriere()}
+           
         </div>
+        
+                
 
         <form action="./ProfileRedirectEdit" method="POST">
             <input type="hidden" name="username" value="${name}" >
             <button class="btn" type="submit">Profile Edit</button>
         </form>
-
+            <form>
         <a href="ChangePhoto"><button class="btn" type="button">Change photo</button></a>
         <a href="ChangePassword"><button class="btn" type="button">Change password</button></a>
         <br><br>
-
+            </form>
     </div>
     <br><br>
     <div class="centerprofc2">

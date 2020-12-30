@@ -32,7 +32,7 @@
                 <br><br>
             </form>
         </div>
-        <div class="centerapadd1">
+        <div class="centerapach1">
             <form>
                 <br>
                 <p><strong>All user applicant:</strong></p>
@@ -55,7 +55,7 @@
         </div>
 
 
-        <div class="centerapadd2">
+        <div class="centerapach2">
             <form>
                 <br>
                 <p><strong>Job list:</strong></p>
