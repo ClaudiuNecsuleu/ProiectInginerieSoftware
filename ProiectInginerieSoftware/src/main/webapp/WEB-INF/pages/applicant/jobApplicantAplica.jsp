@@ -11,7 +11,7 @@
             <form action="./JobApplicantServletAplica" method="POST">
                 <input type="hidden" name="username" id="ts"  value="${name}">
                 <br>
-                <select name="jobname"  required/>
+                <select name="jobname"/>
                 <option value="">Chose Job...</option>
                 <c:forEach var="job" items="${jobList}" varStatus="status">
                     <d:if test="${job.getStatus()!=null}">

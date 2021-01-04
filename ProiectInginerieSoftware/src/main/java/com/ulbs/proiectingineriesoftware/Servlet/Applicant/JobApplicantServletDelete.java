@@ -32,7 +32,7 @@ public class JobApplicantServletDelete extends HttpServlet {
                 userDaoLocal.setJobApplicantDeafult(username);
                 request.setAttribute("message", "Successful!");
             }else{
-                request.setAttribute("message", "Failed!");
+//                request.setAttribute("message", "Failed!");
             }
 
             request.setAttribute("jobList", jobDaoLocal.getAllJobs());

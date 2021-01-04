@@ -32,7 +32,7 @@ public class JobApplicantServletAdd extends HttpServlet {
                 userDaoLocal.confirmJob(username);
                 request.setAttribute("message", "Job added!");
             } else {
-                request.setAttribute("message", "Job added!");
+//                request.setAttribute("message", "Job added!");
             }
 
             request.setAttribute("jobList", jobDaoLocal.getAllJobs());

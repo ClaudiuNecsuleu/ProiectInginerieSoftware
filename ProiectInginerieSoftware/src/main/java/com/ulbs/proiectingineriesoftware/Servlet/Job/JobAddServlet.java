@@ -64,7 +64,7 @@ public class JobAddServlet extends HttpServlet {
                 }
                 
             } else{
-            request.setAttribute("message", "Failed!");
+//            request.setAttribute("message", "Failed!");
             }
 
             request.setAttribute("job", job);

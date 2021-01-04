@@ -37,7 +37,7 @@ public class JobApplicantServletAplica extends HttpServlet {
                  request.setAttribute("message", "Successful!");               
             } 
             else{
-             request.setAttribute("message", "Failed!");
+//             request.setAttribute("message", "Failed!");
             }
             
             request.setAttribute("jobList", jobDaoLocal.getAllJobs());

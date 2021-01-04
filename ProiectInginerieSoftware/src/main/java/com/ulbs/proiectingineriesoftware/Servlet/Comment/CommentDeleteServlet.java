@@ -32,7 +32,7 @@ public class CommentDeleteServlet extends HttpServlet {
                 commentDaoLocal.deleteComment(commentID);
                 request.setAttribute("message", "Successful!");
             } else {
-                request.setAttribute("message", "Failed!");
+//                request.setAttribute("message", "Failed!");
             }
             request.setAttribute("commentID", commentID);
         }

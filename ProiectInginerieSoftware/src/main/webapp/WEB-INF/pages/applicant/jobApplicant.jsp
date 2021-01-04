@@ -8,7 +8,9 @@
     <div class="center">
         <form>
             <h2>Applicant</h2>
-            <c:if test="${pageContext.request.isUserInRole('UserRole')}">
+            <c:if test="${pageContext.request.isUserInRole('UserRole')&&!pageContext.request.isUserInRole('AdminRole')&&
+                          !pageContext.request.isUserInRole('DirDepRole')&&!pageContext.request.isUserInRole('DirGenRole')&&
+                          !pageContext.request.isUserInRole('DirHrRole')&&!pageContext.request.isUserInRole('RecruiterRole')}">
                 <a href="JobApplicantServletAplica"><button class="btn" type="button">Aplica</button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')}">

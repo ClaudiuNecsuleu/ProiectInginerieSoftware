@@ -66,7 +66,7 @@ public class JobApplicantServletChoose extends HttpServlet {
            SendEmail.send(user.getMail(), "Tocmai ai fost recomandat!", "Salut "+user.getUsername()+ " ,tocmai ai fosr repartizat de recruiterul nostru, "+recruiterName+".Iti dorim mult succes in urmatoarea repartitie,cu drag abc.dll !","abc12dll@gmail.com", "firmasoftwareabc12DLL");
 
         } else {
-            request.setAttribute("message", "Failed!");
+//            request.setAttribute("message", "Failed!");
         }
 
         request.setAttribute("jobList", jobDaoLocal.getAllJobs());
