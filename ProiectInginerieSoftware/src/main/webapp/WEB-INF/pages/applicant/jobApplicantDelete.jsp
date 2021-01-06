@@ -27,6 +27,8 @@
             </c:forEach>
             </select>     
             <button type="submit" class="btn3" name="action" value="SelectDeleteJob">Sterge</button> 
+        <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+
         </form>
         <c:if test="${message != null}">
             <div class="alert alert-warning" role="alert">

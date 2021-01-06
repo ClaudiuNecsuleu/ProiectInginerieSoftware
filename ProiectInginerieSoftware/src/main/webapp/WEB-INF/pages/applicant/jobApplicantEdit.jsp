@@ -7,7 +7,7 @@
     <div class="center">
         <h2>Job Applicant</h2>
         <form action="./JobApplicantServletEdit" method="POST">
-       
+          <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
         </form>
     </div>
     <div class="centerapadd1">

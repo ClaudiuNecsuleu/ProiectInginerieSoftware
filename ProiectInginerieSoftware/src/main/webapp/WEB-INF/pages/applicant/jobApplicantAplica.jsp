@@ -26,7 +26,9 @@
                 </c:if>
                 <button type="submit" class="btn3" name="action" value="Add">Aplica</button>  
                 <button type="submit" class="btn3" name="action" value="Def">Elimina aplicarea</button>  
-                <br>
+                
+           <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+              <br>
             </form>
         </div>
         <div class="centeraplica">

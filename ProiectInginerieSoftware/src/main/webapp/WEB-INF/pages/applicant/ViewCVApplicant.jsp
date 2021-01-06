@@ -24,7 +24,7 @@
                     </c:if>
                 </c:forEach>
 
-
+             <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
                 <br><br>
             </form>
         </div>

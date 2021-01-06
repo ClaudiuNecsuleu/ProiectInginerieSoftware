@@ -25,7 +25,9 @@
                 </div>   
             </c:if>
             <button type="submit" class="btn3" name="action" value="Select">Alege</button> 
-            <br><br>
+           
+         <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+          <br><br>
         </form>
     </div>
     <div class="centerapadd1">

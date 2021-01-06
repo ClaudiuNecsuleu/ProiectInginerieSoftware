@@ -80,7 +80,7 @@
                                     <th>Date</th>
                                     <th>Time</th>
                                 </tr>
-                                <c:forEach items="${allComments}" var="comment">
+                                <c:forEach items="${job.getCommentsList()}" var="comment">
                                     <c:if test="${comment.job.getJobname()!=null}">
                                         <tr>
                                             <td>${comment.comment}</td>
