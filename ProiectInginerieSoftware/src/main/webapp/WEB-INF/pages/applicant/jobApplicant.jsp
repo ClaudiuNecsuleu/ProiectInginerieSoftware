@@ -22,9 +22,9 @@
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')}">
                 <a href="JobApplicantServletDelete"><button class="btn" type="button">DeleteApplicant</button></a>
             </c:if>
-            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')}">
-                <a href="JobApplicantServletEdit"><button class="btn" type="button">EditApplicant</button></a>
-            </c:if>
+            <%--<c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')}">--%>
+                <!--<a href="JobApplicantServletEdit"><button class="btn" type="button">EditApplicant</button></a>-->
+            <%--</c:if>--%>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')}">
                 <a href="ViewCVApplicant"><button class="btn" type="button">View CV Applicant</button></a>
             </c:if>
