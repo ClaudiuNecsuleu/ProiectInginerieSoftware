@@ -8,11 +8,23 @@
     <div class="center">
         <h2>Comments Delete</h2>
         <form action="./CommentDeleteServlet" method="POST">
-            <label><strong>Delete comment:</strong></label>
-            <select  name="commentid" id="commentid"  required>
+            <label><strong>Delete comment for user:</strong></label>
+            <select  name="commentIdUser" id="commentIdUser">
+                    <option value="">comment</option>
+                <c:forEach var="comment" items="${allComments}" varStatus="status">
+                    <c:if test ="${comment.getUser()!=null}">
+                    <option value="${comment.commentid}">  ${comment.comment}</option>
+                    </c:if>
+                </c:forEach>
+            </select>
+            <br>
+            <label><strong>Delete comment for job:</strong></label>
+            <select  name="commentIdJob" id="commentIdJob" >
                 <option value="">comment</option>
                 <c:forEach var="comment" items="${allComments}" varStatus="status">
+                    <c:if test ="${comment.getJob()!=null}">
                     <option value="${comment.commentid}">  ${comment.comment}</option>
+                    </c:if>
                 </c:forEach>
             </select>
             <br>

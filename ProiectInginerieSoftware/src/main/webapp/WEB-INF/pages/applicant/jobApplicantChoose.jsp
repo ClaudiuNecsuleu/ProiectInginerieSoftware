@@ -22,7 +22,9 @@
                                 </div>   
                             </c:if>
                             <button type="submit" class="btn3" name="username" value="${user.username}">Recomanda</button> 
+                            </form>
                             <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button>ViewCV</button>  </a>
+                            
                             <br>         
                         </d:if>
                     </c:if>
@@ -31,7 +33,7 @@
                  <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
 
                 <br><br>
-            </form>
+            
         </div>
         <div class="centerapach1">
             <form>

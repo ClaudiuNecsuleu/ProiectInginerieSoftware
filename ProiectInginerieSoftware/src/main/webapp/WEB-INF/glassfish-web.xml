@@ -17,7 +17,6 @@
   <security-role-mapping>
     <role-name>DirGenRole</role-name>
     <group-name>DIRGEN</group-name>
-    <group-name>ADMIN</group-name>
   </security-role-mapping>
   <security-role-mapping>
     <role-name>DirHrRole</role-name>

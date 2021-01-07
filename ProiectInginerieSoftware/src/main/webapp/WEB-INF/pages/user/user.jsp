@@ -6,16 +6,16 @@
     <div class="center">
         <form>
             <h2>Users</h2>
-            <c:if test="${pageContext.request.isUserInRole('DirGenRole')}">
+            <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
                 <a href="UserAddServlet"><button class="btn" type="button">Add</button></a>
             </c:if>
-            <c:if test="${pageContext.request.isUserInRole('DirGenRole')}">
+            <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
                 <a href="UserEditServlet"><button class="btn" type="button">Edit</button></a>
             </c:if>
-            <c:if test="${pageContext.request.isUserInRole('DirGenRole')}">
+            <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
                 <a href="UserDeleteServlet"><button class="btn" type="button">Delete</button></a>
             </c:if>
-            <c:if test="${pageContext.request.isUserInRole('DirGenRole')}">
+            <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
                 <a href="UserFindServlet"><button class="btn" type="button">Search</button></a>
             </c:if>
 

@@ -58,17 +58,17 @@ public class JobApplicantServletChoose extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String recruiterName = request.getParameter("recruiterName");
+        if (username != null) {
+            userDaoLocal.recomandaUser(username, recruiterName);
+            User user = userDaoLocal.getUserByUsername(username);
+            if (user.getRecomandare().equals(recruiterName)) {
+                request.setAttribute("message", "Successful!");
+                SendEmail.send(user.getMail(), "Tocmai ai fost recomandat!", "Salut " + user.getUsername() + " ,tocmai ai fosr repartizat de recruiterul nostru, " + recruiterName + ".Iti dorim mult succes in urmatoarea repartitie,cu drag abc.dll !", "abc12dll@gmail.com", "firmasoftwareabc12DLL");
 
-        userDaoLocal.recomandaUser(username, recruiterName);
-        User user = userDaoLocal.getUserByUsername(username);
-        if (user.getRecomandare().equals(recruiterName)) {
-            request.setAttribute("message", "Successful!");
-           SendEmail.send(user.getMail(), "Tocmai ai fost recomandat!", "Salut "+user.getUsername()+ " ,tocmai ai fosr repartizat de recruiterul nostru, "+recruiterName+".Iti dorim mult succes in urmatoarea repartitie,cu drag abc.dll !","abc12dll@gmail.com", "firmasoftwareabc12DLL");
-
-        } else {
+            } else {
 //            request.setAttribute("message", "Failed!");
+            }
         }
-
         request.setAttribute("jobList", jobDaoLocal.getAllJobs());
         request.setAttribute("userList", userDaoLocal.getAllUsers());
         request.getRequestDispatcher("/WEB-INF/pages/applicant/jobApplicantChoose.jsp").forward(request, response);

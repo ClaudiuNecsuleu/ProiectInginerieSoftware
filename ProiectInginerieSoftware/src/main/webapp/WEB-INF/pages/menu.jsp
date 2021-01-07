@@ -36,7 +36,7 @@
 
         <c:choose>
             <c:when test="${pageContext.request.getRemoteUser() != null}">
-                <c:if test="${pageContext.request.isUserInRole('DirGenRole')}">
+                <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
                     <li ${activePage eq 'UserServlet' ? ' active' : ''}>
                         <a  href="${pageContext.request.contextPath}/UserServlet">User</a>
                     </li>
@@ -56,7 +56,7 @@
 
         <c:choose>
             <c:when test="${pageContext.request.getRemoteUser() != null}">
-                <c:if test="${pageContext.request.isUserInRole('UserRole')}">
+                <c:if test="${pageContext.request.isUserInRole('UserRole')&&!pageContext.request.isUserInRole('DirGenRole')}">
                     <li ${activePage eq 'JobApplicantServlet' ? ' active' : ''}>
                         <a  href="${pageContext.request.contextPath}/JobApplicantServlet">Applicant</a>
                     </li>

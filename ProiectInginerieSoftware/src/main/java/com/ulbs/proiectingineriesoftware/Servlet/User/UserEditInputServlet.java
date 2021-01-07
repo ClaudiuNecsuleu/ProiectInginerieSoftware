@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"DirGenRole"}))
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"DirGenRole","AdminRole"}))
 @WebServlet(name = "UserEditInputServlet", urlPatterns = {"/UserEditInputServlet"})
 public class UserEditInputServlet extends HttpServlet {
 

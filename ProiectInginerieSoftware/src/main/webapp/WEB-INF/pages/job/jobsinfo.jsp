@@ -15,10 +15,10 @@
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
             <a href="JobEditServlet"><button class="btn" type="button">Edit</button></a>
             </c:if>
-            <c:if test="${pageContext.request.isUserInRole('DirGenRole')}">
+            <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
             <a href="JobDeleteServlet"><button class="btn" type="button">Delete</button></a>
             </c:if>
-            <c:if test="${pageContext.request.isUserInRole('DirGenRole')}">
+            <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
             <a href="JobAprobaServlet"><button class="btn" type="button">Aprobare</button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('UserRole')}">
