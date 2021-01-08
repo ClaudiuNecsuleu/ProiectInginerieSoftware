@@ -23,10 +23,15 @@ public class CommentDeleteServlet extends HttpServlet {
         if (request != null) {
             String action = request.getParameter("action");
 
-            String commentIDStr = request.getParameter("commentid");
+            String commentIDStr = request.getParameter("commentIdUser");
             int commentID = 0;
             if (commentIDStr != null && !commentIDStr.equals("")) {
                 commentID = Integer.parseInt(commentIDStr);
+            }
+            String commentIDStr1 = request.getParameter("commentIdJob");
+            
+            if (commentIDStr1 != null && !commentIDStr1.equals("")) {
+                commentID = Integer.parseInt(commentIDStr1);
             }
             if ("Delete".equalsIgnoreCase(action)) {
                 commentDaoLocal.deleteComment(commentID);
