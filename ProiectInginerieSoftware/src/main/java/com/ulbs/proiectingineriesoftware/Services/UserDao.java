@@ -458,7 +458,7 @@ public class UserDao implements UserDaoLocal {
             User getUser = user.get(0);
             if (getUser != null) {
                 getUser.setJobApplicant(null);
-                getUser.setFunctia("Fara");
+               // getUser.setFunctia("Fara");
                 entityManager.merge(getUser);
             }
 

@@ -27,17 +27,11 @@ public class JobApplicantServletEdit extends HttpServlet {
             String action = request.getParameter("action");
             
             String username = request.getParameter("username");
-            String deleteApp = request.getParameter("deleteApp");
-            String deleteJob = request.getParameter("deleteJob");
+            
             
               if ("Select".equalsIgnoreCase(action)) {
                 userDaoLocal.confirmJob(username);
                 
-            } else if ("SelectDelete".equalsIgnoreCase(action)) {
-                userDaoLocal.setJobApplicantDeafult(deleteApp);
-                
-            } else if ("SelectDeleteJob".equalsIgnoreCase(action)) {
-                jobDaoLocal.deleteUserFromJob(deleteJob);
             }
             
             request.setAttribute("jobList", jobDaoLocal.getAllJobs());

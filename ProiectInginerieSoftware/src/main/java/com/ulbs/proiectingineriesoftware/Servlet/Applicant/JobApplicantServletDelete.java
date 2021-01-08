@@ -27,12 +27,17 @@ public class JobApplicantServletDelete extends HttpServlet {
             String action = request.getParameter("action");
 
             String username = request.getParameter("username");
+            String deleteApp = request.getParameter("deleteApp");
+            String deleteJob = request.getParameter("deleteJob");
 
             if ("Def".equalsIgnoreCase(action)) {
                 userDaoLocal.setJobApplicantDeafult(username);
                 request.setAttribute("message", "Successful!");
-            }else{
-//                request.setAttribute("message", "Failed!");
+            }else if ("SelectDelete".equalsIgnoreCase(action)) {
+                userDaoLocal.setJobApplicantDeafult(deleteApp);
+                
+            } else if ("SelectDeleteJob".equalsIgnoreCase(action)) {
+                jobDaoLocal.deleteUserFromJob(deleteJob);
             }
 
             request.setAttribute("jobList", jobDaoLocal.getAllJobs());
