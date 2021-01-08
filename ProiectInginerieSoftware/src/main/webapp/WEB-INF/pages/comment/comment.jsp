@@ -15,7 +15,10 @@
                 <a href="CommentJobServlet"><button class="btn3" type="button">AddToJob</button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
-                <a href="CommentEditServlet"><button class="btn3" type="button">Edit</button></a>
+                <a href="CommentEditUserRedirectServlet"><button class="btn3" type="button">Edit for user</button></a>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
+                <a href="CommentEditJobRedirectServlet"><button class="btn3" type="button">Edit for job</button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
                 <a href="CommentDeleteServlet"><button class="btn3" type="button">Delete</button></a>

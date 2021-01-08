@@ -222,7 +222,7 @@ public class CommentDao implements CommentDaoLocal {
             User getUser = usersList.get(0);
 
             return getUser.getCommentsList();
-
+            
         } catch (Exception e) {
             throw new EJBException(e);
         }
@@ -244,11 +244,12 @@ public class CommentDao implements CommentDaoLocal {
                 getComment.setTime(comments.getTime());
 
                 User user = getComment.getUser();
-
-                user.getCommentsList().remove(getComment);        //stergem commentul vechi
-                user.addCommentsToList(getComment);               //adaugam pe cel nou
+                if (user != null) {
+                    user.getCommentsList().remove(getComment);        //stergem commentul vechi
+                    user.addCommentsToList(getComment);               //adaugam pe cel nou
+                    entityManager.merge(user);
+                }
                 entityManager.merge(getComment);                  //efectuam update-urile
-                entityManager.merge(user);
 
             }
         } catch (Exception e) {
