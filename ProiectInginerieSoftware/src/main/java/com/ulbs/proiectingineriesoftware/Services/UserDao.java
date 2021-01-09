@@ -363,6 +363,7 @@ public class UserDao implements UserDaoLocal {
 
         try {
             if (getUser != null) {
+                 
                 if (existsRoleWithName(role.getRolename())) { //daca exista rolul in bd    
                     Query qr = entityManager.createQuery("select u from Role u where u.rolename = :rolename");
                     qr.setParameter("rolename", role.getRolename());
@@ -371,11 +372,38 @@ public class UserDao implements UserDaoLocal {
                     Role getRole = roles.get(0);
                     getRole.addUserToRole(getUser);//se adauga userul la lista cu roluri
                     getUser.setRole(getRole);//se seteaza rolul userului
+                    switch(getRole.getRoleid()){
+                        case 1:{
+                        getUser.setFunctia("ADMIN");
+                        break;
+                        }
+                        case 2: { 
+                        getUser.setFunctia("DIRGEN"); 
+                        break;
+                        }
+                        case 3:{ 
+                        getUser.setFunctia("DIRHR");
+                        break;
+                        }
+                        case 4:{
+                        getUser.setFunctia("DIRDEP");
+                        break;
+                        }
+                        case 5:{
+                        getUser.setFunctia("RECRUITER");
+                        break;
+                        }
+                        case 6:{
+                        getUser.setFunctia("USER");
+                        break;
+                        }
+                    }
                     entityManager.merge(getRole);//se updateaza rolul in bd
                 } else {//daca nu exista rolul in bd
                     addRole(role);//se adauga in bd               
                     role.addUserToRole(getUser);//se adauga userul la lista cu roluri
-                    getUser.setRole(role);//se seteaza rolul userului
+                    getUser.setRole(role);//se seteaza rolul userului            
+                    getUser.setFunctia(role.getRolename());//se seteaza functia userului
                 }
                 entityManager.merge(getUser);//se updateaza userul in bd
             }
