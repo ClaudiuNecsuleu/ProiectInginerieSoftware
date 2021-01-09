@@ -372,32 +372,8 @@ public class UserDao implements UserDaoLocal {
                     Role getRole = roles.get(0);
                     getRole.addUserToRole(getUser);//se adauga userul la lista cu roluri
                     getUser.setRole(getRole);//se seteaza rolul userului
-                    switch(getRole.getRoleid()){
-                        case 1:{
-                        getUser.setFunctia("ADMIN");
-                        break;
-                        }
-                        case 2: { 
-                        getUser.setFunctia("DIRGEN"); 
-                        break;
-                        }
-                        case 3:{ 
-                        getUser.setFunctia("DIRHR");
-                        break;
-                        }
-                        case 4:{
-                        getUser.setFunctia("DIRDEP");
-                        break;
-                        }
-                        case 5:{
-                        getUser.setFunctia("RECRUITER");
-                        break;
-                        }
-                        case 6:{
-                        getUser.setFunctia("USER");
-                        break;
-                        }
-                    }
+                    getUser.setFunctia(getRole.getRolename());
+                   
                     entityManager.merge(getRole);//se updateaza rolul in bd
                 } else {//daca nu exista rolul in bd
                     addRole(role);//se adauga in bd               
