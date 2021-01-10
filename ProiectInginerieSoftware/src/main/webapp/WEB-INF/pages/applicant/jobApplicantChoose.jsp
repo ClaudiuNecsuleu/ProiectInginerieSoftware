@@ -22,21 +22,23 @@
                                 </div>   
                             </c:if>
                             <button type="submit" class="btn3" name="username" value="${user.username}">Recomanda</button> 
-                            </form>
-                            <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button>ViewCV</button>  </a>
-                            
-                            <br>         
-                        </d:if>
-                    </c:if>
-                </c:forEach>
+                        </form>
+                        <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button>ViewCV</button>  </a>
 
-                 <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+                        <br>         
+                    </d:if>
+                </c:if>
+            </c:forEach>
 
-                <br><br>
-            
+            <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+
+            <br>
+
         </div>
-        <div class="centerapach1">
+
+        <div class="centerapch1">
             <form>
+
                 <br>
                 <p><strong>All user applicant:</strong></p>
                 <table>
@@ -55,6 +57,7 @@
                 </table>
                 <br>
             </form>
+
         </div>
 
 

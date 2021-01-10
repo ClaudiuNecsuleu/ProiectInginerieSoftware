@@ -9,8 +9,12 @@
     <div class="about-section">
         <h1>About Us Page</h1>
         <center>
-            <p><strong>Some text about who we are and what we do.</strong></p>
-            <p><strong>Resize the browser window to see that this page is responsive by the way.</strong></p>
+            <p><center><strong>Suntem echipa ULBS12 ABC.DLL,suntem o echipa muncitoare si unita care s-a straduit in realizarea acestui proiect.</strong></center><p>
+            <p><strong><a href="https://docs.google.com/document/d/1TpUNnOcEc6ybwSvgsg2Xp98nsHsJoNJu/edit">Documentatie</a></strong></p>
+            <br>
+            <p><strong>Pentru comunicare si pentru realizarea proiectului ne-am folosit de:</strong></p>
+            <p><strong><a href="https://trello.com/b/rmUsWc5v/proiect-inginerie-software">Trello</a></strong></p>
+            <p><strong><a href="https://github.com/ClaudiuNecsuleu/ProiectInginerieSoftware/commits/main">GitHub</a></strong></p>
         </center>
     </div>
     <h2 style="text-align:center">Our Team</h2>
@@ -18,7 +22,7 @@
         <div class="card">
             <center>
                 <br>
-                <img src="clau.jpg" alt="Clau" width="80px" height="100px">
+                <img src="clau.jpg" alt="Clau" width="100px" height="100px">
             </center>
             <div class="container">
                 <center>
@@ -36,7 +40,7 @@
         <div class="card">
             <center>
                 <br>
-                <img src="alex.jpg" alt="Alex" width="80px" height="100px">
+                <img src="alex.jpg" alt="Alex" width="100px" height="100px">
             </center>
             <div class="container">
                 <center>
@@ -54,7 +58,7 @@
         <div class="card">
             <center>
                 <br>
-                <img src="bobo.jpg" alt="Bobo" width="80px" height="100px">
+                <img src="bobo.jpg" alt="Bobo" width="100px" height="100px">
             </center>
             <div class="container">
                 <center>
@@ -73,7 +77,7 @@
         <div class="card">
             <center>
                 <br>
-                <img src="larisa.jpg" alt="Larisa" width="80px" height="100px">
+                <img src="larisa.jpg" alt="Larisa" width="100px" height="100px">
             </center>
             <div class="container">
                 <center>
@@ -91,7 +95,7 @@
         <div class="card">
             <center>
                 <br>
-                <img src="dani.jpg" alt="Dani" width="80px" height="100px">
+                <img src="dani.jpg" alt="Dani" width="100px" height="100px">
             </center>
             <div class="container">
                 <center>
@@ -109,7 +113,7 @@
         <div class="card">
             <center>
                 <br>
-                <img src="leo.jpg" alt="Leo" width="80px" height="100px">
+                <img src="leo.jpg" alt="Leo" width="100px" height="100px">
             </center>
             <div class="container">
                 <center>

@@ -9,7 +9,7 @@
 
 
     <h1>Salut, ${user.getName()} ${user.getPrenume()} !</h1>
-            <center> ${user.getDescriere()}</center>
+         
     <div class="centerprof">
         <form>
             <br><br>
@@ -57,28 +57,33 @@
                 <br>
 
 
-            <a href="RedirectUploadFile"><button class="btn" type="button">Upload CV</button></a>
+            <a href="RedirectUploadFile"><button class="btn2" type="button">Upload CV</button></a>
         </form>
-        <div class="circular">
-            <center>
-                <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="100" height="100"/>
-
-            </center>
-           
-        </div>
+        
+                 
         
                 
 
         <form action="./ProfileRedirectEdit" method="POST">
             <input type="hidden" name="username" value="${name}" >
-            <button class="btn" type="submit">Profile Edit</button>
+            <button class="btn2" type="submit">Profile Edit</button>
         </form>
             <form>
-        <a href="ChangePhoto"><button class="btn" type="button">Change photo</button></a>
-        <a href="ChangePassword"><button class="btn" type="button">Change password</button></a>
+        <a href="ChangePhoto"><button class="btn2" type="button">Change photo</button></a>
+        <a href="ChangePassword"><button class="btn2" type="button">Change password</button></a>
         <br><br>
             </form>
     </div>
+            <div class="circular">
+            <center>
+                <img src="${pageContext.request.contextPath}/Photo?id=${user.getUserid()}" width="100" height="100"/>
+
+            </center>
+              
+        </div>
+                 <div class="descriere">
+                     ${user.getDescriere()}
+                </div>
     <br><br>
     <div class="centerprofc2">
         <form>

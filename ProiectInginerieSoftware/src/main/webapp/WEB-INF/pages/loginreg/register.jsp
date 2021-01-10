@@ -15,7 +15,7 @@
             <div>
                 <div>
                     <label for="file">Photo</label>
-                    <input type="file" name="file" required>                      
+                    <input type="file" class="custom-file-input" name="file" required>                      
                 </div>
             </div>
             <c:if test="${message != null}">

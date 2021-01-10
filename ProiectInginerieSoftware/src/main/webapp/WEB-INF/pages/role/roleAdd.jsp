@@ -11,6 +11,7 @@
 
                     <button type="submit" class="btn3"  name="action" value="AddRole" required>Adauga</button>
                     <a href="RoleServlet"><button class="btn3" type="button">Back</button></a>
+                    <br>
                 </form>
                       </div>
                     <br><br>

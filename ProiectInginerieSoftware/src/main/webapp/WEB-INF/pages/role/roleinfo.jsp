@@ -5,12 +5,12 @@
 
 
 <t:pageTemplate pageTitle="RoleInfo">
-            <div class="comm">
+            <div class="center">
                 <form>
                     <h2>Role List</h2>
-                    <a href="RoleAddServlet"><button class="btn3" type="button">Add</button></a>
-                    <a href="RoleDeleteServlet"><button class="btn3" type="button">Delete role</button></a>
-                    <a href="RoleAddUserServlet"><button class="btn3" type="button">AddUserRole</button></a>
+                    <a href="RoleAddServlet"><button class="btn" type="button">Add</button></a>
+                    <a href="RoleDeleteServlet"><button class="btn" type="button">Delete role</button></a>
+                    <a href="RoleAddUserServlet"><button class="btn" type="button">AddUserRole</button></a>
                     <br><br>
                 </form>
             </div>
