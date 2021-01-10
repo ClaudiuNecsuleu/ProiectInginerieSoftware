@@ -140,7 +140,7 @@ public class RegisterServlet extends HttpServlet {
             userDaoLocal.addUser(user);
             if (userDaoLocal.existsUserWithUsername(user.getUsername())) {
                 userDaoLocal.setUserPhoto(user, photo);
-                Role role = new Role("Viewer");
+                Role role = new Role("USER");
                 userDaoLocal.addRoleToUser(role, user.getUsername());
                 status = "Successful register!" ;
                 SendEmail.send(mail, "Inregistrare abc.dll", "Salut "+user.getUsername()+ " ,ne bucuram ca ai ales site-ul nostru ! .Parola ta este: "+password+".","abc12dll@gmail.com", "firmasoftwareabc12DLL");

@@ -441,7 +441,7 @@ public class UserDao implements UserDaoLocal {
             if (!users.isEmpty()) {
                 for (User user : users) {
                     if (user.getRole().getRolename().equals(roleName)) {
-                        user.setRole(getRole("Viewer"));
+                        user.setRole(getRole("User"));
                         entityManager.merge(user);
                     }
                 }
@@ -496,7 +496,7 @@ public class UserDao implements UserDaoLocal {
 
                     user.setJob(job);
                     user.setJobApplicant(null);
-                    user.setFunctia(job.getJobname());
+                   // user.setFunctia(job.getJobname());
 
                     List<User> users1;
 
@@ -532,7 +532,7 @@ public class UserDao implements UserDaoLocal {
                 for (User user : users) {
                     if (user.getJobApplicant() == job) {
 
-                        user.setFunctia("Fara functie");
+                      //  user.setFunctia("Fara functie");
                         user.setJobApplicant(null);
 
                         entityManager.merge(user);
