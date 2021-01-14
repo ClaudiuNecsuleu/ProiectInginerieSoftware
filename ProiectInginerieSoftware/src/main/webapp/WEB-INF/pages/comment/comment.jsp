@@ -6,22 +6,22 @@
 <t:pageTemplate pageTitle="Comment">
 
     <div class="center">
-        <h2>Comments</h2>
+        <h2><fmt:message key="Comments"/></h2>
         <form action="./CommentServlet" method="POST">
             <c:if test="${pageContext.request.isUserInRole('UserRole')}">
-                <a href="CommentAddServlet"><button class="btn3" type="button">AddToUser</button></a>
+                <a href="CommentAddServlet"><button class="btn3" type="button"><fmt:message key="AddToUser"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('UserRole')}">
-                <a href="CommentJobServlet"><button class="btn3" type="button">AddToJob</button></a>
+                <a href="CommentJobServlet"><button class="btn3" type="button"><fmt:message key="AddToJob"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
-                <a href="CommentEditUserRedirectServlet"><button class="btn3" type="button">Edit for user</button></a>
+                <a href="CommentEditUserRedirectServlet"><button class="btn3" type="button"><fmt:message key="Edit for user"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
-                <a href="CommentEditJobRedirectServlet"><button class="btn3" type="button">Edit for job</button></a>
+                <a href="CommentEditJobRedirectServlet"><button class="btn3" type="button"><fmt:message key="Edit for job"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
-                <a href="CommentDeleteServlet"><button class="btn3" type="button">Delete</button></a>
+                <a href="CommentDeleteServlet"><button class="btn3" type="button"><fmt:message key="Delete"/></button></a>
             </c:if>
             <br><br>
         </form>
@@ -29,11 +29,11 @@
     <div class="centerc1">
         <br>
         <form>
-            <p ><strong>Comment for user</strong></p>
+            <p ><strong><fmt:message key="Comment for user"/></strong></p>
             <table> 
                 <tr>
-                    <th>Username</th>
-                    <th>CommentList</th>
+                    <th><fmt:message key="Username"/></th>
+                    <th><fmt:message key="CommentList"/></th>
                 </tr>
                 <d:forEach items="${allUsers}" var="user">
                     <tr>
@@ -41,9 +41,9 @@
                         <td>
                             <table> 
                                 <tr>
-                                    <th>Comment</th>
-                                    <th>Date</th>
-                                    <th>Time</th>
+                                    <th><fmt:message key="Comment"/></th>
+                                    <th><fmt:message key="Date"/></th>
+                                    <th><fmt:message key="Time"/></th>
                                 </tr>
                                 <c:forEach items="${user.getCommentsList()}" var="comment">
                                     <c:if test="${comment.user.getUsername()!=null}">
@@ -67,11 +67,11 @@
     <div class="centerc2">
         <br>
         <form>
-            <p><strong>Comment for job</strong></p>
+            <p><strong><fmt:message key="Comment for job"/></strong></p>
             <table>
                 <tr>
-                    <th>Jobname</th>
-                    <th>Comment list</th>
+                    <th><fmt:message key="Jobname"/></th>
+                        <th><fmt:message key="Comment list"/></th>
                 </tr>
                 <d:forEach items="${allJobs}" var="job">
                     <tr>
@@ -79,9 +79,9 @@
                         <td>
                             <table>
                                 <tr>
-                                    <th>Comment</th>
-                                    <th>Date</th>
-                                    <th>Time</th>
+                                    <th><fmt:message key="Comment"/></th>
+                                    <th><fmt:message key="Date"/></th>
+                                    <th><fmt:message key="Time"/></th>
                                 </tr>
                                 <c:forEach items="${job.getCommentsList()}" var="comment">
                                     <c:if test="${comment.job.getJobname()!=null}">

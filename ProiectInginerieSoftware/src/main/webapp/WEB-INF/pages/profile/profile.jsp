@@ -12,7 +12,7 @@
 
 
     <h1><fmt:message key="Salut"/>, ${user.getName()} ${user.getPrenume()} !</h1>
-            <center> ${user.getDescriere()}</center>
+           
 
     <div class="centerprof">
         <form>
