@@ -5,18 +5,18 @@
 
 <t:pageTemplate pageTitle="JobApplicant">
     <div class="center">
-        <h2>Job Applicant</h2>
+        <h2><fmt:message key="Job Applicant"/></h2>
         <form action="./JobApplicantServletEdit" method="POST">
-          <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+          <a href="JobApplicantServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
         </form>
     </div>
     <div class="centerapadd1">
         <form>
             <br>
-            <p><strong>All user applicant:</strong></p>
+            <p><strong><fmt:message key="All user applicant:"/></strong></p>
             <table>
-                <th>UserName</th>
-                <th>JobName</th>
+                <th><fmt:message key="UserName"/></th>
+                <th><fmt:message key="JobName"/></th>
                     <d:forEach items="${userList}" var="user">
                         <d:if test="${user.getJobApplicant() !=null}">
                         <tr>
@@ -32,10 +32,10 @@
     <div class="centerapadd2">
         <form>
             <br>
-            <p><strong>Job list:</strong></p>
+            <p><strong><fmt:message key="Job list:"/></strong></p>
             <table>
-                <th>UserName</th>
-                <th>JobName</th>
+                <th><fmt:message key="UserName"/></th>
+                <th><fmt:message key="JobName"/></th>
                     <d:forEach items="${jobList}" var="job">
                         <c:forEach items="${job.getUsersList()}" var="user">
                             <c:if test="${user.getJob()!=null}">

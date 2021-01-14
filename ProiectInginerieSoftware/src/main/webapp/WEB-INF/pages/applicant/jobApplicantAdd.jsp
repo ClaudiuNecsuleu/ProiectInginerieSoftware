@@ -7,14 +7,14 @@
 
     <div class="center">
 
-        <h2>Job Applicant</h2>
+        <h2><fmt:message key="Job Applicant"/></h2>
         <form action="./JobApplicantServletAdd" method="POST">
             <select name="username"  required/>
-            <option value="">Chose Applicant...</option>
+            <option value=""><fmt:message key="Chose Applicant..."/></option>
             <c:forEach var="user" items="${userList}" varStatus="status">
                 <c:if test="${user.getJobApplicant() != null}">
                     <d:if test="${user.getRecomandare() != null}">
-                    <option value="${user.username}"> ${user.username} ,recomandat de : ${user.getRecomandare()}</option>
+                    <option value="${user.username}"> ${user.username} ,<fmt:message key="recomandat de :"/> ${user.getRecomandare()}</option>
                       </d:if>
                 </c:if>
             </c:forEach>
@@ -24,19 +24,19 @@
                     ${message}
                 </div>   
             </c:if>
-            <button type="submit" class="btn3" name="action" value="Select">Alege</button> 
+            <button type="submit" class="btn3" name="action" value="Select"><fmt:message key="Alege"/></button> 
            
-         <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+         <a href="JobApplicantServlet"><button class="btn3" type="button"><fmt:message key="Back<"/></button></a>
           <br><br>
         </form>
     </div>
     <div class="centerapadd1">
         <form>
             <br>
-            <p><strong>All user applicant:</strong></p>
+            <p><strong><fmt:message key="All user applicant:"/></strong></p>
             <table>
-                <th>UserName</th>
-                <th>JobName</th>
+                <th><fmt:message key="UserName"/></th>
+                <th><fmt:message key="JobName"/></th>
 
                 <d:forEach items="${userList}" var="user">
                     <d:if test="${user.getJobApplicant() !=null}">

@@ -7,12 +7,12 @@
 <t:pageTemplate pageTitle="JobApplicant">
     <jsp:body>
         <div class="center">
-            <h2>Job Applicant</h2>
+            <h2><fmt:message key="Job Applicant"/></h2>
             <form action="./JobApplicantServletAplica" method="POST">
                 <input type="hidden" name="username" id="ts"  value="${name}">
                 <br>
                 <select name="jobname"/>
-                <option value="">Chose Job...</option>
+                <option value=""><fmt:message key="Chose Job..."/></option>
                 <c:forEach var="job" items="${jobList}" varStatus="status">
                     <d:if test="${job.getStatus()!=null}">
                         <option value="${job.jobname}"> ${job.jobname}</option>
@@ -24,19 +24,19 @@
                         ${message}
                     </div>   
                 </c:if>
-                <button type="submit" class="btn3" name="action" value="Add">Aplica</button>  
-                <button type="submit" class="btn3" name="action" value="Def">Elimina aplicarea</button>  
+                <button type="submit" class="btn3" name="action" value="Add"><fmt:message key="Aplica"/></button>  
+                <button type="submit" class="btn3" name="action" value="Def"><fmt:message key="Elimina aplicarea"/></button>  
                 
-           <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+           <a href="JobApplicantServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
               <br>
             </form>
         </div>
         <div class="centeraplica">
             <form>
-                <p>All user applicant:</p>
+                <p><fmt:message key="All user applicant:"/></p>
                 <table>
-                    <th>UserName</th>
-                    <th>JobName</th>
+                    <th><fmt:message key="UserName"/></th>
+                    <th><fmt:message key="JobName"/></th>
 
                     <d:forEach items="${userList}" var="user">
                         <d:if test="${user.getJobApplicant() !=null}">

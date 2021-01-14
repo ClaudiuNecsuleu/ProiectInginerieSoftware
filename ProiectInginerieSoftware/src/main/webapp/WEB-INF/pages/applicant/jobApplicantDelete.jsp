@@ -5,29 +5,29 @@
 
 <t:pageTemplate pageTitle="JobApplicant">
     <div class="center">
-        <h2>Job Applicant</h2>
+        <h2><fmt:message key="Job Applicant"/></h2>
         <form action="./JobApplicantServletDelete" method="POST">
 
             <select name="deleteApp" />
-            <option value="">Chose Applicant for delete...</option>
+            <option value=""><fmt:message key="Chose Applicant for delete..."/></option>
             <c:forEach var="user" items="${userList}" varStatus="status">
                 <c:if test="${user.getJobApplicant() != null}">
                     <option value="${user.username}"> ${user.username}</option>
                 </c:if>
             </c:forEach>
             </select>     
-            <button type="submit" class="btn3" name="action" value="SelectDelete">Sterge</button> 
+            <button type="submit" class="btn3" name="action" value="SelectDelete"><fmt:message key="Sterge"/></button> 
             <br>
             <select name="deleteJob" />
-            <option value="">Chose user for delete from job</option>
+            <option value=""><fmt:message key="Chose user for delete from job"/></option>
             <c:forEach var="user" items="${userList}" varStatus="status">
                 <c:if test="${user.getJob() != null}">
                     <option value="${user.username}"> ${user.username}</option>
                 </c:if>
             </c:forEach>
             </select>     
-            <button type="submit" class="btn3" name="action" value="SelectDeleteJob">Sterge</button> 
-        <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+            <button type="submit" class="btn3" name="action" value="SelectDeleteJob"><fmt:message key="Sterge"/></button> 
+        <a href="JobApplicantServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
 
         </form>
         <c:if test="${message != null}">
@@ -39,10 +39,10 @@
     <div class="centerapadd1">
         <form>
             <br>
-            <p><strong>All user applicant:</strong></p>
+            <p><strong><fmt:message key="All user applicant:"/></strong></p>
             <table>
-                <th>UserName</th>
-                <th>JobName</th>
+                <th><fmt:message key="UserName"/></th>
+                <th><fmt:message key="JobName"/></th>
                     <d:forEach items="${userList}" var="user">
                         <d:if test="${user.getJobApplicant() !=null}">
                         <tr>
@@ -58,10 +58,10 @@
     <div class="centerapadd2">
         <form>
             <br>
-            <p><strong>Job list:</strong></p>
+            <p><strong><fmt:message key="Job list:"/></strong></p>
             <table>
-                <th>UserName</th>
-                <th>JobName</th>
+                <th><fmt:message key="UserName"/></th>
+                <th><fmt:message key="JobName"/></th>
                     <d:forEach items="${jobList}" var="job">
                         <c:forEach items="${job.getUsersList()}" var="user">
                             <c:if test="${user.getJob()!=null}">

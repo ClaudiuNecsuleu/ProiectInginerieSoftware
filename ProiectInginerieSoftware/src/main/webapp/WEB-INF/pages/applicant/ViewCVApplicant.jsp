@@ -9,22 +9,22 @@
     <jsp:body>
         <div class="center">
 
-            <h2>Job Applicant</h2>
+            <h2><fmt:message key="Job Applicant"/></h2>
             <form action="./ViewCVApplicant" method="POST">
 
                 <c:forEach var="user" items="${userList}" varStatus="status">
                     <c:if test="${user.getJobApplicant() != null}">
                         <d:if test="${user.getRecomandare() != null}">
                             <e:if test="${user.getFile() != null}">
-                                <label>User: ${user.username} , CV: ${user.getFile().getFilename()} </label>
-                                <button type="submit" class="btn3" name="username" value="${user.username}">View</button> 
+                                <label><fmt:message key="User:"/> ${user.username} , CV: ${user.getFile().getFilename()} </label>
+                                <button type="submit" class="btn3" name="username" value="${user.username}"><fmt:message key="View"/></button> 
                                 <br>
                             </e:if>
                         </d:if>
                     </c:if>
                 </c:forEach>
 
-             <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+             <a href="JobApplicantServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
                 <br><br>
             </form>
         </div>

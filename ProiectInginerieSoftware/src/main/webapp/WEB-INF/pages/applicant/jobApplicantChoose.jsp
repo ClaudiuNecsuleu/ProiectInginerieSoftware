@@ -8,7 +8,7 @@
     <jsp:body>
         <div class="center">
 
-            <h2>Job Applicant</h2>
+            <h2><fmt:message key="Job Applicant"/></h2>
             <form action="./JobApplicantServletChoose" method="POST">
 
                 <c:forEach var="user" items="${userList}" varStatus="status">
@@ -21,16 +21,16 @@
                                     ${message}
                                 </div>   
                             </c:if>
-                            <button type="submit" class="btn3" name="username" value="${user.username}">Recomanda</button> 
+                            <button type="submit" class="btn3" name="username" value="${user.username}"><fmt:message key="Recomanda"/></button> 
                         </form>
-                        <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button>ViewCV</button>  </a>
+                        <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button><fmt:message key="ViewCV"/></button>  </a>
 
                         <br>         
                     </d:if>
                 </c:if>
             </c:forEach>
 
-            <a href="JobApplicantServlet"><button class="btn3" type="button">Back</button></a>
+            <a href="JobApplicantServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
 
             <br>
 
@@ -40,10 +40,10 @@
             <form>
 
                 <br>
-                <p><strong>All user applicant:</strong></p>
+                <p><strong><fmt:message key="All user applicant:"/></strong></p>
                 <table>
-                    <th>UserName</th>
-                    <th>JobName</th>
+                    <th><fmt:message key="UserName"/></th>
+                    <th><fmt:message key="JobName"/></th>
 
                     <d:forEach items="${userList}" var="user">
                         <d:if test="${user.getJobApplicant() !=null}">
@@ -64,10 +64,10 @@
         <div class="centerapach2">
             <form>
                 <br>
-                <p><strong>Job list:</strong></p>
+                <p><strong><fmt:message key="Job list:"/></strong></p>
                 <table>
-                    <th>UserName</th>
-                    <th>JobName</th>
+                    <th><fmt:message key="UserName"/></th>
+                    <th><fmt:message key="JobName"/></th>
 
                     <d:forEach items="${jobList}" var="job">
                         <c:forEach items="${job.getUsersList()}" var="user">
