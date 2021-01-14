@@ -78,7 +78,7 @@
         <li>
             <c:choose>
                 <c:when test="${pageContext.request.getRemoteUser() == null}">
-                    <a  href="${pageContext.request.contextPath}/LoginServlet">Login</a>
+                    <a  href="${pageContext.request.contextPath}/LoginServlet?language=en_US">Login</a>
                 </c:when>
                 <c:otherwise>
                     <a  href="${pageContext.request.contextPath}/LogoutServlet">Logout</a>

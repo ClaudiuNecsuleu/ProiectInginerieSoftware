@@ -3,18 +3,21 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
+ 
 <t:pageTemplate pageTitle="ABC.DLL">
 
-    <h1>Welcome to the ABC.DLL</h1>
+    <h1><fmt:message key="Welcome.msg"/></h1>
 
     <div class="center">  
-        <h2>NEWS</h2>
+        <h2><fmt:message key="News"/></h2>
         <form>
         <table>
-            <th>Job name</th>
-            <th>Job description</th>
-            <th>Remaining posts</th>
+            <th><fmt:message key="Job.name"/></th>
+            <th><fmt:message key="Job.description"/></th>
+            <th><fmt:message key="Remaining.posts"/></th>
                 <c:forEach items="${allJobs}" var="job">
                     <d:if test="${job.getStatus()!=null}">
                     <tr>
@@ -26,7 +29,7 @@
 
                         </c:if>
                         <c:if test="${job.getRemainingjob()==0}">
-                            <td>Job inchis</td>
+                            <td><fmt:message key="Job.inchis"/></td>
                         </c:if>
                     </tr>   
                 </d:if>
