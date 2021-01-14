@@ -11,8 +11,10 @@
     <form action="UploadFileServlet" method="POST" enctype="multipart/form-data" novalidate>
         <div>
             <div>
-                <label for="file">File</label>
-                <input type="file" name="file" required>                      
+                
+                <br>
+             
+                <input type="file" class="custom-file-input" name="file" required>                      
             </div>
         </div>
         <input type="hidden" name="username" value="${name}">

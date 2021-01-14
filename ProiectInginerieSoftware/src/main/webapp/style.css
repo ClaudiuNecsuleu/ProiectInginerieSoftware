@@ -176,8 +176,8 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%,60%);
-    width:200px;
+    transform:translate(-115px,150px);
+    width:240px;
     background:white;
     border-radius:10px;
 
@@ -243,8 +243,8 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-280px,140px);
-    width:250px;
+    transform:translate(-300px,160px);
+    width:290px;
     background:white;
     border-radius:10px;
 
@@ -258,8 +258,8 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(10px,140px);
-    width:250px;
+    transform:translate(10px,160px);
+    width:300px;
     background:white;
     border-radius:10px;
 
@@ -270,17 +270,16 @@ h1{
 
 }
 
-.centerapach1{
+.centerapch1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-480px,-140px);
-    width:250px;
+    transform:translate(-630px,-90px);
+    width:300px;
     background:white;
     border-radius:10px;
-
 }
-.centerapach1 form{
+.centerapch1 form{
     padding: 0 40px;
     box-sizing: border-box;
 
@@ -289,8 +288,8 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(240px,-140px);
-    width:250px;
+    transform:translate(340px,-90px);
+    width:300px;
     background:white;
     border-radius:10px;
 
@@ -331,18 +330,13 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(10%,-20%);
+    transform:translate(240px,-165px);
     width:250px;
     background:white;
     border-radius:10px;
 
 }
-.centerr1 h2{
-    text-align:center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver; 
-    font-size:40px
-}
+
 .centerr1 form{
     padding: 0 40px;
     box-sizing: border-box;
@@ -352,7 +346,7 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-100%,-19%);
+    transform:translate(-500px,-165px);
     width:250px;
     background:white;
     border-radius:10px;
@@ -391,7 +385,13 @@ h1{
   border-radius: 50%;
   position: absolute;
   overflow: hidden;
-  transform: translate(85%, -255%);
+  transform: translate(680px, -50px);
+}
+.descriere{
+     position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-20px,0px);    
 }
 .circular img {
   min-width: 100%;
@@ -411,8 +411,8 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%,0%);
-    width:390px;
+    transform:translate(-255px,50px);
+    width:500px;
     background:white;
     border-radius:30px;
 
@@ -432,7 +432,7 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(240px,30px);
+    transform:translate(275px,30px);
     width:400px;
     background:white;
     border-radius:10px;
@@ -447,7 +447,7 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-640px,30px);
+    transform:translate(-680px,30px);
     width:400px;
     background:white;
     border-radius:10px;
@@ -503,8 +503,9 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-360px,150px);
-    width:auto;
+    transform:translate(-420px,150px);
+    width:900px;
+
     background:white;
     border-radius:20px;
 }
@@ -659,8 +660,8 @@ tr:hover {
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color:grey;
-  color: white;
+  background-color:#BDD5EA;
+  color: black;
 }
 .column {
   float: left;
@@ -672,6 +673,30 @@ tr:hover {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select files';
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 
 

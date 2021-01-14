@@ -26,32 +26,32 @@ public class IndexServlet extends HttpServlet {
     LanguageBean languageBean;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if (!userDaoLocal.existsRoleWithName("Admin")) {
-            Role role = new Role("Admin");
+        if (!userDaoLocal.existsRoleWithName("ADMIN")) {
+            Role role = new Role("ADMIN");
             userDaoLocal.addRole(role);
         }
-        if (!userDaoLocal.existsRoleWithName("DirectorGeneral")) {
-            Role role = new Role("DirectorGeneral");
-            userDaoLocal.addRole(role);
-        }
-
-        if (!userDaoLocal.existsRoleWithName("DirectorHR")) {
-            Role role = new Role("DirectorHR");
+        if (!userDaoLocal.existsRoleWithName("DIRGEN")) {
+            Role role = new Role("DIRGEN");
             userDaoLocal.addRole(role);
         }
 
-        if (!userDaoLocal.existsRoleWithName("DirectorDep")) {
-            Role role = new Role("DirectorDep");
+        if (!userDaoLocal.existsRoleWithName("DIRHR")) {
+            Role role = new Role("DIRHR");
             userDaoLocal.addRole(role);
         }
 
-        if (!userDaoLocal.existsRoleWithName("Recruiter")) {
-            Role role = new Role("Recruiter");
+        if (!userDaoLocal.existsRoleWithName("DIRDEP")) {
+            Role role = new Role("DIRDEP");
             userDaoLocal.addRole(role);
         }
 
-        if (!userDaoLocal.existsRoleWithName("User")) {
-            Role role = new Role("User");
+        if (!userDaoLocal.existsRoleWithName("RECRUITER")) {
+            Role role = new Role("RECRUITER");
+            userDaoLocal.addRole(role);
+        }
+
+        if (!userDaoLocal.existsRoleWithName("USER")) {
+            Role role = new Role("USER");
             userDaoLocal.addRole(role);
         }
 
@@ -59,42 +59,42 @@ public class IndexServlet extends HttpServlet {
 
             User user = new User("admin", "admin","688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6", "07217351", "931293791", "abc12dll@gmail.com", "ADMIN", "Face si el ce poate", "admin", null, null, null, null);
             userDaoLocal.addUser(user);
-            userDaoLocal.addRoleToUser(new Role("Admin"), user.getUsername());
+            userDaoLocal.addRoleToUser(new Role("ADMIN"), user.getUsername());
 
         }
         if (!userDaoLocal.existsUserWithUsername("dirgen")) {
 
             User user = new User("dirgen", "dirgen","688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6", "07217352", "931293792", "abc12dll@gmail.com", "DIRGEN", "Face si el ce poate", "dirgen", null, null, null, null);
             userDaoLocal.addUser(user);
-            userDaoLocal.addRoleToUser(new Role("DirectorGeneral"), user.getUsername());
+            userDaoLocal.addRoleToUser(new Role("DIRGEN"), user.getUsername());
 
         }
         if (!userDaoLocal.existsUserWithUsername("dirhr")) {
 
             User user = new User("dirhr", "dirhr","688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6", "07217353", "931293793", "abc12dll@gmail.com", "DIRHR", "Face si el ce poate", "dirhr", null, null, null, null);
             userDaoLocal.addUser(user);
-            userDaoLocal.addRoleToUser(new Role("DirectorHR"), user.getUsername());
+            userDaoLocal.addRoleToUser(new Role("DIRHR"), user.getUsername());
 
         }
         if (!userDaoLocal.existsUserWithUsername("dirdep")) {
 
             User user = new User("dirdep", "dirdep","688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6", "07217354", "931293794", "abc12dll@gmail.com", "DIRDEP", "Face si el ce poate", "dirdep", null, null, null, null);
             userDaoLocal.addUser(user);
-            userDaoLocal.addRoleToUser(new Role("DirectorDep"), user.getUsername());
+            userDaoLocal.addRoleToUser(new Role("DIRDEP"), user.getUsername());
 
         }
         if (!userDaoLocal.existsUserWithUsername("recruiter")) {
 
             User user = new User("recruiter", "recruiter","688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6", "07217355", "931293795", "abc12dll@gmail.com", "RECRUITER", "Face si el ce poate", "recruiter", null, null, null, null);
             userDaoLocal.addUser(user);
-            userDaoLocal.addRoleToUser(new Role("Recruiter"), user.getUsername());
+            userDaoLocal.addRoleToUser(new Role("RECRUITER"), user.getUsername());
 
         }
         if (!userDaoLocal.existsUserWithUsername("user")) {
 
             User user = new User("User", "User","688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6", "07217356", "931293796", "abc12dll@gmail.com", "USER", "Face si el ce poate", "user", null, null, null, null);
             userDaoLocal.addUser(user);
-            userDaoLocal.addRoleToUser(new Role("User"), user.getUsername());
+            userDaoLocal.addRoleToUser(new Role("USER"), user.getUsername());
 
         }
 

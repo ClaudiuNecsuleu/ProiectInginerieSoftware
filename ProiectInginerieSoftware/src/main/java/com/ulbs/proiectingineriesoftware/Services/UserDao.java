@@ -363,6 +363,7 @@ public class UserDao implements UserDaoLocal {
 
         try {
             if (getUser != null) {
+                 
                 if (existsRoleWithName(role.getRolename())) { //daca exista rolul in bd    
                     Query qr = entityManager.createQuery("select u from Role u where u.rolename = :rolename");
                     qr.setParameter("rolename", role.getRolename());
@@ -371,11 +372,14 @@ public class UserDao implements UserDaoLocal {
                     Role getRole = roles.get(0);
                     getRole.addUserToRole(getUser);//se adauga userul la lista cu roluri
                     getUser.setRole(getRole);//se seteaza rolul userului
+                    getUser.setFunctia(getRole.getRolename());
+                   
                     entityManager.merge(getRole);//se updateaza rolul in bd
                 } else {//daca nu exista rolul in bd
                     addRole(role);//se adauga in bd               
                     role.addUserToRole(getUser);//se adauga userul la lista cu roluri
-                    getUser.setRole(role);//se seteaza rolul userului
+                    getUser.setRole(role);//se seteaza rolul userului            
+                    getUser.setFunctia(role.getRolename());//se seteaza functia userului
                 }
                 entityManager.merge(getUser);//se updateaza userul in bd
             }
@@ -437,7 +441,7 @@ public class UserDao implements UserDaoLocal {
             if (!users.isEmpty()) {
                 for (User user : users) {
                     if (user.getRole().getRolename().equals(roleName)) {
-                        user.setRole(getRole("Viewer"));
+                        user.setRole(getRole("User"));
                         entityManager.merge(user);
                     }
                 }
@@ -492,7 +496,7 @@ public class UserDao implements UserDaoLocal {
 
                     user.setJob(job);
                     user.setJobApplicant(null);
-                    user.setFunctia(job.getJobname());
+                   // user.setFunctia(job.getJobname());
 
                     List<User> users1;
 
@@ -528,7 +532,7 @@ public class UserDao implements UserDaoLocal {
                 for (User user : users) {
                     if (user.getJobApplicant() == job) {
 
-                        user.setFunctia("Fara functie");
+                      //  user.setFunctia("Fara functie");
                         user.setJobApplicant(null);
 
                         entityManager.merge(user);

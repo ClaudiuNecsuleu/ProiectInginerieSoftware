@@ -127,7 +127,7 @@ public class JobDao implements JobDaoLocal {
                 userList.remove(user);
                 job.setUsersList(userList);
                 user.setJob(null);
-                user.setFunctia("Fara");
+              //  user.setFunctia("Fara");
                 entityManager.merge(job);
                 entityManager.merge(user);
             }

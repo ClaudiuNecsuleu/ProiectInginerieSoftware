@@ -114,6 +114,19 @@ public class CommentDao implements CommentDaoLocal {
                 }
                 entityManager.remove(comment);             //stergem
             }
+             if (comment != null) {
+                Job job = comment.getJob();          //preluam obiectul de tip user din comment   
+                if (job != null) {                        //testam daca user ul a fost sters
+                    commentList = job.getCommentsList();
+                    commentList.remove(comment);                  //stergem comentariu din lista
+                    comment.setJob(null);
+                    job.setCommentsList(commentList);          //setam  noua lista
+                    entityManager.merge(job);                 //actualizam user   
+                    entityManager.merge(comment);
+                }
+                entityManager.remove(comment);             //stergem
+            }
+
 
         } catch (Exception e) {
             throw new EJBException(e);
@@ -134,7 +147,7 @@ public class CommentDao implements CommentDaoLocal {
                 comment.setUser(null);
                 entityManager.merge(user);
                 entityManager.merge(comment);
-                entityManager.remove(comment);                //luam pe rand fiecare inserare din tabelul Comment si il stergem
+                             //luam pe rand fiecare inserare din tabelul Comment si il stergem
             }
         } catch (Exception e) {
             throw new EJBException(e);
