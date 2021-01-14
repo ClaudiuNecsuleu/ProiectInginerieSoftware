@@ -6,11 +6,11 @@
 <t:pageTemplate pageTitle="JobEdit">
     <jsp:body>
         <div class="center">    
-            <h2>Job Edit</h2>
+            <h2><fmt:message key="Job Edit"/></h2>
             <form action="./JobEditInputServlet" method="POST">
-                <label><strong>Select job to edit:</strong></label>
+                <label><strong><fmt:message key="Select job to edit:"/></strong></label>
                 <select name="jobid" required>
-                    <option value="">Jobname</option>
+                    <option value=""><fmt:message key="Jobname"/></option>
                     <c:forEach var="job" items="${allJobs}" varStatus="status">
                         <option value="${job.jobid}"> ${job.jobname}</option>
                     </c:forEach>
@@ -21,8 +21,8 @@
                         ${message}
                     </div>   
                 </c:if>
-                <button type="submit" class="btn3" value="Edit">Edit</button>
-                <a href="JobsServlet"><button class="btn3" type="button">Back</button></a>
+                <button type="submit" class="btn3" value="Edit"><fmt:message key="Edit"/></button>
+                <a href="JobsServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
 
             </form>
             <br>
@@ -34,10 +34,10 @@
                 <br><br>
                 <table>
                     <th>IDJob</th>
-                    <th>Job name</th>
-                    <th>Job description</th>
-                    <th>Remaining posts</th>
-                    <th>Publisher</th>
+                    <th><fmt:message key="Job name"/></th>
+                    <th><fmt:message key="Job description"/></th>
+                    <th><fmt:message key="Remaining posts"/></th>
+                    <th><fmt:message key="Publisher"/></th>
                         <c:forEach items="${allJobs}" var="job">
                         <tr>
                             <td>${job.jobid}</td>
@@ -47,7 +47,7 @@
                                 <td>${job.remainingjob}</td>
                             </c:if>
                             <c:if test="${job.getRemainingjob()==0}">
-                                <td>Job inchis</td>
+                                <td><fmt:message key="Job inchis"/></td>
                             </c:if>
                             <td>${job.publisher}</td>
                         </tr>   

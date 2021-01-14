@@ -8,19 +8,19 @@
     <jsp:body>
         <div class="center">    
 
-            <h2>Job Add</h2>
+            <h2><fmt:message key="Job Add"/></h2>
             <form action="./JobAddServlet" method="POST">
-                <div class="txt_field"> <input type="text" placeholder="Name" name="jobname" value="${job.jobname}" required></div>
-                <div class="txt_field"><input type="text" placeholder="Description" name="description" value="${job.description}" required></div>
-                <div class="txt_field">  <input type="text" placeholder="RemainingPosts" name="remainingjob" value="${job.remainingjob}" required></div>
+                <div class="txt_field"> <input type="text" placeholder="<fmt:message key="Name"/>" name="jobname" value="${job.jobname}" required></div>
+                <div class="txt_field"><input type="text" placeholder="<fmt:message key="Description"/>" name="description" value="${job.description}" required></div>
+                <div class="txt_field">  <input type="text" placeholder="<fmt:message key="RemainingPosts"/>" name="remainingjob" value="${job.remainingjob}" required></div>
                 <input type="hidden" name="publisher" value="${name}">
                 <c:if test="${message != null}">
                     <div class="alert alert-warning" role="alert">
                         ${message}
                     </div>   
                 </c:if>
-                <button type="submit" name="action" value="Add">Add</button>
-                <a href="JobsServlet"><button type="button">Back</button></a>
+                <button type="submit" name="action" value="Add"><fmt:message key="Add"/></button>
+                <a href="JobsServlet"><button type="button"><fmt:message key="Back"/></button></a>
 
             </form>
         </div>

@@ -7,11 +7,11 @@
 <t:pageTemplate pageTitle="JobDelete">
     <jsp:body>
         <div class="center">    
-            <h2>Job Delete</h2>
+            <h2><fmt:message key="Job Delete"/></h2>
             <form action="./JobDeleteServlet" method="POST">
-                <label>Select job to delete:</label>
+                <label><fmt:message key="Select job to delete:"/></label>
                 <select name="jobid" required>
-                    <option value="">Job</option>
+                    <option value=""><fmt:message key="Job"/></option>
                     <c:forEach var="job" items="${allJobs}" varStatus="status">
                         <option value="${job.jobid}">  ${job.jobname}</option>
                     </c:forEach>
@@ -22,8 +22,8 @@
                         ${message}
                     </div>   
                 </c:if>
-                <button type="submit" class="btn3" name="action" value="Delete">Delete</button>
-                <a href="JobsServlet"><button class="btn3" type="button">Back</button></a>
+                <button type="submit" class="btn3" name="action" value="Delete"><fmt:message key="Delete"/></button>
+                <a href="JobsServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
                 <br>
                 <br>
 
