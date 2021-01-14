@@ -6,18 +6,18 @@
 <t:pageTemplate pageTitle="CommentEdit">
 
     <div class="center">   
-        <h2>Comments Edit Job</h2>
+        <h2><fmt:message key="Comments Edit Job"/></h2>
         <form action="./CommentEditJobServlet" method="POST">
 
             <select name="jobid" required>
-                <option value="">Choose job</option>
+                <option value=""><fmt:message key="Choose job"/></option>
                 <c:forEach var="job" items="${allJobs}" varStatus="status">
                     <option value="${job.jobid}"> ${job.jobname}</option> 
                 </c:forEach>                      
             </select>
             <br>
-            <button type="submit" class="btn3" name="action" value="Edit" >Edit</button>
-            <a href="CommentServlet"><button class="btn3" type="button">Back</button></a>
+            <button type="submit" class="btn3" name="action" value="Edit" ><fmt:message key="Edit"/></button>
+            <a href="CommentServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
             <br>
         </form>
     </div>

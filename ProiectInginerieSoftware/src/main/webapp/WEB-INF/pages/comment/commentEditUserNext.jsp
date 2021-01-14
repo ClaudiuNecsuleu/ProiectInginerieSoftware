@@ -6,18 +6,18 @@
 <t:pageTemplate pageTitle="CommentEdit">
 
     <div class="center">  
-        <h2>Comments Edit User</h2>
+        <h2><fmt:message key="Comments Edit User"/></h2>
         <form action="./CommentEditUserNextServlet" method="POST">
 
 
             <select name="commentIDUser" required>
-                <option value="">Choose comment</option>
+                <option value=""><fmt:message key="Choose comment"/></option>
                 <d:forEach var="comment" items="${user.getCommentsList()}" varStatus="status">
                     <option value="${comment.commentid}">  ${comment.comment}</option>
                 </d:forEach>
             </select>
 
-            <div class="txt_field"> <input type="text" placeholder="New Comment" name="newCommentUser" value="${comment.comment}" required></div>
+            <div class="txt_field"> <input type="text" placeholder="<fmt:message key="New Comment"/>" name="newCommentUser" value="${comment.comment}" required></div>
                 <c:if test="${message != null}">
                 <div class="alert alert-warning" role="alert">
                     ${message}
@@ -25,8 +25,8 @@
             </c:if>
             
             <input type="hidden" name="userid" value="${user.userid}">
-            <button type="submit" class="btn3" name="action" value="EditUser" >Edit</button>
-            <a href="CommentServlet"><button class="btn3" type="button">Back</button></a>
+            <button type="submit" class="btn3" name="action" value="EditUser" ><fmt:message key="Edit"/></button>
+            <a href="CommentServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
             <br>
         </form>
     </div>

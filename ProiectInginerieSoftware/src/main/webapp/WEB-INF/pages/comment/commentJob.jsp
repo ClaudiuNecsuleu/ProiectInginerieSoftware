@@ -7,24 +7,24 @@
 <t:pageTemplate pageTitle="CommentToJob">
     <jsp:body>
         <div class="center">  
-            <h2>Comments Add</h2>
+            <h2><fmt:message key="Comments Add"/></h2>
             <form action="./CommentJobServlet" method="POST">
-                <label><strong>Select job to add a comment:</strong></label>
+                <label><strong><fmt:message key="Select job to add a comment:"/></strong></label>
                 <select  name="jobname" id="jobname"  required>
-                    <option value="">jobname</option>
+                    <option value=""><fmt:message key="jobname"/></option>
                     <c:forEach var="job" items="${allJobs}" varStatus="status">
                         <option value="${job.jobname}">  ${job.jobname}</option>
                     </c:forEach>
                 </select>
-                <div class="txt_field"> <input type="text" placeholder="Comment" name="comment" value="${comment.comment}" required></div>
+                <div class="txt_field"> <input type="text" placeholder="<fmt:message key="Comment"/>" name="comment" value="${comment.comment}" required></div>
                 <input type="hidden" name="publisherUsername" value="${name}">
                   <c:if test="${message != null}">
                     <div class="alert alert-warning" role="alert">
                         ${message}
                     </div>   
                 </c:if>
-                <button type="submit" class="btn3" name="action" value="AddJob">Add</button>
-                <a href="CommentServlet"><button class="btn3" type="button">Back</button></a>
+                <button type="submit" class="btn3" name="action" value="AddJob"><fmt:message key="Add"/></button>
+                <a href="CommentServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
                 <br>
             </form>
         </div>

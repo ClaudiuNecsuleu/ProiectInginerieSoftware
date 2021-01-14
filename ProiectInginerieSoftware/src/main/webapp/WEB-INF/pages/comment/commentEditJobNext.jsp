@@ -6,17 +6,17 @@
 <t:pageTemplate pageTitle="CommentEdit">
 
     <div class="center">  
-        <h2>Comments Edit Job</h2>
+        <h2><fmt:message key="Comments Edit Job"/></h2>
         <form action="./CommentEditJobNextServlet" method="POST">
 
             <select name="commentIDJob" required>
-                <option value="">Choose comment</option>
+                <option value=""><fmt:message key="Choose comment"/></option>
                 <d:forEach var="comment" items="${job.getCommentsList()}" varStatus="status">
                     <option value="${comment.commentid}">${comment.comment}</option>
                 </d:forEach>
             </select>
 
-            <div class="txt_field"> <input type="text" placeholder="New Comment" name="newCommentJob" value="${comment.comment}" required></div>
+            <div class="txt_field"> <input type="text" placeholder="<fmt:message key="New Comment"/>" name="newCommentJob" value="${comment.comment}" required></div>
                 <c:if test="${message != null}">
                 <div class="alert alert-warning" role="alert">
                     ${message}
@@ -24,8 +24,8 @@
             </c:if>
             
             <input type="hidden" name="jobID" value="${job.jobid}">
-            <button type="submit" class="btn3" name="action" value="EditJob" >Edit</button>
-            <a href="CommentServlet"><button class="btn3" type="button">Back</button></a>
+            <button type="submit" class="btn3" name="action" value="EditJob" ><fmt:message key="Edit"/></button>
+            <a href="CommentServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
             <br>
         </form>
     </div>

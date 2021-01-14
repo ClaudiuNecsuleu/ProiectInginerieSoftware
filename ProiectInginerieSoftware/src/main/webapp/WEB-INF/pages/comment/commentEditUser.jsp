@@ -6,11 +6,11 @@
 <t:pageTemplate pageTitle="CommentEdit">
 
     <div class="center">   
-        <h2>Comments Edit User</h2>
+        <h2><fmt:message key="Comments Edit User"/></h2>
         <form action="./CommentEditUserServlet" method="POST">
 
             <select name="userid" required>
-                <option value="">Choose User</option>
+                <option value=""><fmt:message key="Choose User"/></option>
                 <c:forEach var="user" items="${allUsers}" varStatus="status">
                     <option value="${user.userid}"> ${user.username}</option> 
                 </c:forEach>                      
@@ -21,8 +21,8 @@
                         ${message}
                     </div>   
                 </c:if>
-            <button type="submit" class="btn3" name="action" value="Edit" >Edit</button>
-            <a href="CommentServlet"><button class="btn3" type="button">Back</button></a>
+            <button type="submit" class="btn3" name="action" value="Edit" ><fmt:message key="Edit"/></button>
+            <a href="CommentServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
             <br>
         </form>
     </div>
