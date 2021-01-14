@@ -5,23 +5,23 @@
 <!DOCTYPE html>
 <t:pageTemplate pageTitle="RoleAddUser">
             <div class="center">
-                <h2>Add Role to User</h2>
+                <h2><fmt:message key="Add Role to User"/></h2>
                 <form action="./RoleAddUserServlet" method="POST">
                     <select name="nameRole" required>
-                        <option value="">Alegeti rolul</option>
+                        <option value=""><fmt:message key="Alegeti rolul"/></option>
                         <c:forEach var="role" items="${allRoles}" varStatus="status">
                             <option value="${role.rolename}">${role.rolename}</option>
                         </c:forEach>
                     </select>
                     <select name="username" required>
-                        <option value="">Alegeti userul</option>
+                        <option value=""><fmt:message key="Alegeti userul"/></option>
                         <c:forEach var="user" items="${allUsers}" varStatus="status">
                             <option value="${user.username}">${user.username}</option>
                         </c:forEach>
                     </select>
 
-                    <button type="submit" class="btn3"   name="action" value="AddToUser">Add User Role</button>
-                    <a href="RoleServlet"><button class="btn3"  type="button">Back</button>    </a>
+                    <button type="submit" class="btn3"   name="action" value="AddToUser"><fmt:message key="Add User Role"/></button>
+                    <a href="RoleServlet"><button class="btn3"  type="button"><fmt:message key="Back"/></button>    </a>
                     
                       </form>
                       </div>
@@ -32,7 +32,7 @@
 
                     <table>
                         <th>ID</th>
-                        <th>NameRole</th>
+                        <th><fmt:message key="NameRole"/></th>
 
                         <c:forEach items="${allRoles}" var="role">
                             <tr>

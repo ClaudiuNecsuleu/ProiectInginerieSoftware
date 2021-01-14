@@ -5,18 +5,18 @@
 <t:pageTemplate pageTitle="User">
     <div class="center">
         <form>
-            <h2>Users</h2>
+            <h2><fmt:message key="Users"/></h2>
             <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
-                <a href="UserAddServlet"><button class="btn" type="button">Add</button></a>
+                <a href="UserAddServlet"><button class="btn" type="button"><fmt:message key="Add"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
-                <a href="UserEditServlet"><button class="btn" type="button">Edit</button></a>
+                <a href="UserEditServlet"><button class="btn" type="button"><fmt:message key="Edit"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
-                <a href="UserDeleteServlet"><button class="btn" type="button">Delete</button></a>
+                <a href="UserDeleteServlet"><button class="btn" type="button"><fmt:message key="Delete"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('DirGenRole')||pageContext.request.isUserInRole('AdminRole')}">
-                <a href="UserFindServlet"><button class="btn" type="button">Search</button></a>
+                <a href="UserFindServlet"><button class="btn" type="button"><fmt:message key="Search"/></button></a>
             </c:if>
 
             <br><br>

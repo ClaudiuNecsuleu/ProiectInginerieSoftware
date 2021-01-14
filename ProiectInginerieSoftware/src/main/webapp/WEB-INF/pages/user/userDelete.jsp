@@ -6,19 +6,19 @@
 <t:pageTemplate pageTitle="UserDelete">
 
     <div class="center">
-        <h2>Users Delete</h2>
+        <h2><fmt:message key="Users Delete"/></h2>
         <form action="./UserDeleteServlet" method="POST">
 
-            <label><strong>Select user to delete:</strong></label>
+            <label><strong><fmt:message key="Select user to delete:"/></strong></label>
             <select name="userid" required>
-                <option value="">Username</option>
+                <option value=""><fmt:message key="Username"/></option>
                 <c:forEach var="user" items="${allUsers}" varStatus="status">
                     <option value="${user.userid}">  ${user.username}</option>
                 </c:forEach>
             </select>
             <br>
-            <button type="submit" class="btn3" name="action" value="Delete">Delete</button>
-            <a href="UserServlet"><button class="btn3" type="button">Back</button></a>
+            <button type="submit" class="btn3" name="action" value="Delete"><fmt:message key="Delete"/></button>
+            <a href="UserServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
         </form>
         <br>
     </div>

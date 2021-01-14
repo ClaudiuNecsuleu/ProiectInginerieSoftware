@@ -7,17 +7,17 @@
 <t:pageTemplate pageTitle="Contact">
 
     <div class="about-section">
-        <h1>About Us Page</h1>
+        <h1><fmt:message key="About Us Page"/></h1>
         <center>
-            <p><center><strong>Suntem echipa ULBS12 ABC.DLL,suntem o echipa muncitoare si unita care s-a straduit in realizarea acestui proiect.</strong></center><p>
-            <p><strong><a href="https://docs.google.com/document/d/1TpUNnOcEc6ybwSvgsg2Xp98nsHsJoNJu/edit">Documentatie</a></strong></p>
+            <p><center><strong><fmt:message key="Suntem echipa ULBS12 ABC.DLL,suntem o echipa muncitoare si unita care s-a straduit in realizarea acestui proiect."/></strong></center><p>
+            <p><strong><a href="https://docs.google.com/document/d/1TpUNnOcEc6ybwSvgsg2Xp98nsHsJoNJu/edit"><fmt:message key="Documentatie"/></a></strong></p>
             <br>
-            <p><strong>Pentru comunicare si pentru realizarea proiectului ne-am folosit de:</strong></p>
+            <p><strong><fmt:message key="Pentru comunicare si pentru realizarea proiectului ne-am folosit de:"/></strong></p>
             <p><strong><a href="https://trello.com/b/rmUsWc5v/proiect-inginerie-software">Trello</a></strong></p>
             <p><strong><a href="https://github.com/ClaudiuNecsuleu/ProiectInginerieSoftware/commits/main">GitHub</a></strong></p>
         </center>
     </div>
-    <h2 style="text-align:center">Our Team</h2>
+    <h2 style="text-align:center"><fmt:message key="Our Team"/></h2>
     <div class="column">
         <div class="card">
             <center>
@@ -28,10 +28,10 @@
                 <center>
                     <h2>Clau</h2>
 
-                    <p><strong>CEO & Founder</strong></p>
-                    <p>Some text </p>
+                    <p><strong><fmt:message key="CEO & Founder"/></strong></p>
+                    <p><fmt:message key="Some text"/> </p>
                     <p>claudiu.necsuleu@ulbsibiu.ro</p>
-                    <button class="btn1">Contact</button>
+                    <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -46,10 +46,10 @@
                 <center>
                     <h2>Alex</h2>
 
-                    <p><strong>CEO & Founder</strong></p>
-                    <p>Some text </p>
+                    <p><strong><fmt:message key="CEO & Founder"/></strong></p>
+                    <p><fmt:message key="Some text"/> </p>
                     <p>alexandruc.stoian@ulbsibiu.ro</p>
-                    <button class="btn1">Contact</button>
+                    <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -64,11 +64,11 @@
                 <center>
                     <h2>Bogdan</h2>
 
-                    <p><strong>CEO & Founder</strong></p>
-                    <p>Some text </p>
+                    <p><strong><fmt:message key="CEO & Founder"/></strong></p>
+                    <p><fmt:message key="Some text"/> </p>
                     <p>bogdan.paicu@ulbsibiu.ro</p>
 
-                    <button class="btn1">Contact</button>
+                    <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -83,10 +83,10 @@
                 <center>
                     <h2>Larisa</h2>
 
-                    <p><strong>CEO & Founder</strong></p>
-                    <p>Some text </p>
+                    <p><strong><fmt:message key="CEO & Founder"/></strong></p>
+                    <p><fmt:message key="Some text"/> </p>
                     <p>larisa.giubega@ulbsibiu.ro</p>
-                    <button class="btn1">Contact</button>
+                    <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -101,10 +101,10 @@
                 <center>
                     <h2>Dani</h2>
 
-                    <p><strong>CEO & Founder</strong></p>
-                    <p>Some text</p>
+                    <p><strong><fmt:message key="CEO & Founder"/></strong></p>
+                    <p><fmt:message key="Some text"/></p>
                     <p>daniel.dumitrana@ulbsibiu.ro</p>
-                    <button class="btn1">Contact</button>
+                    <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -119,10 +119,10 @@
                 <center>
                     <h2>Leo</h2>
 
-                    <p><strong> CEO & Founder</strong></p>
-                    <p>Some text </p>
+                    <p><strong><fmt:message key=" CEO & Founder"/></strong></p>
+                    <p><fmt:message key="Some text"/> </p>
                     <p>leonard.otesanu@ulbsibiu.ro</p>
-                    <button class="btn1">Contact</button>
+                    <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>

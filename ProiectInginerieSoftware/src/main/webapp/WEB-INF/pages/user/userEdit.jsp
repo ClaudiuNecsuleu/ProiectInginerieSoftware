@@ -6,18 +6,18 @@
 <t:pageTemplate pageTitle="UserEdit">
     
     <div class="center">
-        <h2>Users Edit</h2>
+        <h2><fmt:message key="Users Edit"/></h2>
         <form action="./UserEditInputServlet" method="POST">
-            <label><strong>Select user to edit:</strong></label>
+            <label><strong><fmt:message key="Select user to edit:"/></strong></label>
             <select  name="userid" required>
-                <option value="">Username</option>
+                <option value=""><fmt:message key="Username"/></option>
                 <c:forEach var="user" items="${allUsers}" varStatus="status">
                     <option value="${user.userid}">  ${user.username}</option>
                 </c:forEach>
             </select>
 
-            <button type="submit" class="btn3" name="action" value="Edit">Edit</button>
-            <a href="UserServlet"><button class="btn3" type="button">Back</button></a>
+            <button type="submit" class="btn3" name="action" value="Edit"><fmt:message key="Edit"/></button>
+            <a href="UserServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
             
         </form> 
          <br>
@@ -28,14 +28,14 @@
                 <br><br>
             <table>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Prenume</th>
-                <th>Telefon</th>
-                <th>Telefon Mobil</th>
-                <th>Mail</th>
-                <th>Functie</th>
-                <th>Descriere</th>
-                <th>Username</th>
+                <th><fmt:message key="Name"/></th>
+                <th><fmt:message key="Prenume"/></th>
+                <th><fmt:message key="Telefon"/></th>
+                <th><fmt:message key="Telefon Mobil"/></th>
+                <th><fmt:message key="Mail"/></th>
+                <th><fmt:message key="Functie"/></th>
+                <th><fmt:message key="Descriere"/></th>
+                <th><fmt:message key="Username"/></th>
                     <c:forEach items="${allUsers}" var="user">
                     <tr>
                         <td>${user.userid}</td>

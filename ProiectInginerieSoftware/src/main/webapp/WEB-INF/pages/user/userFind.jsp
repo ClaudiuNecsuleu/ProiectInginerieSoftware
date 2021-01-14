@@ -6,10 +6,10 @@
 <t:pageTemplate pageTitle="UserFind">
 
     <div class="center">
-        <h1>Users Information</h1>  
+        <h1><fmt:message key="Users Information"/></h1>  
         <form action="./UserFindServlet" method="POST">
-            <div class="txt_field"> <input type="text" id="usernameInput" onkeypress="return noenter()" placeholder="Cauta dupa nume si prenume..." required></div>
-            <a href="UserServlet"><button class="btn3" type="button">Back</button></a>
+            <div class="txt_field"> <input type="text" id="usernameInput" onkeypress="return noenter()" placeholder="<fmt:message key="Cauta dupa nume si prenume..."/>" required></div>
+            <a href="UserServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
             <br>
         </form>
     </div>
@@ -21,14 +21,14 @@
             <table id="userTable">
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Prenume</th>
-                    <th>Telefon</th>
-                    <th>Telefon Mobil</th>
-                    <th>Mail</th>
-                    <th>Functie</th>
-                    <th>Descriere</th>
-                    <th>Username</th>
+                    <th><fmt:message key="Name"/></th>
+                    <th><fmt:message key="Prenume"/></th>
+                    <th><fmt:message key="Telefon"/></th>
+                    <th><fmt:message key="Telefon Mobil"/></th>
+                    <th><fmt:message key="Mail"/></th>
+                    <th><fmt:message key="Functie"/></th>
+                    <th><fmt:message key="Descriere"/></th>
+                    <th><fmt:message key="Username"/></th>
                 </tr>
                 <tbody id="myTable">
                     <c:forEach items="${allUsers}" var="users">

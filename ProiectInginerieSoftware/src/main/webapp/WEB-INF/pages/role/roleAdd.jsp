@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <t:pageTemplate pageTitle="RoleAdd">
             <div class="center">
-                <h2>Role Add</h2>
+                <h2><fmt:message key="Role Add"/></h2>
                 <form action="./RoleAddServlet" method="POST">
-                    <div class="txt_field"> <input type="text" placeholder="Rol" name="nameRole" value="${role.rolename}"/> </div>
+                    <div class="txt_field"> <input type="text" placeholder="<fmt:message key="Rol"/>" name="nameRole" value="${role.rolename}"/> </div>
 
-                    <button type="submit" class="btn3"  name="action" value="AddRole" required>Adauga</button>
-                    <a href="RoleServlet"><button class="btn3" type="button">Back</button></a>
+                    <button type="submit" class="btn3"  name="action" value="AddRole" required><fmt:message key="Adauga"/></button>
+                    <a href="RoleServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
                     <br>
                 </form>
                       </div>
@@ -21,7 +21,7 @@
 
                     <table>
                         <th>ID</th>
-                        <th>NameRole</th>
+                        <th><fmt:message key="NameRole"/></th>
 
                         <c:forEach items="${allRoles}" var="role">
                             <tr>
