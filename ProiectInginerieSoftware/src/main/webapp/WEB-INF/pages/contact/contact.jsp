@@ -32,7 +32,7 @@
                     <h2>Clau</h2>
 
                     <p><strong><fmt:message key="Clau"/></strong></p>
-                    <p><fmt:message key="Some text"/> </p>
+   
                     <p>claudiu.necsuleu@ulbsibiu.ro</p>
                     <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
@@ -50,7 +50,7 @@
                     <h2>Alex</h2>
 
                     <p><strong><fmt:message key="Alex"/></strong></p>
-                    <p><fmt:message key="Some text"/> </p>
+         
                     <p>alexandruc.stoian@ulbsibiu.ro</p>
                     <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
@@ -68,7 +68,7 @@
                     <h2>Bogdan</h2>
 
                     <p><strong><fmt:message key="Bogdan"/></strong></p>
-                    <p><fmt:message key="Some text"/> </p>
+                
                     <p>bogdan.paicu@ulbsibiu.ro</p>
 
                     <button class="btn1"><fmt:message key="Contact"/></button>
@@ -87,7 +87,7 @@
                     <h2>Larisa</h2>
 
                     <p><strong><fmt:message key="Larisa"/></strong></p>
-                    <p><fmt:message key="Some text"/> </p>
+                
                     <p>larisa.giubega@ulbsibiu.ro</p>
                     <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
@@ -105,7 +105,7 @@
                     <h2>Dani</h2>
 
                     <p><strong><fmt:message key="Dani"/></strong></p>
-                    <p><fmt:message key="Some text"/></p>
+               
                     <p>daniel.dumitrana@ulbsibiu.ro</p>
                     <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
@@ -120,10 +120,10 @@
             </center>
             <div class="container">
                 <center>
-                    <h2>Leo</h2>
+                    <h2>Leon</h2>
 
                     <p><strong><fmt:message key="Leo"/></strong></p>
-                    <p><fmt:message key="Some text"/> </p>
+                   
                     <p>leonard.otesanu@ulbsibiu.ro</p>
                     <button class="btn1"><fmt:message key="Contact"/></button>
                 </center>
