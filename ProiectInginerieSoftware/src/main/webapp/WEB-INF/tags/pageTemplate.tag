@@ -13,7 +13,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="style.css" media="all" />
         <title>${pageTitle}</title>
-     
+        <script>
+           document.captureEvents(Event.KEYDOWN);
+            function fblock(e) {
+                if (e.which === 123) {
+                    return false;
+                }
+            }
+            document.onkeydown = fblock;
+        </script>
     </head>
     <body>
         <jsp:include page="/WEB-INF/pages/menu.jsp" />
