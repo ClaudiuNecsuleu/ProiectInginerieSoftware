@@ -2,6 +2,9 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
 <t:pageTemplate pageTitle="JobApplicant">
 
@@ -23,10 +26,10 @@
                 <a href="JobApplicantServletDelete"><button class="btn" type="button"><fmt:message key="DeleteApplicant"/></button></a>
             </c:if>
             <%--<c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')}">--%>
-                <!--<a href="JobApplicantServletEdit"><button class="btn" type="button"><fmt:message key="EditApplicant</button></a>-->
+                <!--<a href="JobApplicantServletEdit"><button class="btn" type="button"><fmt:message key="EditApplicant"/></button></a>-->
             <%--</c:if>--%>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')}">
-                <a href="ViewCVApplicant"><button class="btn" type="button"><fmt:message key="View CV Applicant"/></button></a>
+                <a href="ViewCVApplicant"><button class="btn" type="button"><fmt:message key="View.CV.Applicant"/></button></a>
             </c:if>
             <br><br>
         </form>

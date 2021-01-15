@@ -8,14 +8,8 @@
 
 <t:pageTemplate pageTitle="Login">
      <div class="center"> 
-         <h2>Login</h2>
-         <form>
-             <select id="language" name="language" onchange="submit()">
-                 <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
-                 <option value="ro" ${language == 'ro' ? 'selected' : ''}>Romana</option>
-                 <option value="de" ${language == 'de' ? 'selected' : ''}>Deutsch</option>
-             </select>
-         </form>
+         <h2><fmt:message key="Login"/></h2>
+
     <form method="POST" action="j_security_check">
         <div class="txt_field"> <input type="text"  name="j_username"  placeholder="<fmt:message key="Username"/>" required autofocus/></div>
         <div class="txt_field"><input type="password"  name="j_password" placeholder="<fmt:message key="Password"/>" required/></div>

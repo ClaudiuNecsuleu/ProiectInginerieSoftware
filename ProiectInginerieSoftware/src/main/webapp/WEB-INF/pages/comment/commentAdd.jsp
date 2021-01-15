@@ -2,14 +2,17 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
 <% request.setAttribute("name", request.getRemoteUser());%>
 <t:pageTemplate pageTitle="CommentToUser">
     <jsp:body>
         <div class="center">   
-            <h2><fmt:message key="Comments Add"/></h2>
+            <h2><fmt:message key="Comments.Add"/></h2>
             <form action="./CommentAddServlet" method="POST">
-                <label><strong><fmt:message key="Select user to add a comment:"/></strong></label>
+                <label><strong><fmt:message key="Select.user.add.comment"/></strong></label>
                 <select  name="username" id="username"  required>
                     <option value=""><fmt:message key="Username"/></option>
                     <c:forEach var="user" items="${allUsers}" varStatus="status">

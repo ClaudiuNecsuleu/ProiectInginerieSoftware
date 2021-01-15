@@ -40,7 +40,7 @@
                 </tr>
                 <d:if test="${user.getJob().getJobname()!=null}">
                     <tr>
-                        <td><strong>Job:</strong> </td>
+                        <td><strong><fmt:message key="Job"/></strong> </td>
                         <td>${user.getJob().getJobname()}</td>
                     </tr>
                 </d:if>

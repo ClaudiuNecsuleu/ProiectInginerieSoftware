@@ -2,20 +2,23 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
+
 <t:pageTemplate pageTitle="RoleDelete">
             <div class="center">
-                <h2><fmt:message key="Delete Role"/></h2>
+                <h2><fmt:message key="Delete.role"/></h2>
                 <form action="./RoleDeleteServlet" method="POST">
 
                     <select name="deleteRole" required>
-                        <option value=""><fmt:message key="Alegeti rolul"/></option>
+                        <option value=""><fmt:message key="Choose.role"/></option>
                         <c:forEach var="role" items="${allRoles}" varStatus="status">
                             <option value="${role.rolename}">${role.rolename}</option>
                         </c:forEach>
                     </select>
                     <br>
-                    <button type="submit" class="btn3"  name="action" value="deleteRole"><fmt:message key="Sterge"/></button>
+                    <button type="submit" class="btn3"  name="action" value="deleteRole"><fmt:message key="Delete.role"/></button>
                     <a href="RoleServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
                 </form>
                       </div>

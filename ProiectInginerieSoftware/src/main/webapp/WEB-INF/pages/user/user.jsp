@@ -1,6 +1,9 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
 <t:pageTemplate pageTitle="User">
     <div class="center">

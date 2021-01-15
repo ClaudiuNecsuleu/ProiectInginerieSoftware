@@ -3,12 +3,15 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
 <t:pageTemplate pageTitle="Job">
 
     <div class="center">
         <form>
-            <h2><fmt:message key="Job Info"/></h2>
+            <h2><fmt:message key="Job.Section"/></h2>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
             <a href="JobAddServlet"><button class="btn" type="button"><fmt:message key="Add"/></button></a>
             </c:if>
@@ -33,9 +36,9 @@
             <br><br>
             <table>
                 <th>IDJob</th>
-                <th><fmt:message key="Job name"/></th>
-                <th><fmt:message key="Job description"/></th>
-                <th><fmt:message key="Remaining posts"/></th>
+                <th><fmt:message key="Jobname"/></th>
+                <th><fmt:message key="Job.description"/></th>
+                <th><fmt:message key="Remaining.posts"/></th>
                 <th><fmt:message key="Publisher"/></th>
                     <c:forEach items="${allJobs}" var="job">
                         <d:if test="${job.getStatus()!=null}">
@@ -49,7 +52,7 @@
 
                             </c:if>
                             <c:if test="${job.getRemainingjob()==0}">
-                                <td><fmt:message key="Job inchis"/></td>
+                                <td><fmt:message key="Job.inchis"/></td>
                             </c:if>
                             <td>${job.publisher}</td>
                         </d:if>

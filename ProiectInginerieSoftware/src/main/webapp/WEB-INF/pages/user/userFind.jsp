@@ -2,13 +2,16 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
 <t:pageTemplate pageTitle="UserFind">
 
     <div class="center">
-        <h1><fmt:message key="Users Information"/></h1>  
+        <h1><fmt:message key="Users.Information"/></h1>  
         <form action="./UserFindServlet" method="POST">
-            <div class="txt_field"> <input type="text" id="usernameInput" onkeypress="return noenter()" placeholder="<fmt:message key="Cauta dupa nume si prenume..."/>" required></div>
+            <div class="txt_field"> <input type="text" id="usernameInput" onkeypress="return noenter()" placeholder="<fmt:message key="Cauta.dupa.orice"/>" required></div>
             <a href="UserServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
             <br>
         </form>
@@ -21,12 +24,12 @@
             <table id="userTable">
                 <tr>
                     <th>ID</th>
-                    <th><fmt:message key="Name"/></th>
+                    <th><fmt:message key="Nume"/></th>
                     <th><fmt:message key="Prenume"/></th>
                     <th><fmt:message key="Telefon"/></th>
-                    <th><fmt:message key="Telefon Mobil"/></th>
+                    <th><fmt:message key="Telefon.mobil"/></th>
                     <th><fmt:message key="Mail"/></th>
-                    <th><fmt:message key="Functie"/></th>
+                    <th><fmt:message key="Functia"/></th>
                     <th><fmt:message key="Descriere"/></th>
                     <th><fmt:message key="Username"/></th>
                 </tr>

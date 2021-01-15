@@ -8,7 +8,13 @@
  <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
  
 <t:pageTemplate pageTitle="ABC.DLL">
-
+    <form method="POST" action="./ChangeLanguage">
+             <select id="language" name="language" onchange="submit()">
+                 <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
+                 <option value="ro" ${language == 'ro' ? 'selected' : ''}>Romana</option>
+                 <option value="de" ${language == 'de' ? 'selected' : ''}>Deutsch</option>
+             </select>
+         </form>
     <h1><fmt:message key="Welcome.msg"/></h1>
 
     <div class="center">  

@@ -2,13 +2,16 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
 <% request.setAttribute("name", request.getRemoteUser());%>
 <t:pageTemplate pageTitle="JobApplicant">
     <jsp:body>
         <div class="center">
 
-            <h2><fmt:message key="Job Applicant"/></h2>
+            <h2><fmt:message key="Job.Applicant"/></h2>
             <form action="./JobApplicantServletChoose" method="POST">
 
                 <c:forEach var="user" items="${userList}" varStatus="status">
@@ -18,12 +21,12 @@
                             <input type="hidden" name="recruiterName" value="${name}" />
                             <c:if test="${message != null}">
                                 <div class="alert alert-warning" role="alert">
-                                    ${message}
+                                    <fmt:message key="${message}"/>
                                 </div>   
                             </c:if>
                             <button type="submit" class="btn3" name="username" value="${user.username}"><fmt:message key="Recomanda"/></button> 
                         </form>
-                        <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button><fmt:message key="ViewCV"/></button>  </a>
+                        <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button><fmt:message key="View"/></button>  </a>
 
                         <br>         
                     </d:if>
@@ -40,10 +43,10 @@
             <form>
 
                 <br>
-                <p><strong><fmt:message key="All user applicant:"/></strong></p>
+                <p><strong><fmt:message key="All.user.applicant"/></strong></p>
                 <table>
-                    <th><fmt:message key="UserName"/></th>
-                    <th><fmt:message key="JobName"/></th>
+                    <th><fmt:message key="Username"/></th>
+                    <th><fmt:message key="Jobname"/></th>
 
                     <d:forEach items="${userList}" var="user">
                         <d:if test="${user.getJobApplicant() !=null}">
@@ -64,10 +67,10 @@
         <div class="centerapach2">
             <form>
                 <br>
-                <p><strong><fmt:message key="Job list:"/></strong></p>
+                <p><strong><fmt:message key="Job.List"/></strong></p>
                 <table>
-                    <th><fmt:message key="UserName"/></th>
-                    <th><fmt:message key="JobName"/></th>
+                    <th><fmt:message key="Username"/></th>
+                    <th><fmt:message key="Jobname"/></th>
 
                     <d:forEach items="${jobList}" var="job">
                         <c:forEach items="${job.getUsersList()}" var="user">

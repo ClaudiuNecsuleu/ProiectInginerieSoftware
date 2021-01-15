@@ -11,18 +11,18 @@ import javax.enterprise.context.SessionScoped;
 @SessionScoped
 public class LanguageBean {
 
-    Locale locale_en=new Locale("en");
-    Locale locale_ro=new Locale("ro");
-    Locale locale_de=new Locale("de");
+    Locale content_en=new Locale("en");
+    Locale content_ro=new Locale("ro");
+    Locale content_de=new Locale("de");
     
     String language="ro";
 
     public Locale getLocale(){
-    if(language.equals("ro")) return locale_ro;
-        if(language.equals("de")) return locale_de;
-        if(language.equals("en")) return locale_en;
+    if(language.equals("ro")) return content_ro;
+        if(language.equals("de")) return content_de;
+        if(language.equals("en")) return content_en;
 
-        return locale_en;
+        return content_en;
     }
     
     public void changeLanguage(String newLanguage){

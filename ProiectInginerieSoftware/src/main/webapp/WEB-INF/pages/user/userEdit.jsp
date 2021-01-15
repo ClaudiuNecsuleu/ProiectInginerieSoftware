@@ -2,13 +2,16 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
 <t:pageTemplate pageTitle="UserEdit">
     
     <div class="center">
-        <h2><fmt:message key="Users Edit"/></h2>
+        <h2><fmt:message key="Users.Edit"/></h2>
         <form action="./UserEditInputServlet" method="POST">
-            <label><strong><fmt:message key="Select user to edit:"/></strong></label>
+            <label><strong><fmt:message key="Select.user.edit"/></strong></label>
             <select  name="userid" required>
                 <option value=""><fmt:message key="Username"/></option>
                 <c:forEach var="user" items="${allUsers}" varStatus="status">
@@ -28,12 +31,12 @@
                 <br><br>
             <table>
                 <th>ID</th>
-                <th><fmt:message key="Name"/></th>
+                <th><fmt:message key="Nume"/></th>
                 <th><fmt:message key="Prenume"/></th>
                 <th><fmt:message key="Telefon"/></th>
-                <th><fmt:message key="Telefon Mobil"/></th>
+                <th><fmt:message key="Telefon.mobil"/></th>
                 <th><fmt:message key="Mail"/></th>
-                <th><fmt:message key="Functie"/></th>
+                <th><fmt:message key="Functia"/></th>
                 <th><fmt:message key="Descriere"/></th>
                 <th><fmt:message key="Username"/></th>
                     <c:forEach items="${allUsers}" var="user">

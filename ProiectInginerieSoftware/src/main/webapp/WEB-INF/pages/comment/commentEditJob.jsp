@@ -2,15 +2,18 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
-<t:pageTemplate pageTitle="CommentEdit">
+<t:pageTemplate pageTitle="Comment Edit">
 
     <div class="center">   
-        <h2><fmt:message key="Comments Edit Job"/></h2>
+        <h2><fmt:message key="Comments.Edit.Job"/></h2>
         <form action="./CommentEditJobServlet" method="POST">
 
             <select name="jobid" required>
-                <option value=""><fmt:message key="Choose job"/></option>
+                <option value=""><fmt:message key="Choose.job"/></option>
                 <c:forEach var="job" items="${allJobs}" varStatus="status">
                     <option value="${job.jobid}"> ${job.jobname}</option> 
                 </c:forEach>                      

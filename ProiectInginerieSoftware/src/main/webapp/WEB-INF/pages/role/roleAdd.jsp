@@ -2,14 +2,17 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
+
 <t:pageTemplate pageTitle="RoleAdd">
             <div class="center">
-                <h2><fmt:message key="Role Add"/></h2>
+                <h2><fmt:message key="Add.role"/></h2>
                 <form action="./RoleAddServlet" method="POST">
                     <div class="txt_field"> <input type="text" placeholder="<fmt:message key="Rol"/>" name="nameRole" value="${role.rolename}"/> </div>
 
-                    <button type="submit" class="btn3"  name="action" value="AddRole" required><fmt:message key="Adauga"/></button>
+                    <button type="submit" class="btn3"  name="action" value="Add.role" required><fmt:message key="Adauga"/></button>
                     <a href="RoleServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
                     <br>
                 </form>

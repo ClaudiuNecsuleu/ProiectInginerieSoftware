@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setAttribute("message", "Eroare.logare");
+        request.setAttribute("language", languageBean.getLocale());
         request.getRequestDispatcher("/WEB-INF/pages/loginreg/login.jsp").forward(request, response);
     }
 

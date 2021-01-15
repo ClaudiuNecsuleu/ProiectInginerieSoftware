@@ -1,5 +1,6 @@
 package com.ulbs.proiectingineriesoftware.Servlet.LoginRegister;
 
+import com.ulbs.proiectingineriesoftware.Common.LanguageBean;
 import com.ulbs.proiectingineriesoftware.Common.PasswordUtil;
 import com.ulbs.proiectingineriesoftware.Models.Photo;
 import com.ulbs.proiectingineriesoftware.Models.Role;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import com.ulbs.proiectingineriesoftware.Common.SendEmail;
 import java.util.logging.Logger;
+import javax.inject.Inject;
 
 
 @MultipartConfig
@@ -27,7 +29,9 @@ public class RegisterServlet extends HttpServlet {
 
     @EJB
     private UserDaoLocal userDaoLocal;
-
+    @Inject
+   LanguageBean languageBean;
+    
     private String createUsername(String name, String prenume) {
         String username = "";
 
@@ -69,28 +73,15 @@ public class RegisterServlet extends HttpServlet {
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setAttribute("language", languageBean.getLocale());
         request.getRequestDispatcher("/WEB-INF/pages/loginreg/register.jsp").forward(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -142,27 +133,23 @@ public class RegisterServlet extends HttpServlet {
                 userDaoLocal.setUserPhoto(user, photo);
                 Role role = new Role("USER");
                 userDaoLocal.addRoleToUser(role, user.getUsername());
-                status = "Successful register!" ;
+                status = "Succ.reg" ;
                 SendEmail.send(mail, "Inregistrare abc.dll", "Salut "+user.getUsername()+ " ,ne bucuram ca ai ales site-ul nostru ! .Parola ta este: "+password+".","abc12dll@gmail.com", "firmasoftwareabc12DLL");
 
             } else {
-                status = "Failed register!";
+                status = "Fail.reg";
             }
 
         }
         request.setAttribute("user", user);
-
+        request.setAttribute("language", languageBean.getLocale());
         request.setAttribute("message", status);
-
+        request.setAttribute("message", "Eroare.logare");
         request.getRequestDispatcher("/WEB-INF/pages/loginreg/register.jsp").forward(request, response);
     }
     private static final Logger LOG = Logger.getLogger(RegisterServlet.class.getName());
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    
     @Override
     public String getServletInfo() {
         return "Short description";

@@ -2,6 +2,9 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <fmt:setLocale value="${language}" />
+ <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
 <t:pageTemplate pageTitle="CommentEdit">
 
@@ -10,16 +13,16 @@
         <form action="./CommentEditJobNextServlet" method="POST">
 
             <select name="commentIDJob" required>
-                <option value=""><fmt:message key="Choose comment"/></option>
+                <option value=""><fmt:message key="Choose.comment"/></option>
                 <d:forEach var="comment" items="${job.getCommentsList()}" varStatus="status">
                     <option value="${comment.commentid}">${comment.comment}</option>
                 </d:forEach>
             </select>
 
-            <div class="txt_field"> <input type="text" placeholder="<fmt:message key="New Comment"/>" name="newCommentJob" value="${comment.comment}" required></div>
+            <div class="txt_field"> <input type="text" placeholder="<fmt:message key="New.Comment"/>" name="newCommentJob" value="${comment.comment}" required></div>
                 <c:if test="${message != null}">
                 <div class="alert alert-warning" role="alert">
-                    ${message}
+                    <fmt:message key="${message}"/>
                 </div>   
             </c:if>
             
