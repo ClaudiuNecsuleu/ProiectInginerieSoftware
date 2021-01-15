@@ -7,29 +7,13 @@
 <%-- any content can be specified here e.g.: --%>
 
 <!DOCTYPE html>
-<html>
+<html oncontextmenu="return false">
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="style.css" media="all" />
         <title>${pageTitle}</title>
-        <script>
-            var isNS = (navigator.appName == "Abcdll") ? 1 : 0;
-            if (navigator.appName == "Abcdll")
-                document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
-            function mischandler() {
-                return false;
-            }
-            function mousehandler(e) {
-                var myevent = (isNS) ? e : event;
-                var eventbutton = (isNS) ? myevent.which : myevent.button;
-                if ((eventbutton == 2) || (eventbutton == 3))
-                    return false;
-            }
-            document.oncontextmenu = mischandler;
-            document.onmousedown = mousehandler;
-            document.onmouseup = mousehandler;
-        </script>
+     
     </head>
     <body>
         <jsp:include page="/WEB-INF/pages/menu.jsp" />
