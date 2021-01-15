@@ -13,6 +13,8 @@
                  <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
                  <option value="ro" ${language == 'ro' ? 'selected' : ''}>Romana</option>
                  <option value="de" ${language == 'de' ? 'selected' : ''}>Deutsch</option>
+                 <option value="fr" ${language == 'fr' ? 'selected' : ''}>Français</option>
+                 <option value="es" ${language == 'es' ? 'selected' : ''}>Español,</option>
              </select>
          </form>
     <h1><fmt:message key="Welcome.msg"/></h1>

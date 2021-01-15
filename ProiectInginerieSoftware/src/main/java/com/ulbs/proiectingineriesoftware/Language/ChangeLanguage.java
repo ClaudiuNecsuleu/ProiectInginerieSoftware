@@ -1,6 +1,7 @@
 
-package com.ulbs.proiectingineriesoftware.Common;
+package com.ulbs.proiectingineriesoftware.Language;
 
+import com.ulbs.proiectingineriesoftware.Common.LanguageBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.inject.Inject;
