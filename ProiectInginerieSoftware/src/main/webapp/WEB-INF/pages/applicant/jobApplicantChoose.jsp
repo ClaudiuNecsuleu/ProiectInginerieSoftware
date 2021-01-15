@@ -18,16 +18,20 @@
                     <c:if test="${user.getJobApplicant() != null}">
                         <d:if test="${user.getRecomandare() == null}">
                             <label>User:  ${user.username}</label>  
+                            <br>
+                             <input type="text" placeholder="<fmt:message key="Feedback"/>" name="comment" required>
                             <input type="hidden" name="recruiterName" value="${name}" />
                             <c:if test="${message != null}">
                                 <div class="alert alert-warning" role="alert">
                                     <fmt:message key="${message}"/>
                                 </div>   
                             </c:if>
+                            <br>
                             <button type="submit" class="btn3" name="username" value="${user.username}"><fmt:message key="Recomanda"/></button> 
                         </form>
+                        <div style="margin-left: 50px;">
                         <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button><fmt:message key="View"/></button>  </a>
-
+                        </div>
                         <br>         
                     </d:if>
                 </c:if>

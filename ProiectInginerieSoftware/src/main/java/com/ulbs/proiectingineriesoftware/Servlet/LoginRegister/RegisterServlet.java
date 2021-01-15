@@ -144,7 +144,6 @@ public class RegisterServlet extends HttpServlet {
         request.setAttribute("user", user);
         request.setAttribute("language", languageBean.getLocale());
         request.setAttribute("message", status);
-        request.setAttribute("message", "Eroare.logare");
         request.getRequestDispatcher("/WEB-INF/pages/loginreg/register.jsp").forward(request, response);
     }
     private static final Logger LOG = Logger.getLogger(RegisterServlet.class.getName());

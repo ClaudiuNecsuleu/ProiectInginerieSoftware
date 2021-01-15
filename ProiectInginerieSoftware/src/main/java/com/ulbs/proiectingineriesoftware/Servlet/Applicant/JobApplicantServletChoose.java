@@ -2,10 +2,14 @@ package com.ulbs.proiectingineriesoftware.Servlet.Applicant;
 
 import com.ulbs.proiectingineriesoftware.Common.LanguageBean;
 import com.ulbs.proiectingineriesoftware.Common.SendEmail;
+import com.ulbs.proiectingineriesoftware.Models.Comment;
 import com.ulbs.proiectingineriesoftware.Models.User;
+import com.ulbs.proiectingineriesoftware.Services.CommentDaoLocal;
 import com.ulbs.proiectingineriesoftware.Services.JobDaoLocal;
 import com.ulbs.proiectingineriesoftware.Services.UserDaoLocal;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -26,6 +30,8 @@ public class JobApplicantServletChoose extends HttpServlet {
     UserDaoLocal userDaoLocal;
     @Inject
    LanguageBean languageBean;
+    @EJB
+    private CommentDaoLocal commentDaoLocal;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,6 +43,7 @@ public class JobApplicantServletChoose extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         request.setAttribute("language", languageBean.getLocale());
         request.setAttribute("jobList", jobDaoLocal.getAllJobs());
         request.setAttribute("userList", userDaoLocal.getAllUsers());
@@ -49,6 +56,15 @@ public class JobApplicantServletChoose extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String recruiterName = request.getParameter("recruiterName");
+        String comment1 = request.getParameter("comment");
+        
+            LocalTime time = LocalTime.now();
+            LocalDate date1 = LocalDate.now();
+            
+        Comment comment = new Comment(comment1, date1, time, recruiterName);
+        
+                commentDaoLocal.addCommentToUser(comment, username);
+         
         if (username != null) {
             userDaoLocal.recomandaUser(username, recruiterName);
             User user = userDaoLocal.getUserByUsername(username);
@@ -60,6 +76,7 @@ public class JobApplicantServletChoose extends HttpServlet {
 //            request.setAttribute("message", "Failed!");
             }
         }
+        
         request.setAttribute("language", languageBean.getLocale());
         request.setAttribute("jobList", jobDaoLocal.getAllJobs());
         request.setAttribute("userList", userDaoLocal.getAllUsers());

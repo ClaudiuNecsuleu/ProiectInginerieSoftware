@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet(name = "IndexServlet", urlPatterns = {"/IndexServlet"})
@@ -100,6 +101,8 @@ public class IndexServlet extends HttpServlet {
 
         request.setAttribute("allJobs", jobDaoLocal.getAllJobs());
         request.setAttribute("language", languageBean.getLocale());
+        HttpSession session = request.getSession(true);
+        session.setAttribute("languageLocale", languageBean);
         request.getRequestDispatcher("/WEB-INF/pages/home.jsp").forward(request, response);
     }
 

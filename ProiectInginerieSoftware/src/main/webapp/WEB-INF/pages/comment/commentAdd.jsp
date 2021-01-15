@@ -23,7 +23,7 @@
                 <input type="hidden" name="publisherUsername" value="${name}">
                   <c:if test="${message != null}">
                     <div class="alert alert-warning" role="alert">
-                        ${message}
+                        <fmt:message key="${message}"/>
                     </div>   
                 </c:if>
                 <button type="submit" class="btn3" name="action" value="Add"><fmt:message key="Add"/></button>
