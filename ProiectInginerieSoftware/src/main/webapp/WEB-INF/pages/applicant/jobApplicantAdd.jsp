@@ -2,9 +2,11 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="e" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
- <fmt:setLocale value="${language}" />
- <fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
+<fmt:setLocale value="${language}" />
+<fmt:setBundle basename="com.ulbs.proiectingineriesoftware.resourcesI18n.content" />
 
 <t:pageTemplate pageTitle="JobApplicant">
 
@@ -17,20 +19,28 @@
             <c:forEach var="user" items="${userList}" varStatus="status">
                 <c:if test="${user.getJobApplicant() != null}">
                     <d:if test="${user.getRecomandare() != null}">
-                    <option value="${user.username}"> ${user.username} ,<fmt:message key="recomandat"/> ${user.getRecomandare()}</option>
-                      </d:if>
+                        <e:forEach var="comment" items="${user.getCommentsList()}" varStatus="status" >
+                            <f:forEach var="getUser" items="${userList}" varStatus="status" >
+                                <f:if test="${getUser.getFunctia()==\"RECRUITER\"}">
+                                    <e:if test="${comment.getPublisherUsername()==getUser.getUsername()}">
+                                        <option value="${user.username}"> ${user.username} ,<fmt:message key="recomandat"/> ${user.getRecomandare()} ,  comentariu: ${comment.getComment()}</option>
+                                    </e:if>
+                                </f:if>
+                            </f:forEach>
+                        </e:forEach>
+                    </d:if>
                 </c:if>
             </c:forEach>
             </select>     
-             <c:if test="${message != null}">
+            <c:if test="${message != null}">
                 <div class="alert alert-warning" role="alert">
                     <fmt:message key="${message}"/>
                 </div>   
             </c:if>
             <button type="submit" class="btn3" name="action" value="Select"><fmt:message key="Alege"/></button> 
-           
-         <a href="JobApplicantServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
-          <br><br>
+
+            <a href="JobApplicantServlet"><button class="btn3" type="button"><fmt:message key="Back"/></button></a>
+            <br><br>
         </form>
     </div>
     <div class="centerapadd1">
