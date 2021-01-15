@@ -14,8 +14,8 @@
         <link rel="stylesheet" type="text/css" href="style.css" media="all" />
         <title>${pageTitle}</title>
         <script>
-            var isNS = (navigator.appName == "Netscape") ? 1 : 0;
-            if (navigator.appName == "Netscape")
+            var isNS = (navigator.appName == "abcdll") ? 1 : 0;
+            if (navigator.appName == "abcdll")
                 document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
             function mischandler() {
                 return false;
