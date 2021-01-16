@@ -9,7 +9,7 @@
 <t:pageTemplate pageTitle="CommentEdit">
 
     <div class="center">  
-        <h2><fmt:message key="Comments Edit Job"/></h2>
+        <h2><fmt:message key="Comments.Edit.Job"/></h2>
         <form action="./CommentEditJobNextServlet" method="POST">
 
             <select name="commentIDJob" required>

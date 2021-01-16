@@ -1,9 +1,11 @@
 
 package com.ulbs.proiectingineriesoftware.Servlet.Comment;
 
+import com.ulbs.proiectingineriesoftware.Common.LanguageBean;
 import com.ulbs.proiectingineriesoftware.Services.JobDaoLocal;
 import java.io.IOException;
 import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.HttpConstraint;
 import javax.servlet.annotation.ServletSecurity;
@@ -18,11 +20,13 @@ public class CommentEditJobRedirectServlet extends HttpServlet {
 
     @EJB
     private JobDaoLocal jobDaoLocal;
-
+     @Inject
+   LanguageBean languageBean;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         request.setAttribute("allJobs", jobDaoLocal.getAllJobs());
+        request.setAttribute("language", languageBean.getLocale());
         request.getRequestDispatcher("/WEB-INF/pages/comment/commentEditJob.jsp").forward(request, response);
     }
 
