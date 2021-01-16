@@ -125,7 +125,7 @@
     <br><br>
     <div class="centerprofc">
         <form>
-            <p><strong<fmt:message key="Comentariile.tale"/></strong></p>
+             <p><strong><fmt:message key="Comentariile.tale"/></strong></p>
             <table >
                 <th>
                     <fmt:message key="Comentariu"/>
