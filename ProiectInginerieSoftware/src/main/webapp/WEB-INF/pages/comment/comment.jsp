@@ -12,19 +12,19 @@
         <h2><fmt:message key="Comments"/></h2>
         <form action="./CommentServlet" method="POST">
             <c:if test="${pageContext.request.isUserInRole('UserRole')}">
-                <a href="CommentAddServlet"><button class="btn3" type="button"><fmt:message key="AddToUser"/></button></a>
+                <a href="CommentAddServlet"><button class="btn2" type="button"><fmt:message key="AddToUser"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('UserRole')}">
-                <a href="CommentJobServlet"><button class="btn3" type="button"><fmt:message key="AddToJob"/></button></a>
+                <a href="CommentJobServlet"><button class="btn2" type="button"><fmt:message key="AddToJob"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
-                <a href="CommentEditUserRedirectServlet"><button class="btn3" type="button"><fmt:message key="Edit.for.user"/></button></a>
+                <a href="CommentEditUserRedirectServlet"><button class="btn2" type="button"><fmt:message key="Edit.for.user"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
-                <a href="CommentEditJobRedirectServlet"><button class="btn3" type="button"><fmt:message key="Edit.for.job"/></button></a>
+                <a href="CommentEditJobRedirectServlet"><button class="btn2" type="button"><fmt:message key="Edit.for.job"/></button></a>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('RecruiterRole')||pageContext.request.isUserInRole('DirDepRole')||pageContext.request.isUserInRole('DirHrRole')||pageContext.request.isUserInRole('DirGenRole')}">
-                <a href="CommentDeleteServlet"><button class="btn3" type="button"><fmt:message key="Delete"/></button></a>
+                <a href="CommentDeleteServlet"><button class="btn2" type="button"><fmt:message key="Delete"/></button></a>
             </c:if>
             <br><br>
         </form>

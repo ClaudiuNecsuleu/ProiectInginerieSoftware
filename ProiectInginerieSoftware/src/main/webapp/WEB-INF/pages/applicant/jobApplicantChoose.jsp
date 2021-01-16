@@ -29,9 +29,9 @@
                             <br>
                             <button type="submit" class="btn3" name="username" value="${user.username}"><fmt:message key="Recomanda"/></button> 
                         </form>
-                        <div style="margin-left: 50px;">
+                        
                         <a href="${pageContext.request.contextPath}/File?id=${user.getUsername()}"> <button><fmt:message key="View"/></button>  </a>
-                        </div>
+                       
                         <br>         
                     </d:if>
                 </c:if>

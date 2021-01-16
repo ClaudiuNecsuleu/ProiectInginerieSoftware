@@ -197,7 +197,7 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-400px,140px);
+    transform:translate(-700px,-170px);
     width:400px;
     background:white;
     border-radius:10px;
@@ -212,7 +212,7 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(10px,140px);
+    transform:translate(300px,-170px);
     width:400px;
     background:white;
     border-radius:10px;
@@ -385,7 +385,7 @@ h1{
   border-radius: 50%;
   position: absolute;
   overflow: hidden;
-  transform: translate(450%, -30%);
+  transform: translate(580%, 45%);
 }
 .descriere{
      position:absolute;
@@ -462,7 +462,7 @@ h1{
     position:absolute;
     top:57%;
     left:50%;
-    transform:translate(-250px,190px);
+    transform:translate(-290px,190px);
     width:auto;
     background:white;
     border-radius:20px;
@@ -490,7 +490,7 @@ h1{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-250px,150px);
+    transform:translate(-290px,150px);
     width:auto;
     background:white;
     border-radius:20px;

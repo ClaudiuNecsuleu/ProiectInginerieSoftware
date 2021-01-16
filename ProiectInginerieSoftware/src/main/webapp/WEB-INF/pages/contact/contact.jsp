@@ -18,6 +18,7 @@
             <p><strong><fmt:message key="Contact.msg"/></strong></p>
             <p><strong><a href="https://trello.com/b/rmUsWc5v/proiect-inginerie-software">Trello</a></strong></p>
             <p><strong><a href="https://github.com/ClaudiuNecsuleu/ProiectInginerieSoftware/commits/main">GitHub</a></strong></p>
+            <p><strong><a href="https://github.com/LeonOtesanu/Project-Leonii/commits/main">OldGitHub</a></strong></p>
         </center>
     </div>
     <h2 style="text-align:center"><fmt:message key="Our.Team"/></h2>
