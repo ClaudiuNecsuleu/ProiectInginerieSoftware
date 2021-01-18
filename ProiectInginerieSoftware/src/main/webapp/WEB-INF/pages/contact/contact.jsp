@@ -13,7 +13,7 @@
         <h1><fmt:message key="About.Us"/></h1>
         <center>
             <p><center><strong><fmt:message key="Echipa.ULBS12"/></strong></center><p>
-            <p><strong><a href="https://docs.google.com/document/d/1TpUNnOcEc6ybwSvgsg2Xp98nsHsJoNJu/edit"><fmt:message key="Documentatie"/></a></strong></p>
+            <p><strong><a href="https://docs.google.com/document/d/1tJilwOKqfEhGJuj4PdKGB9mT9mvbVEL6/edit"><fmt:message key="Documentatie"/></a></strong></p>
             <br>
             <p><strong><fmt:message key="Contact.msg"/></strong></p>
             <p><strong><a href="https://trello.com/b/rmUsWc5v/proiect-inginerie-software">Trello</a></strong></p>
@@ -35,7 +35,7 @@
                     <p><strong><fmt:message key="Clau"/></strong></p>
    
                     <p>claudiu.necsuleu@ulbsibiu.ro</p>
-                    <button class="btn1"><fmt:message key="Contact"/></button>
+                   <button onclick="location.href='https://docs.google.com/document/d/1heraAtsZAZx-GXHfWJYppcg2fhvFUuiU/edit'"  class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -53,7 +53,7 @@
                     <p><strong><fmt:message key="Alex"/></strong></p>
          
                     <p>alexandruc.stoian@ulbsibiu.ro</p>
-                    <button class="btn1"><fmt:message key="Contact"/></button>
+                     <button onclick="location.href='https://docs.google.com/document/d/1zOHIXQGchtJKyrvv-hG_-vhkZJlfR0rM/edit'" class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -72,7 +72,7 @@
                 
                     <p>bogdan.paicu@ulbsibiu.ro</p>
 
-                    <button class="btn1"><fmt:message key="Contact"/></button>
+                    <button onclick="location.href='https://docs.google.com/document/d/1EZUWNl8A3CEexG3L_DjhIPEi0EVd2B64/edit'" class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -90,7 +90,7 @@
                     <p><strong><fmt:message key="Larisa"/></strong></p>
                 
                     <p>larisa.giubega@ulbsibiu.ro</p>
-                    <button class="btn1"><fmt:message key="Contact"/></button>
+                    <button onclick="location.href='https://docs.google.com/document/d/1GdKpD7QcHsgZyucTkAY8XBRp84W-v83K/edit'" class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -108,7 +108,7 @@
                     <p><strong><fmt:message key="Dani"/></strong></p>
                
                     <p>daniel.dumitrana@ulbsibiu.ro</p>
-                    <button class="btn1"><fmt:message key="Contact"/></button>
+                     <button onclick="location.href='https://docs.google.com/document/d/1I-BFHl8oYB1zNzUVcE-LWrPvt5zV3P6W/edit'" class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
@@ -126,10 +126,11 @@
                     <p><strong><fmt:message key="Leo"/></strong></p>
                    
                     <p>leonard.otesanu@ulbsibiu.ro</p>
-                    <button class="btn1"><fmt:message key="Contact"/></button>
+                    <button onclick="location.href='https://docs.google.com/document/d/1fZY0xQ1Nq5oS69T_Xtex5ZNgJO3VuPyr/edit'" class="btn1"><fmt:message key="Contact"/></button>
                 </center>
             </div>
         </div>
     </div>
 
 </t:pageTemplate>
+    
